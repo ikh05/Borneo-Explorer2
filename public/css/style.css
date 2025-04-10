@@ -1,0 +1,174 @@
+
+* {
+    transition: all 1s;
+    --sb-track-color: rgb(0, 175, 255);
+    --sb-thumb-color: rgb(106, 175, 140);
+    --sb-size: 4px;
+  
+    --pastel-1: rgb(181, 234, 215);  /* Hijau mint */
+    --pastel-2: rgb(199, 206, 234);  /* Biru langit */
+    --pastel-3: rgb(255, 218, 193);  /* Peach */
+    --pastel-4: rgb(226, 240, 203);  /* Hijau daun muda */
+    --pastel-5: rgb(255, 154, 162);  /* Merah muda */
+    --pastel-6: rgb(255, 183, 178);  /* Salmon */
+    --pastel-7: hsl(24, 100%, 86%);  /* Apricot */
+    --pastel-8: rgb(216, 181, 255);  /* Ungu lavender */
+    --pastel-9: rgb(160, 231, 229);  /* Toska muda */
+    --pastel-10: rgb(181, 234, 215); /* Hijau air */
+    --pastel-11: rgb(245, 245, 245); /* Putih smoke */
+    --pastel-12: rgb(252, 228, 236); /* Pink blush */
+    --pastel-13: rgb(224, 247, 250); /* Biru es */
+  }
+  
+  
+  
+  
+  
+  
+  *::-webkit-scrollbar {
+    width: var(--sb-size)
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 3px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 3px;
+    border: 1px solid #ff0000;
+  }
+  
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+  }
+  
+  
+  .pointer {
+    cursor: pointer;
+    background: linear-gradient(145deg, #2a2a2a, #383838);
+    border: 2px solid #646cff;
+    transform-origin: center center;
+    
+  }
+  .rotate180 {
+    display: inline-block;
+    transform: rotate(180deg) !important;
+  }
+  .pointer span{
+    transform: rotate(0);
+  }
+  .pointer:hover {
+    box-shadow: 0 0 15px #646cff50;
+  }
+  .pointer i{
+    transition: transform .5s;
+  }
+  .pointer:hover i{
+    transform: scale(1.3) rotate(360deg);
+  }
+  
+  
+  .nama_kelompok input{
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+  }
+  
+  #kelompok .card{
+    padding: .5rem;
+    border: 2px #383838 solid;
+    position: relative;
+    overflow: hidden;
+    width: 20vw;
+    height: 8rem;
+  }
+  #kelompok .card .card-body{
+    padding: 0;
+  }
+  #kelompok .card:hover{
+    border: 2px #646cff solid;
+  }
+  
+  #kelompok .card img{
+    transform-origin: center center;
+    top: 50%;
+    left: 30%;
+    height: 95%;
+    padding: .1rem;
+    aspect-ratio: 1/1;
+  }
+  #kelompok .card:hover img{
+    top: 50%;
+    left: 20%;
+    height: 130%;
+    background-color: #646cff;
+    aspect-ratio: 1/1;
+  }
+  
+  #kelompok .card .data{
+    max-width: 100%;
+    margin: .5rem;
+    position: absolute;
+    right: 0;
+  }
+  #kelompok .card .data label{
+    max-width: 100%;
+  }
+  #kelompok .card .data .total{
+    position: absolute;
+    right: -100%;
+  }
+  #kelompok .card:hover .data .total{
+    position: absolute;
+    right: 0;
+  }
+  
+  #pilihan_kabupaten {
+    width: 13rem;
+  }
+  #pilihan_kabupaten a{
+    transition: all 1s;
+  }
+  #pilihan_kabupaten a:nth-child(13n+1){ color: var(--pastel-1); }
+  #pilihan_kabupaten a:nth-child(13n+2){ color: var(--pastel-2); }
+  #pilihan_kabupaten a:nth-child(13n+3){ color: var(--pastel-3); }
+  #pilihan_kabupaten a:nth-child(13n+4){ color: var(--pastel-4); }
+  #pilihan_kabupaten a:nth-child(13n+5){ color: var(--pastel-5); }
+  #pilihan_kabupaten a:nth-child(13n+6){ color: var(--pastel-6); }
+  #pilihan_kabupaten a:nth-child(13n+7){ color: var(--pastel-7); }
+  #pilihan_kabupaten a:nth-child(13n+8){ color: var(--pastel-8); }
+  #pilihan_kabupaten a:nth-child(13n+9){ color: var(--pastel-9); }
+  #pilihan_kabupaten a:nth-child(13n+10){ color: var(--pastel-10); }
+  #pilihan_kabupaten a:nth-child(13n+11){ color: var(--pastel-11); }
+  #pilihan_kabupaten a:nth-child(13n+12){ color: var(--pastel-12); }
+  #pilihan_kabupaten a:nth-child(13n+13){ color: var(--pastel-13); }
+  
+  #pilihan_kabupaten a.active{ 
+    color: aliceblue; 
+    padding-left: 2rem;
+    font-weight: bold;
+  }
+  #pilihan_kabupaten a{
+    transition: bold 0s all 1s;
+  }
+  #pilihan_kabupaten a:not(.active):hover{
+    padding-left: 2rem;
+  }
+  
+  
+  
+  .z-1030{
+    z-index: 1030;
+  }
+
+  .hover-up:hover{
+    position: relative;
+    top: -.1rem;
+  }

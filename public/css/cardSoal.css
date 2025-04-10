@@ -1,0 +1,116 @@
+#pilihan_soal, body, .modal{
+    max-height: none;
+  }
+  .modal.show{
+    z-index: 3000 !important;
+  }
+  #pilihan_soal{
+    right: 18.5rem;
+  }
+  
+  #pilihan_soal .pilihan{
+    width: 100%;
+    min-height: calc(100vh - 4rem);
+  }
+  #pilihan_soal .pilihan p{
+    color: #2a2a2a;
+  }
+  #pilihan_soal .card{
+    margin: 0rem;
+    width: 30%;
+    height: 30%;
+    padding: 0;
+  }
+  
+  
+  .puzzle-piece {
+    background-size: 300% 300%; /* 3x3 grid */
+    background-position: calc(var(--x) * 100% / 2) calc(var(--y) * 100% / 2);
+    border: 1px solid #333;
+    transform: 'filter' 1s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+  }
+  .puzzle-piece p{
+    color: #2a2a2a !important;
+  }
+  .puzzle-piece::before{
+    content: "";
+    position: absolute;
+    height: 15rem;
+    width: 3rem;
+    background : #fff;
+    left: -10rem;
+    top: -6rem;
+    transform: rotate(37deg);
+    transition: all .3s ease-in;
+    opacity: 0.3;
+  }
+  .puzzle-piece::after{
+    content: "";
+    position: absolute;
+    height: 15rem;
+    width: .3rem;
+    background : #fff;
+    left: -9rem;
+    top: -6rem;
+    transform: rotate(37deg);
+    transition: all .3s ease-in;
+    opacity: 0.3;
+  }
+  .puzzle-piece:hover::before{
+    left: 16rem;
+    top: -3rem;
+  }
+  .puzzle-piece:hover::after{
+    left: 15rem;
+    top: -3rem;
+  }
+  #pilihan_soal:has(.card:hover) .card:not(:hover){
+    filter: blur(5px);
+    transition-delay: 1s;
+
+  }
+  #pilihan_soal .card:hover{
+    transform: rotate(5deg);
+    transition: all .5s;
+}
+  #pilihan_soal .card:hover p{
+    font-weight: bold;
+  }
+  
+  #pilihan_soal .pilihan .bg-has{ 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .opacity-75{
+    opacity: .75;
+  }
+  #pilihan_soal .pilihan:nth-child(13n+2) .bg-has{ background-color: var(--pastel-2);}
+  #pilihan_soal .pilihan:nth-child(13n+1) .bg-has{ background-color: var(--pastel-1);}
+  #pilihan_soal .pilihan:nth-child(13n+3) .bg-has{ background-color: var(--pastel-3);}
+  #pilihan_soal .pilihan:nth-child(13n+4) .bg-has{ background-color: var(--pastel-4);}
+  #pilihan_soal .pilihan:nth-child(13n+5) .bg-has{ background-color: var(--pastel-5);}
+  #pilihan_soal .pilihan:nth-child(13n+6) .bg-has{ background-color: var(--pastel-6);}
+  #pilihan_soal .pilihan:nth-child(13n+7) .bg-has{ background-color: var(--pastel-7);}
+  #pilihan_soal .pilihan:nth-child(13n+8) .bg-has{ background-color: var(--pastel-8);}
+  #pilihan_soal .pilihan:nth-child(13n+9) .bg-has{ background-color: var(--pastel-9);}
+  #pilihan_soal .pilihan:nth-child(13n+10) .bg-has{ background-color: var(--pastel-10);}
+  #pilihan_soal .pilihan:nth-child(13n+11) .bg-has{ background-color: var(--pastel-11);}
+  #pilihan_soal .pilihan:nth-child(13n+12) .bg-has{ background-color: var(--pastel-12);}
+  #pilihan_soal .pilihan:nth-child(13n+13) .bg-has{ background-color: var(--pastel-13);}
+
+  #pilihan_soal img{
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    opacity: .7;
+  }
+  #pilihan_soal p.bonus{
+    padding: .3rem;
+    background-color: #fff;
+    border-radius: 5px;
+  }

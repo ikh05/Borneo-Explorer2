@@ -1,0 +1,74 @@
+#kelompok .nama_kelompok input{
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+  }
+#kelompok .card{
+    padding: .5rem;
+    border: 2px #383838 solid;
+    position: relative;
+    overflow: hidden;
+    width: 20vw;
+    height: 8rem;
+  }
+  #kelompok .card .card-body{
+    padding: 0;
+  }
+  #kelompok .card:hover{
+    border: 2px #646cff solid;
+  }
+  
+  #kelompok .card img{
+    transform-origin: center center;
+    top: 50%;
+    left: 30%;
+    height: 95%;
+    padding: .1rem;
+    aspect-ratio: 1/1;
+  }
+  #kelompok .card:hover img{
+    top: 50%;
+    left: 20%;
+    height: 130%;
+    background-color: #646cff;
+    aspect-ratio: 1/1;
+  }
+  
+  #kelompok .card .data{
+    max-width: 100%;
+    margin: .5rem;
+    position: absolute;
+    right: 0;
+  }
+  #kelompok .card .data label{
+    max-width: 100%;
+  }
+  #kelompok .card .data .total{
+    position: absolute;
+    right: -100%;
+  }
+  #kelompok .card:hover .data .total{
+    position: absolute;
+    right: 0;
+  }
+  #kelompok .card .nama_kelompok label:hover{
+    cursor: text;
+  }
+
+  #kelompok button{
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+  }
+  #kelompok button p{
+    margin-left: 0rem;
+    width: 0;
+    overflow: hidden;
+    transition: all 1s;
+  }
+  #kelompok button:hover p,
+  #kelompok .offcanvas.show + button p{
+    width: 4.5rem;
+    margin-left: .5rem;
+  }
