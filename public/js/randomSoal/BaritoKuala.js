@@ -1,4 +1,4 @@
-window.BaritoKuala = {
+window.Soal_BaritoKuala = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //20^5 = 3.200.000
         let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa sty-rofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggu-lan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produk-tivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut(dalam ton per hektar): __x_1__; __x_2__; __x_3__; __x_4__; dan __x_5__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
@@ -18,11 +18,11 @@ window.BaritoKuala = {
             x_3 = Soal.randomInterval(6, 8, 0.1);
             x_4 = Soal.randomInterval(6, 8, 0.1);
             x_5 = Soal.randomInterval(6, 8, 0.1);
-        } while (BaritoKuala.random_statistika.array_in_array([x_1, x_2, x_3, x_4, x_5]));
+        } while (Soal_BaritoKuala.random_statistika.array_in_array([x_1, x_2, x_3, x_4, x_5]));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        BaritoKuala.random_statistika.lastPush([x_1, x_2, x_3, x_4, x_5]);
+        Soal_BaritoKuala.random_statistika.lastPush([x_1, x_2, x_3, x_4, x_5]);
 
         window.setting.jawaban = ((x_1 + x_2 + x_3 + x_4 + x_5)/5).toLocaleString('id-ID')+' ton';
         return text
@@ -44,8 +44,8 @@ window.BaritoKuala = {
         do {
             x = Soal.randomInterval(10000, 15000, 1000);
             y = Soal.randomInterval(5000, 7000, 1000);
-        } while (BaritoKuala.random_persamaan_linear.array_in_array([x, y]));
-        BaritoKuala.random_persamaan_linear.lastPush([x, y]);
+        } while (Soal_BaritoKuala.random_persamaan_linear.array_in_array([x, y]));
+        Soal_BaritoKuala.random_persamaan_linear.lastPush([x, y]);
 
         // jawaban
         window.setting.jawaban = 'Rp\\('+((x-y)/2).toLocaleString('id-ID')+'\\)';
@@ -75,9 +75,9 @@ window.BaritoKuala = {
             n = Soal.randomInterval(6,10);
             console.log('selesai random, akan di cek');
             
-        } while (BaritoKuala.random_barisan_dan_deret.array_in_array([a, b, n]));
+        } while (Soal_BaritoKuala.random_barisan_dan_deret.array_in_array([a, b, n]));
         console.log('masukkan ke array record');
-        BaritoKuala.random_barisan_dan_deret.lastPush([a, b, n]);
+        Soal_BaritoKuala.random_barisan_dan_deret.lastPush([a, b, n]);
         console.log('sudah di masukkan');
         
         // jawaban

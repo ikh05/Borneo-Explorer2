@@ -1,4 +1,4 @@
-window.Banjar = {
+window.Soal_Banjar = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         let text = `
@@ -66,7 +66,7 @@ window.Banjar = {
         
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         let randomEntries = '';
-        console.log(typeof (Banjar.random_statistika));
+        console.log(typeof (Soal_Banjar.random_statistika));
         
         do {
             let banyak_kecamatan = Soal.randomInterval(3, 5);
@@ -75,11 +75,11 @@ window.Banjar = {
             .shuffleArray()
             .slice(0, banyak_kecamatan);
             console.log('statistika sudah_di random');
-        } while (Banjar.random_statistika.array_in_array(randomEntries));
+        } while (Soal_Banjar.random_statistika.array_in_array(randomEntries));
         console.log(randomEntries);
 
         // simpan ke daftar 5 terakhir
-        Banjar.random_statistika.lastPush(randomEntries);
+        Soal_Banjar.random_statistika.lastPush(randomEntries);
 
         window.setting.jawaban = randomEntries.reduce((sum, item) => sum + item[1], 0) / randomEntries.length + ' ton';
         return text.replace('__daftar_kecamatan__', randomEntries.joinName());
@@ -111,8 +111,8 @@ window.Banjar = {
             x = Soal.randomInterval(20, 40);
             do { y = Soal.randomInterval(20, 30);
             } while (x+y > 60);
-        } while (Banjar.random_persamaan_linear.array_in_array([a, x, b, y]));
-        Banjar.random_persamaan_linear.lastPush([a, x, b, y]);
+        } while (Soal_Banjar.random_persamaan_linear.array_in_array([a, x, b, y]));
+        Soal_Banjar.random_persamaan_linear.lastPush([a, x, b, y]);
 
         // jawaban
         window.setting.jawaban = y;
@@ -149,9 +149,9 @@ window.Banjar = {
             } while (m == o);
             console.log('selesai random, akan di cek');
             
-        } while (Banjar.random_barisan_dan_deret.array_in_array([a, b, m, o]));
+        } while (Soal_Banjar.random_barisan_dan_deret.array_in_array([a, b, m, o]));
         console.log('masukkan ke array record');
-        Banjar.random_barisan_dan_deret.lastPush([a, b, m, o]);
+        Soal_Banjar.random_barisan_dan_deret.lastPush([a, b, m, o]);
         console.log('sudah di masukkan');
         
         // jawaban
