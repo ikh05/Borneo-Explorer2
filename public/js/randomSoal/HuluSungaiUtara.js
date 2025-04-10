@@ -88,3 +88,4 @@ Soal.HuluSungaiUtara = {
             .replace('__n__', n);
     }
 }
+console.log("Soal.HuluSungaiUtara", Soal.HuluSungaiUtara);
