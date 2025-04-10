@@ -120,7 +120,7 @@
       console.log(setting);
       document.getElementById('soal_lokasi').innerHTML = setting.lokasi.replace(/([A-Z])/g, ' $1').trim();;
       document.getElementById('soal_materi').innerHTML = formatJudul(setting.materi);
-      const objek = window[setting.lokasi];
+      const objek = window['Soal_'+setting.lokasi];
       if (typeof objek === "object" && typeof objek[setting.materi] === "function") {
           return objek[setting.materi]();
       } else {
