@@ -34,7 +34,7 @@
 
 
 <script>
-  const LokasiSoal = {};
+  const Soal = {};
   $(document).ready(function() {
     const timer_start = @json($timeOtomatis);
     let bool_timer = false;
