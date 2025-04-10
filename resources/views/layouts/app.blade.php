@@ -80,12 +80,6 @@
         }).on('hidden.bs.offcanvas', function() {
           $('#pilihan_kabupaten').addClass('z-1030');
         });
-
-        $('.card-front').each(function(i,e) { 
-          $(e).on('click', function() {
-            $(this).closest('.card-flip').addClass('flip-active');
-          });
-        });
       }); 
     </script>
   </body>

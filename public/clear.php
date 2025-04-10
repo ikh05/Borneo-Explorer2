@@ -7,7 +7,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 
-$commands = ['config:clear', 'cache:clear', 'config:cache'];
+$commands = ['config:clear', 'cache:clear', 'config:cache', 'optimize:clear'];
 
 echo "<pre>";
 foreach ($commands as $command) {

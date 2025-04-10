@@ -73,5 +73,11 @@
         window.setting.lokasi = this.getAttribute('lokasi');
       });
     });
+
+    $('.card-front').each(function(i,e) { 
+          $(e).on('click', function() {
+            $(this).closest('.card-flip').addClass('flip-active');
+          });
+        }); 
   });
 </script>
