@@ -103,7 +103,7 @@
   #pilihan_soal .pilihan:nth-child(13n+12) .bg-has{ background-color: var(--pastel-12);}
   #pilihan_soal .pilihan:nth-child(13n+13) .bg-has{ background-color: var(--pastel-13);}
 
-  #pilihan_soal img{
+  #pilihan_soal .card img{
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
