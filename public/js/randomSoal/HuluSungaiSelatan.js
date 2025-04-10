@@ -1,4 +1,4 @@
-Soal.HuluSungaiSelatan = {
+window.HuluSungaiSelatan = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         const data = {

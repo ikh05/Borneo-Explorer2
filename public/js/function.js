@@ -86,7 +86,8 @@ Array.prototype.lastPush = function(item, maxLength = 5) {
     return this; // Return array untuk chaining
 };
 
-Soal.randomInterval = function (min, max, kelipatan=1) {
+window.Soal = {
+  randomInterval: function (min, max, kelipatan=1) {
     // random
     if(min > max){
       let buff = min; min = max; max = buff;
@@ -103,4 +104,11 @@ Soal.randomInterval = function (min, max, kelipatan=1) {
     
     return result;
   }
+  
+}
+
+
+
+
+
 });

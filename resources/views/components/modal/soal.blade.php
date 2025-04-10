@@ -34,7 +34,6 @@
 
 
 <script>
-  let Soal = {};
   $(document).ready(function() {
     const timer_start = @json($timeOtomatis);
     let bool_timer = false;
@@ -119,14 +118,10 @@
     }
     function buatSoal(setting){
       console.log(setting);
+      
       document.getElementById('soal_lokasi').innerHTML = setting.lokasi.replace(/([A-Z])/g, ' $1').trim();;
       document.getElementById('soal_materi').innerHTML = formatJudul(setting.materi);
-      const objek = Soal[setting.lokasi];
-      if (typeof objek === "object" && typeof objek[setting.materi] === "function") {
-          return objek[setting.materi]();
-      } else {
-          console.error("Fungsi tidak ditemukan atau bukan objek");
-      } 
+      return window[setting.lokasi][setting.materi]();
     }
   });
 </script>

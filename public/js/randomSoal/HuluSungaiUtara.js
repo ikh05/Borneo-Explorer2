@@ -1,4 +1,4 @@
-Soal.HuluSungaiUtara = {
+window.HuluSungaiUtara = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         const data = {
@@ -88,4 +88,3 @@ Soal.HuluSungaiUtara = {
             .replace('__n__', n);
     }
 }
-console.log("Soal.HuluSungaiUtara", Soal.HuluSungaiUtara);
