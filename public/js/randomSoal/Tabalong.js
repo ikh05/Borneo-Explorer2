@@ -1,4 +1,4 @@
-window.Tabalong = {
+Soal.Tabalong = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         let text =  `

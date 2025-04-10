@@ -1,4 +1,4 @@
-window.Soal_Balangan = {
+Soal.Balangan = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         let text = 'Terletak di Desa Nungka Kecamatan Awayan, Bendungan Pitap dibangun pada tahun 2004 hingga 2011, sebagai penunjang ketahanan nasional, yang menjadi sumber aliran air dan irigasi bagi pertanian, luasannya ribuan hektare yang tersebar pada beberapa kecamatan. Bendungan Pitap dibangun Kementerian Pekerjaan Umum dan Perumahan Rakyat, Direktorat Jenderal Sumber Daya Air, Balai Wilayah Sungai Kalimantan II dengan menggunakan Anggaran APBN sebagai berikut, Pada Tahun 2004, Rp11.189.920.000, pada tahun 2005, Rp14.845.000.000, kemudian tahun 2006 Rp22.179.635.000, dan tahun 2007 Rp19.073.670.000, dilanjutkan pada tahun 2011 Rp22.475.238.000. Tentukan rata-rata anggaran pada tahun __tahunA__, __tahunB__, dan __tahunC__.';
@@ -13,7 +13,7 @@ window.Soal_Balangan = {
         
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         let randomEntries = '';
-        console.log(typeof (Soal_Balangan.random_statistika));
+        console.log(typeof (Balangan.random_statistika));
         
         do {
             console.log('statistika iterasi_random');
@@ -22,11 +22,11 @@ window.Soal_Balangan = {
             .slice(0, 3)
             .sort((a, b) => a[0] - b[0]);
             console.log('statistika sudah_di random');
-        } while (Soal_Balangan.random_statistika.array_in_array(randomEntries));
+        } while (Balangan.random_statistika.array_in_array(randomEntries));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        Soal_Balangan.random_statistika.lastPush(randomEntries);
+        Balangan.random_statistika.lastPush(randomEntries);
 
         window.setting.jawaban = 'Rp\\('+((randomEntries[0][1] + randomEntries[1][1] + randomEntries[2][1])/3).toLocaleString('id-ID')+'\\),-'
         return text
@@ -46,8 +46,8 @@ window.Soal_Balangan = {
         do {
             a = Soal.randomInterval(6,9);
             x = Soal.randomInterval(20000, 22000, 1000);
-        } while (Soal_Balangan.random_persamaan_linear.array_in_array([a, x]));
-        Soal_Balangan.random_persamaan_linear.lastPush([a, x]);
+        } while (Balangan.random_persamaan_linear.array_in_array([a, x]));
+        Balangan.random_persamaan_linear.lastPush([a, x]);
 
         // jawaban
         window.setting.jawaban = 'Rp\\('+(200000 - a*x).toLocaleString('id-ID')+'\\),-';
@@ -77,9 +77,9 @@ window.Soal_Balangan = {
             r = Soal.randomInterval(2,3);
             console.log('selesai random, akan di cek');
             
-        } while (Soal_Balangan.random_barisan_dan_deret.array_in_array([a, r, n]));
+        } while (Balangan.random_barisan_dan_deret.array_in_array([a, r, n]));
         console.log('masukkan ke array record');
-        Soal_Balangan.random_barisan_dan_deret.lastPush([a, r, n]);
+        Balangan.random_barisan_dan_deret.lastPush([a, r, n]);
         console.log('sudah di masukkan');
         
         // jawaban

@@ -1,4 +1,4 @@
-window.KotaBanjarmasin = {
+Soal.KotaBanjarmasin = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         text =`Sungai yang terletak di kelurahan Benua Anyar, Banjarmasin Timur, adalah Sungai Martapura. Kelurahan Benua Anyar berada di bantaran sungai ini, terkenal sebagai surga kuliner di Banjarmasin. Mulai dari soto banjar, ketupat kandangan, sampai ikan bakar khas lahan basah. Setiap akhir pekan, banyak pengunjung datang untuk mencicipi ku liner sambil menikmati pemandangan sungai. Seorang petugas kelurahan melakukan pencatatan jumlah pengunjung di 7 warung kuliner yang berada di tepi sungai pada hari Minggu. Berikut adalah data jumlah pengunjung di masing-masing warung:
