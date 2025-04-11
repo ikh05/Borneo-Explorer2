@@ -1,9 +1,9 @@
 <div id="logo_be" style="width: 100vw; height: 100vh; background-color: rgb(251, 238, 196); position: fixed; z-index: 5000000;">
     <div class="opacity-0">
-        <img src="/img/logo/BorneoExplorer.jpeg" alt="" style="max-height: 100vh; max-width: 100vw;" class="position-absolute top-50 start-50 translate-middle">
+        <img src="img/logo/BorneoExplorer.jpeg" alt="" style="max-height: 100vh; max-width: 100vw;" class="position-absolute top-50 start-50 translate-middle">
         <div style="width: 90%; height: .5rem; border: 1px black solid; border-radius: .1rem" class="position-absolute bottom-0 mb-4 start-50 translate-middle-x d-flex align-items-center">
             <span style="height: 90%; max-width: 100%; background-color: #99bdd2;"></span>
-            <img id="loading_kapal" src="/img/logo/start_loading.png" style="height: 3rem; top: -2rem;" alt="" class="position-absolute">
+            <img id="loading_kapal" src="img/logo/start_loading.png" style="height: 3rem; top: -2rem;" alt="" class="position-absolute">
         </div>
     </div>
 </div>
