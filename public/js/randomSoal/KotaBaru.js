@@ -1,57 +1,51 @@
 window.KotaBaru = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        const data = {
-            2004: 11189920000,
-            2005: 14845000000,
-            2006: 22179635000,
-            2007: 19073670000,
-            2011: 22475238000
-        }
+        let text = `<p class="m-0"> Kabupaten Kotabaru dikenal dengan budidaya kepiting bakau yang dibina oleh Dinas Perikanan. Kepiting bakau ini menjadi salah satu komoditas unggulan yang banyak dikirim ke berbagai daerah. Para peternak kepiting mencatat berat kepiting yang mereka panen setiap minggu untuk memastikan kualitasnya tetap terjaga. Berikut adalah data berat kepiting (dalam kg) yang dipanen dalam satu minggu terakhir: </p> 
+        <p class="m-0"> __daftar_data__ </p> 
+        <p class="m-0"> Hitunglah rata-rata (mean) berat kepiting yang dipanen!</p>`;
+
         console.log('statistika belum_random');
         
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
-        let randomEntries = '';
-        console.log(typeof (KotaBaru.random_statistika));
+        let data = [];
+        console.log(typeof (TanahBumbu.random_statistika));
         
         do {
-            console.log('statistika iterasi_random');
-            randomEntries = Object.entries(data)
-            .shuffleArray()
-            .slice(0, 3)
-            .sort((a, b) => a[0] - b[0]);
-            console.log('statistika sudah_di random');
-        } while (KotaBaru.random_statistika.array_in_array(randomEntries));
+            for (let index = 0; index < 7; index++) {
+                data.push(Soal.randomInterval(0.8, 1.5, 0.1));
+            }
+        } while (TanahBumbu.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        KotaBaru.random_statistika.lastPush(randomEntries);
-
-        window.setting.jawaban = 'Rp\\('+((randomEntries[0][1] + randomEntries[1][1] + randomEntries[2][1])/3).toLocaleString('id-ID')+'\\),-'
-        return text
-            .replace('__tahunA__', randomEntries[0][0])
-            .replace('__tahunB__', randomEntries[1][0])
-            .replace('__tahunC__', randomEntries[2][0]);
+        TanahBumbu.random_statistika.lastPush(data);
+        window.setting.jawaban = data.reduce((a,b)=>a+b)/data.length;
+        return text.replace('__daftar_data__', data.join(' - '));
     },
 
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-
-        let a = 0;
+        let text = `Di Kabupaten Kotabaru terdapat beberapa pulau kecil yang hanya dapat diakses dengan perahu nelayan. Sebuah kelompok peneliti ingin melakukan penelitian ekosistem mangrove di salah satu pulau dan menyewa perahu untuk perjalanan. Biaya sewa perahu terdiri dari biaya tetap Rp__x__ dan biaya tambahan Rp50.000 per kilometer perjalanan. Jika kelompok peneliti memiliki anggaran maksimal Rp__y__, berapa kilometer maksimal perjalanan yang bisa mereka tempuh?`;
+        // Ketentuan Random:
+        // x = 500.000 − 800.000 (kelipatan 100.000)
+        // y = 100.000 − 200.000 (kelipatan 50.000)
+        // Jawaban: (x − y)/50000
         let x = 0;
+        let y = 0;
 
         do {
-            a = Soal.randomInterval(6,9);
-            x = Soal.randomInterval(20000, 22000, 1000);
-        } while (KotaBaru.random_persamaan_linear.array_in_array([a, x]));
-        KotaBaru.random_persamaan_linear.lastPush([a, x]);
+            x = Soal.randomInterval(500000, 800000, 100000);
+            y = Soal.randomInterval(100000, 200000, 50000);
+        } while (KotaBaru.random_persamaan_linear.array_in_array([x, y]));
+        KotaBaru.random_persamaan_linear.lastPush([x, y]);
 
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(200000 - a*x).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = 'Rp\\('+((x - y)/50000).toLocaleString('id-ID')+'\\),-';
         return text
-            .replace('__a__', a)
-            .replace('__x__', x.toLocaleString('id-ID'));
+        .replace('__x__', x.toLocaleString('id-ID'))
+        .replace('__y__', y.toLocaleString('id-ID'));
     },
 
     // barisan dan deret

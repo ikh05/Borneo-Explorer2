@@ -13,12 +13,6 @@ class GameController extends Controller
         $kecamatan = Api::getDistrict();
         $kelurahan = Api::getVillage();
         $ref = [
-            "Kota Baru",
-            "Tanah Bumbu",
-            "Tanah Laut",
-            "Kota Banjarmasin",
-            "Kota Banjar Baru",
-            "Banjar",
             "Barito Kuala",
             "Tapin",
             "Hulu Sungai Selatan",
@@ -26,6 +20,13 @@ class GameController extends Controller
             "Hulu Sungai Utara",
             "Tabalong",
             "Balangan",
+            "Kota Baru",
+            "Tanah Bumbu",
+            "Tanah Laut",
+            "Kota Banjar Baru",
+            "Banjar",
+            "Kota Banjarmasin",
+            
         ];
         $startlokasi = 0;
         foreach ($ref as $i => $kab) {
