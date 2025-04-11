@@ -58,6 +58,23 @@
               </div>
             </div>
           </div>
+
+          {{-- banyaknya tanpa pertanyaan --}}
+          {{-- <div class="row">
+            <div class="col-6">
+              <label for="Ikan_Gabusn">Banyak Kartu Ikan Gabus</label>
+              <div class="input-group mb-3">
+                <input readonly class="form-control" type="number" name="bonus" id="Ikan_Gabus" min="0" max="9" value="{{ isset($data['post']) ? $data['post']['bonus'] : 2 }}">
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="Eceng_Gondok">Banyak Kartu Eceng Gondok</label>
+              <div class="input-group mb-3">
+                <input readonly class="form-control" type="number" name="hukuman" id="Eceng Gondok" min="0" max="9" value="{{ isset($data['post']) ? $data['post']['hukuman'] : 1 }}">
+              </div>
+            </div>
+          </div> --}}
+
           <!-- waktu Pengerjaan -->
           <p class="mb-0">Waktu Pengerjaan Soal</p>
           <div class="input-group mb-3 has-validation">

@@ -23,7 +23,14 @@
     
     {{-- @dd(isset($data['post']) ? $data['post'] : []) --}}
     <!-- Pilihan Soal -->
-    @include('layouts.optional-soal', ['kabupaten' => $data['kabupaten'], 'materi' => (isset($data['post']) ? $data['post']['materi'] : [])])
+    @include('layouts.optional-soal', [
+      'kabupaten' => $data['kabupaten'], 
+      'materi' => (isset($data['post']) ? $data['post']['materi'] : []),
+      'bonus' => 2,
+      'hukuman' => 1,
+      // 'bonus' => (isset($data['post']) ? $data['post']['bonus'] : 2),
+      // 'hukuman' => (isset($data['post']) ? $data['post']['hukuman'] : 1)
+      ])
 
     <!-- Kelompok -->
     @isset($data['post'])

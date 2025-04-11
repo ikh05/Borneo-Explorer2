@@ -7,6 +7,8 @@
     @endforeach
   </div>
 </section>
+
+
 {{-- random bintang dan materi --}}
 <script>
   $(document).ready(()=>{
@@ -41,8 +43,11 @@
 
     function generateSimpleRandomArray(items) {
       // 1. Siapkan elemen khusus (2 bintang, 1 bom)
-      const grid = ['Ikan Gabus', 'Ikan Gabus', 'Eceng Gondok'];
-      
+
+      const grid = [];
+      for (let index = 0; index < @json($bonus); index++) { grid.push('Ikan Gabus'); }
+      for (let index = 0; index < @json($hukuman); index++) { grid.push('Eceng Gondok'); }
+
       // 2. Jika tidak ada items, isi dengan 'kosong'
       if (!items || items.length === 0) {
         return [...grid, ...Array(6).fill('kosong')].sort(() => Math.random() - 0.5);
