@@ -118,7 +118,6 @@
     }
     function buatSoal(setting){
       console.log(setting);
-      
       document.getElementById('soal_lokasi').innerHTML = setting.lokasi.replace(/([A-Z])/g, ' $1').trim();;
       document.getElementById('soal_materi').innerHTML = formatJudul(setting.materi);
       return window[setting.lokasi][setting.materi]();

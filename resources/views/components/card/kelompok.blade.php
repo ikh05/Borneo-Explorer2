@@ -8,8 +8,8 @@
           </div>
           <a href="#{{ Str::remove(' ', $kabupaten) }}" id="pos_kelompok_{{ $slot }}" class="card-subtitle mb-2 text-body-secondary small p-0 link-underline link-underline-opacity-0">{{ $kabupaten }}</a>
           <div class="total">
-            <p class="card-text m-0">Benar 0</p>
-            <p class="card-text m-0">Salah 0</p>
+            <p id="count-benar_kelompok_{{ $slot }}" count='0' class="card-text m-0">Benar 0</p>
+            <p id="count-salah_kelompok_{{ $slot }}" count='0' class="card-text m-0">Salah 0</p>
           </div>
       </div>
     </div>
