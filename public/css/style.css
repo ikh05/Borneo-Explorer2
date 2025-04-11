@@ -152,8 +152,7 @@
   
   #pilihan_kabupaten a.active{ 
     color: aliceblue; 
-    padding-left: 2rem;
-    font-weight: bold;
+    padding-left: 1rem;
   }
   #pilihan_kabupaten a{
     transition: bold 0s all 1s;

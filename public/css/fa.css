@@ -1,0 +1,36 @@
+  .fa-stack-custom {
+    position: relative;
+    display: inline-block;
+    width: 1.5rem; /* bisa kamu sesuaikan */
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .fa-stack-custom .fa-stack-size {
+    font-size: var(--fa-size);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .fa-stack-custom .fa-stack-normal {
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  i{
+      transition: transform 0.6s;
+  }
+  .fa-hover-flip{
+      /* display: inline-block; */
+      transform-style: preserve-3d;
+  }
+  .fa-ishover-flip:hover{
+      transform: rotateY(180deg);
+  }
+
+  .fa-hover:hover .fa-hover-flip{
+    margin-left: ;
+    transform: rotateY(180deg);
+  }
