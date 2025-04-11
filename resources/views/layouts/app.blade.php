@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="id" data-bs-theme="dark">
   <head>
-
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borneo - Eksplorer</title>
@@ -12,10 +12,14 @@
     
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+    
   </head>
-  <body style="overflow-x: hidden;">
+  <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden">
     <script src="js/function.js"></script>
+    
+        @empty($data['post'])  
+          @include('layouts.logo');
+        @endempty
     
     {{-- @dd(isset($data['post']) ? $data['post'] : []) --}}
     <!-- Pilihan Soal -->

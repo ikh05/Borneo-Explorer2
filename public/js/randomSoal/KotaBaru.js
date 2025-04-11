@@ -42,7 +42,7 @@ window.KotaBaru = {
         KotaBaru.random_persamaan_linear.lastPush([x, y]);
 
         // jawaban
-        window.setting.jawaban = 'Rp\\('+((x - y)/50000).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = ((x - y)/50000).toLocaleString('id-ID')+' km';
         return text
         .replace('__x__', x.toLocaleString('id-ID'))
         .replace('__y__', y.toLocaleString('id-ID'));
