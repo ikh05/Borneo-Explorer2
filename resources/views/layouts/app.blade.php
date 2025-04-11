@@ -17,10 +17,24 @@
   <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden">
     <script src="js/function.js"></script>
     
-        @empty($data['post'])  
-          @include('layouts.logo');
-        @endempty
-    
+    @empty($data['post'])  
+      @include('layouts.logo');
+    @endempty
+
+
+     <!-- Kelompok -->
+    @isset($data['post'])
+      @include('layouts.kelompok', ['kabupaten' => $data['kabupaten']->keys()[0], 'kelompok' => isset($data['post']) ? $data['post']['kelompok'] : 4])  
+    @endisset
+
+    <!-- Soal -->
+    <x-modal.soal 
+      :kabupaten="$data['kabupaten']->keys()"
+      :timeOtomatis="(isset($data['post']['time_otomatis']) ? true : false)"
+      :durasi="(isset($data['post']) ? $data['post']['menit']*60 + $data['post']['detik'] : 120)"
+    ></x-modal.soal>
+
+
     {{-- @dd(isset($data['post']) ? $data['post'] : []) --}}
     <!-- Pilihan Soal -->
     @include('layouts.optional-soal', [
@@ -32,24 +46,13 @@
       // 'hukuman' => (isset($data['post']) ? $data['post']['hukuman'] : 1)
       ])
 
-    <!-- Kelompok -->
-    @isset($data['post'])
-      @include('layouts.kelompok', ['kabupaten' => $data['kabupaten']->keys()[0], 'kelompok' => isset($data['post']) ? $data['post']['kelompok'] : 4])  
-    @endisset
+   
     
     <!-- Pilihan Kabupaten -->
     @include('layouts.optional-kabupaten', ['kabupaten' => collect($data['kabupaten'])])
     
     <!-- Navbar -->
     @include('layouts.navbar',['data' => collect($data)])
-
-
-    <!-- Soal -->
-    <x-modal.soal 
-      :kabupaten="$data['kabupaten']->keys()"
-      :timeOtomatis="(isset($data['post']['time_otomatis']) ? true : false)"
-      :durasi="(isset($data['post']) ? $data['post']['menit']*60 + $data['post']['detik'] : 120)"
-    ></x-modal.soal>
 
     <!-- Notif -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">

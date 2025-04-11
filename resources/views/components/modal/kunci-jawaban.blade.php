@@ -3,6 +3,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="jawabanLabel">Kunci Jawaban</h1>
+            <h1 class="modal-title fs-5 d-none" id="title_bonus">Selamat Anda Bisa Lanjut ke Kabupaten Selanjutnta</h1>
           </div>
           <div class="modal-body text-center">
             <p id="kunci_jawaban" class="fs-3">5</p>
@@ -21,6 +22,7 @@
               <div class="mb-3 input-group justify-content-center">
                 <button style="width: 5rem;" class="btn btn-success" type="button" name="benar" data-bs-dismiss="modal">Ya</button>
                 <button style="width: 5rem;" class="btn btn-danger" type="button" name="salah" data-bs-dismiss="modal">Tidak</button>
+                <button style="width: 5rem;" class="btn btn-info d-none" type="button" name="bonus" data-bs-dismiss="modal">Selamat</button>
               </div>
             <!-- </form> -->
           </div>
@@ -33,6 +35,7 @@
     <script>
       $(document).ready(function () {
         $('#jawaban').on('show.bs.modal', function(){
+          // mengatur option kelompok
           const $option = $('#jawaban_kelompok option');
           let tanpa_kelompok = true;
           $option.each(function(i,e) {
@@ -47,6 +50,13 @@
           $('#jawaban_kelompok option').each(function (index, element) {
             $(element).addClass('d-none');
           });
+          
+          // mengatur ulang agar bisa digunakan untuk kunci jawaban
+          $('#title_bonus').addClass('d-none');
+          $('#jawabanLabel').removeClass('d-none');
+          $('#jawaban button').each(function(i,e) { $(e).removeClass('d-none') });
+          $('#jawaban p').each(function(i,e) { $(e).removeClass('d-none') });
+          $('#jawaban button[name=bonus]').addClass('d-none');
         });
 
         $('#jawaban button').each(function(index, element) {
@@ -59,7 +69,7 @@
               console.log('Status jawaban (benar/salah):', statusJawaban);
       
               // jika benar
-              if (statusJawaban === 'benar') {
+              if (statusJawaban === 'benar' || statusJawaban === 'bonus') {
                 const $posKelompok = $('#pos_' + kelompok);
                 const $pilihan_kabupaten = $('#pilihan_kabupaten a');
                 // pos_kelompok_1
@@ -85,18 +95,20 @@
               }else{
                 console.log('status jawaban harusnya salah:'+statusJawaban);
               }
-      
-              // Update count
-              const $count = $('#count-' + statusJawaban + '_' + kelompok);
-              const countLama = Number($count.attr('count'));
-              const countBaru = countLama + 1;
               
-              console.log()
-              console.log('Count lama:', countLama);
-              console.log('Count baru:', countBaru);
-      
-              $count.attr('count', countBaru);
-              $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
+              // Update count
+              if(statusJawaban !== 'bonus'){
+                const $count = $('#count-' + statusJawaban + '_' + kelompok);
+                const countLama = Number($count.attr('count'));
+                const countBaru = countLama + 1;
+                
+                console.log()
+                console.log('Count lama:', countLama);
+                console.log('Count baru:', countBaru);
+        
+                $count.attr('count', countBaru);
+                $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
+              }
             }
           });
         });

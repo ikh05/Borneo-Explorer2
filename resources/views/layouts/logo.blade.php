@@ -1,9 +1,9 @@
-<div id="logo_be" style="width: 100vw; height: 100vh; background-color: rgb(251, 238, 196); position: fixed; z-index: 5000000;">
+<div id="logo_be" style="width: 100vw; height: 100vh; background-color: #121212; position: fixed; z-index: 5000000;">
     <div class="opacity-0">
-        <img src="img/logo/BorneoExplorer.jpeg" alt="" style="max-height: 100vh; max-width: 100vw;" class="position-absolute top-50 start-50 translate-middle">
-        <div style="width: 90%; height: .5rem; border: 1px black solid; border-radius: .1rem" class="position-absolute bottom-0 mb-4 start-50 translate-middle-x d-flex align-items-center">
-            <span style="height: 90%; max-width: 100%; background-color: #99bdd2;"></span>
-            <img id="loading_kapal" src="img/logo/start_loading.png" style="height: 3rem; top: -2rem;" alt="" class="position-absolute">
+        <img src="img/logo/logo_be.svg" alt="" style="max-height: 80vh; max-width: 80vw; padding: 5rem; background-color: #242424; border: 3px blueviolet solid" class="position-absolute top-50 start-50 translate-middle rounded-circle">
+        <div style="width: 90%; height: .7rem; border: 1px blueviolet solid; border-radius: .1rem" class="position-absolute bottom-0 mb-4 start-50 translate-middle-x d-flex align-items-center">
+            <span style="height: 100%; max-width: 100%; background-color: #99bdd2;"></span>
+            <img id="loading_kapal" src="img/logo/start_loading.png" style="width: 4rem; top: -2rem;" alt="" class="position-absolute">
         </div>
     </div>
 </div>
@@ -33,13 +33,13 @@
         width: 3rem;
     }
     #logo_be #loading_kapal{
-        padding-left: 0;
+        margin-left: 0;
     }
     #logo_be.run span{
         width: 100%;
     }
     #logo_be.run #loading_kapal{
-        padding-left: 100%;
+        margin-left: calc(100% - 3rem);
     }
 </style>
 

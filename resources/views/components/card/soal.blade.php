@@ -7,13 +7,13 @@
         </div>
         </div>
         <div class="card-back">
-        <div class="d-flex align-items-center justify-content-center position-absolute w-100 h-100">
-            <div class="bg-has d-flex align-items-center justify-content-center flex-column">
-                <img class="d-none img-bns position-absolute">
-                <p class="mb-2 p-materi text-center position-relative">Materi</p>
-                <button lokasi="{{ Str::remove(' ', $name) }}" class="btn btn-success btn-materi" data-bs-toggle="modal" data-bs-target="#modal_soal">Buka Soal</button>
+            <div class="d-flex align-items-center justify-content-center position-absolute w-100 h-100">
+                <div class="bg-has d-flex align-items-center justify-content-center flex-column">
+                    <img class="d-none img-bns position-absolute">
+                    <p class="mb-2 p-materi text-center position-relative">Materi</p>
+                    <button lokasi="{{ Str::remove(' ', $name) }}" class="btn btn-success btn-materi" data-bs-toggle="modal" data-bs-target="#modal_soal">Buka Soal</button>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </div>

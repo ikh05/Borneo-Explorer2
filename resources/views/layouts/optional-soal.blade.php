@@ -12,6 +12,10 @@
 {{-- random bintang dan materi --}}
 <script>
   $(document).ready(()=>{
+    
+    const bonus = 'Ikan Gabus';
+    const hukuman = 'Eceng Gondok';
+
     const kabupaten = @json($kabupaten->keys()->map(function($k) {
         return Str::remove(' ', $k);
       }));
@@ -25,36 +29,36 @@
       const susunan = generateSimpleRandomArray(materi);
       console.log(susunan);
       Array.from(kab.querySelectorAll('.p-materi')).map((e,i) => {
-        if(susunan[i] === 'Ikan Gabus' || susunan[i] === 'Eceng Gondok') e.classList.add('bonus');
+        if(susunan[i] === bonus || susunan[i] === hukuman) e.classList.add('bonus');
         else e.classList.remove('bonus');
         e.innerHTML = susunan[i].split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
       });
       Array.from(kab.querySelectorAll('.btn-materi')).map((e,i) => {
-        if(susunan[i] === 'Ikan Gabus' || susunan[i] === 'Eceng Gondok') e.classList.add('d-none');
+        if(susunan[i] === bonus || susunan[i] === hukuman) e.classList.add('d-none');
         else e.classList.remove('d-none');
         e.setAttribute('materi', susunan[i]);
       });
       Array.from(kab.querySelectorAll('.img-bns')).map((e,i)=>{
         $(e).removeClass('d-none');
-        if(susunan[i] === 'Ikan Gabus' || susunan[i] === 'Eceng Gondok') $(e).attr('src', 'img/logo/'+susunan[i]+'.jpeg');
+        if(susunan[i] === bonus || susunan[i] === hukuman) $(e).attr('src', 'img/logo/'+susunan[i]+'.jpeg');
         else $(e).addClass('d-none');
       })
     }
 
+
     function generateSimpleRandomArray(items) {
       // 1. Siapkan elemen khusus (2 bintang, 1 bom)
-
       const grid = [];
-      for (let index = 0; index < @json($bonus); index++) { grid.push('Ikan Gabus'); }
-      for (let index = 0; index < @json($hukuman); index++) { grid.push('Eceng Gondok'); }
+      for (let index = 0; index < @json($bonus); index++) { grid.push(bonus); }
+      for (let index = 0; index < @json($hukuman); index++) { grid.push(hukuman); }
 
       // 2. Jika tidak ada items, isi dengan 'kosong'
       if (!items || items.length === 0) {
-        return [...grid, ...Array(6).fill('kosong')].sort(() => Math.random() - 0.5);
+        return [...grid, ...Array(9 - @json($bonus - $hukuman)).fill('kosong')].sort(() => Math.random() - 0.5);
       }
       
       // 3. Hitung berapa kali masing-masing item harus muncul
-      const totalItems = 6;
+      const totalItems = 9 - @json($bonus + $hukuman) ;
       const baseCount = Math.floor(totalItems / items.length);
       let remainder = totalItems % items.length;
       
@@ -80,9 +84,25 @@
     });
 
     $('.card-front').each(function(i,e) { 
-          $(e).on('click', function() {
-            $(this).closest('.card-flip').addClass('flip-active');
-          });
-        }); 
+      $(e).on('click', function() {
+        let $flip = $(this).closest('.card-flip');
+        console.log($flip);
+        console.log($flip.find('.p-materi'));
+        $flip.addClass('flip-active');
+        if($flip.find('.p-materi').text() === bonus){
+          // munculkan modal yang di edit
+          window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');
+          console.log(window.setting.lokasi);
+          
+          const modal = new bootstrap.Modal(document.getElementById('jawaban'));
+          $('#title_bonus').removeClass('d-none');
+          $('#jawabanLabel').addClass('d-none');
+          $('#jawaban button').each(function(i,e) { $(e).addClass('d-none') });
+          $('#jawaban p').each(function(i,e) { $(e).addClass('d-none') });
+          $('#jawaban button[name=bonus]').removeClass('d-none');
+          modal.show();
+        }
+      });
+    }); 
   });
 </script>
