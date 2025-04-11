@@ -83,17 +83,16 @@
       });
     });
 
+    // card soal di buak
     $('.card-front').each(function(i,e) { 
       $(e).on('click', function() {
         let $flip = $(this).closest('.card-flip');
-        console.log($flip);
-        console.log($flip.find('.p-materi'));
         $flip.addClass('flip-active');
+
+        // mendapatkan bonus
         if($flip.find('.p-materi').text() === bonus){
           // munculkan modal yang di edit
-          window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');
-          console.log(window.setting.lokasi);
-          
+          window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');          
           const modal = new bootstrap.Modal(document.getElementById('jawaban'));
           $('#title_bonus').removeClass('d-none');
           $('#jawabanLabel').addClass('d-none');
