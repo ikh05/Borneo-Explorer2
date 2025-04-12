@@ -172,7 +172,12 @@
     top: -.1rem;
   }
 
-
-  body.android .android-hidden{
-    display: hidden !important;
+  #pilihan_soal{
+    width: calc(100vw - 15rem);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #pilihan_soal{
+      width: 100vw;
+    }
   }

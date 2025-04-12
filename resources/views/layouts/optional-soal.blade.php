@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/cardSoal.css">
 
-<section id="pilihan_soal" style="width: calc(100vw - 15rem); overflow: visible;" class="position-absolute end-0 text-bold"  >
+<section id="pilihan_soal" style="overflow: visible;" class="position-absolute end-0 text-bold"  >
   <div data-bs-spy="scroll" data-bs-target="#pilihan_kabupaten" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
     @foreach ($kabupaten as $key => $detail)
       <x-soal.pilihan-soal :detail=$detail name="{{ $key }}"></x-soal.pilihan-soal>  

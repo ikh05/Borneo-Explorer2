@@ -1,4 +1,4 @@
-<section id="pilihan_kabupaten" class="d-flex position-fixed start-0 top-0 align-items-center z-1030" style="margin-top: 4rem;">
+<section id="pilihan_kabupaten" class="d-none d-md-flex position-fixed start-0 top-0 align-items-center z-1030" style="margin-top: 4rem;">
     <div class="list-group" style="border-radius: 0; width: 100%;">
       <a href="#{{ Str::remove(' ', $kabupaten->keys()->first()) }}"
           class="list-group-item list-group-item-action position-relative active" aria-current="true">
