@@ -12,7 +12,7 @@
 {{-- random bintang dan materi --}}
 <script>
   const bonus = 'Ikan Gabus';
-  const hukuman = 'Eceng Gondok';
+  const hukuman = 'Ikan Buntal';
 
   const kabupaten = @json($kabupaten->keys()->map(function($k) {
       return Str::remove(' ', $k);

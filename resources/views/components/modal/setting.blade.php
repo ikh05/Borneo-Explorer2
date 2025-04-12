@@ -80,7 +80,7 @@
           <!-- waktu Pengerjaan -->
           <p class="mb-0">Waktu Pengerjaan Soal</p>
           <div class="input-group mb-3 has-validation">
-            <input id="setting_menit" name="menit" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['menit'] : 2 }}">
+            <input id="setting_menit" name="menit" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['menit'] : 3 }}">
             <span class="input-group-text">menit</span>
             <input id="setting_detik" name="detik" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['detik'] : 0 }}">
             <span class="input-group-text">detik</span>

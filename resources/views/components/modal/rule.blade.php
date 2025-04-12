@@ -25,19 +25,19 @@
                   <ul style="list-style: circle">
                       <li><strong>Soal Biasa (6 nomor):</strong>
                           <ul>
-                              <li>Jawab benar dalam 2 menit → maju ke kabupaten berikutnya.</li>
-                              <li>Jawab salah/waktu habis → tetap di tempat, ganti pemain.</li>
+                              <li>Jawab benar → maju ke kabupaten berikutnya.</li>
+                              <li>Jawab salah/waktu mengerjakan habis → tetap di tempat, ganti pemain.</li>
                           </ul>
                       </li>
                       <li><strong>🐟 Ikan Gabus (2 nomor):</strong> Langsung melompat ke kabupaten berikutnya (tanpa jawab soal).</li>
-                      <li><strong>🌿 Eceng Gondok (1 nomor):</strong> Terjebak di kabupaten saat ini (tidak ganti pemain).</li>
+                      <li><strong>🌿 Ikan Buntal (1 nomor):</strong> Terjebak di kabupaten saat ini (tidak ganti pemain).</li>
                   </ul>
               </li>
               
               <li><strong>Waktu & Diskusi:</strong>
                   <ul style="list-style: circle">
-                      <li>Setiap jawaban hanya boleh diberikan dalam <strong>2 menit</strong>.</li>
-                      <li>Tidak boleh diskusi—hanya pemain yang sedang giliran yang menjawab.</li>
+                      <li>Waktu yang diberikan untuk mengerjakan soal adalah <strong>3 menit (bisa diubah)</strong>.</li>
+                      <li>Tidak boleh diskusi dengan kelompok—hanya pemain yang sedang giliran yang menjawab.</li>
                   </ul>
               </li>
               
