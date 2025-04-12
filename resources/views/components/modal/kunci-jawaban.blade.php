@@ -3,7 +3,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="jawabanLabel">Kunci Jawaban</h1>
-            <h1 class="modal-title fs-5 d-none" id="title_bonus">Selamat Anda Bisa Lanjut ke Kabupaten Selanjutnta</h1>
+            <h1 class="modal-title fs-5 d-none" id="title_bonus">Selamat Anda Bisa Lanjut ke Kabupaten Selanjutnya</h1>
           </div>
           <div class="modal-body text-center">
             <p id="kunci_jawaban" class="fs-3">5</p>

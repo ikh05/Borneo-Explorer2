@@ -30,7 +30,7 @@
                           </ul>
                       </li>
                       <li><strong>🐟 Ikan Gabus (2 nomor):</strong> Langsung melompat ke kabupaten berikutnya (tanpa jawab soal).</li>
-                      <li><strong>🌿 Ikan Buntal (1 nomor):</strong> Terjebak di kabupaten saat ini (tidak ganti pemain).</li>
+                      <li><strong>🐡 Ikan Buntal (1 nomor):</strong> Terjebak di kabupaten saat ini (tidak ganti pemain).</li>
                   </ul>
               </li>
               

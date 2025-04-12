@@ -107,8 +107,13 @@ window.Soal = {
   
 }
 
-
-
-
-
 });
+
+
+function playTeks(teks) {
+  const msg = new SpeechSynthesisUtterance(teks);
+  msg.lang = 'id-ID'; // Bahasa Indonesia
+  msg.rate = 1;
+  window.speechSynthesis.speak(msg);
+}
+

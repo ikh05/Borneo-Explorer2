@@ -13,6 +13,7 @@
 <script>
   const bonus = 'Ikan Gabus';
   const hukuman = 'Ikan Buntal';
+  let boolean_flipcard = true;
 
   const kabupaten = @json($kabupaten->keys()->map(function($k) {
       return Str::remove(' ', $k);
@@ -24,12 +25,13 @@
   });
   
   function generateMateriCard(kab) {
+    boolean_flipcard = false;
     const susunan = generateSimpleRandomArray(materi);
     console.log(susunan);
     Array.from(kab.querySelectorAll('.p-materi')).map((e,i) => {
       if(susunan[i] === bonus || susunan[i] === hukuman) e.classList.add('bonus');
       else e.classList.remove('bonus');
-      e.innerHTML = susunan[i].split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+      $(e).text(susunan[i].split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
     });
     Array.from(kab.querySelectorAll('.btn-materi')).map((e,i) => {
       if(susunan[i] === bonus || susunan[i] === hukuman) e.classList.add('d-none');
@@ -41,6 +43,7 @@
       if(susunan[i] === bonus || susunan[i] === hukuman) $(e).attr('src', 'img/logo/'+susunan[i]+'.jpeg');
       else $(e).addClass('d-none');
     })
+    boolean_flipcard = true;
   }
 
 
@@ -86,12 +89,15 @@
     // card soal di buak
     $('.card-front').each(function(i,e) { 
       $(e).on('click', function() {
+        // mengecek apakah bisa flipcard
+        if(!boolean_flipcard) return 0;
         let $flip = $(this).closest('.card-flip');
         $flip.addClass('flip-active');
         window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');          
 
         // mendapatkan bonus
         if($flip.find('.p-materi').text() === bonus){
+          boolean_flipcard = false;
           // munculkan modal yang di edit
           const modal = new bootstrap.Modal(document.getElementById('jawaban'));
           $('#title_bonus').removeClass('d-none');
@@ -99,13 +105,22 @@
           $('#jawaban button').each(function(i,e) { $(e).addClass('d-none') });
           $('#jawaban p').each(function(i,e) { $(e).addClass('d-none') });
           $('#jawaban button[name=bonus]').removeClass('d-none');
-          modal.show();
+          setTimeout(() => {
+            modal.show();
+            playTeks('Selamat kamu lanjut ke kabupaten selanjutnya.');
+            boolean_flipcard = true;
+          }, 1000);
         }
 
         // semua kartu sudah di buka
         if($flip.closest('.card').parent().find('.flip-active').length === 9){
           // buka mekanisme restart flip
           $('#backFlip_'+window.setting.lokasi).removeClass('d-none');
+        }
+
+        // mendapatkan hukuman
+        if($flip.find('.p-materi').text() === hukuman){
+          playTeks('Sayang sekali kamu harus menunggu giliranmu berikutnya!');
         }
       });
     }); 

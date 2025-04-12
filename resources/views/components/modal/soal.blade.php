@@ -87,6 +87,10 @@
       setTimer();
       $('#modal_soal .loading').addClass('d-none');
       $('#modal_soal .soal').removeClass('d-none');
+
+      setTimeout(() => {
+        playTeks(window.setting.soal);
+      }, 500);
     });
 
     // setting waktu
