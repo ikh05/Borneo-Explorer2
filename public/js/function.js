@@ -107,6 +107,11 @@ window.Soal = {
   
 }
 
+if (/Android/i.test(navigator.userAgent)) {
+  document.body.classList.add('android');
+}
+
+
 });
 
 

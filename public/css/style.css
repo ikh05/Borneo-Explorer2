@@ -171,3 +171,8 @@
     position: relative;
     top: -.1rem;
   }
+
+
+  body.android .android-hidden{
+    display: hidden !important;
+  }
