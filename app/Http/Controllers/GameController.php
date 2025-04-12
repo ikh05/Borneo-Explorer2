@@ -17,7 +17,7 @@ class GameController extends Controller
         "Hulu Sungai Utara",
         "Tabalong",
         "Balangan",
-        "Kota Baru",
+        "Kotabaru",
         "Tanah Bumbu",
         "Tanah Laut",
         "Kota Banjarbaru",
@@ -25,7 +25,7 @@ class GameController extends Controller
         "Kota Banjarmasin",
     ];
     protected $kab =  [
-        "Kota Baru" => [
+        "Kotabaru" => [
             "kecamatan" => "22",
             "ibukota" => "Kotabaru",
             "luas" => 9480,

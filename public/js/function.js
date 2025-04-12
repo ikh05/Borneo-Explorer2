@@ -116,4 +116,8 @@ function playTeks(teks) {
   msg.rate = 1;
   window.speechSynthesis.speak(msg);
 }
-
+function stopTeks() {
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+  }
+}

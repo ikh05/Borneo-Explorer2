@@ -79,6 +79,7 @@
       MathJax.typesetPromise($('#modal_soal .soal-container')).then(() => {
         console.log('MathJax rendering complete for');
       });
+      stopText();
       bootstrap.Toast.getOrCreateInstance($('#jawaban')).show();
     });
 

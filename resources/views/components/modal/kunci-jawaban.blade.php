@@ -88,11 +88,15 @@
                       $posKelompok.attr('href', $($pilihan_kabupaten[i + 1]).attr('href'));
                       $posKelompok.text($($pilihan_kabupaten[i + 1]).text());
                     }
-      
+                    if(statusJawaban === 'benar'){
+                      const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
+                      playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang berada di '+ l + $($pilihan_kabupaten[i+1]).text())
+                    }
                     return false; // berhenti dari .each
                   }
                 });
               }else{
+                playTeks('Maaf jawaban '+$('#jawaban_kelompok option:selected').text()+' kerang tepat. ');
                 console.log('status jawaban harusnya salah:'+statusJawaban);
               }
               

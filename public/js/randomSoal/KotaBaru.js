@@ -1,4 +1,4 @@
-window.KotaBaru = {
+window.Kotabaru = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         let text = `<p class="m-0"> Kabupaten Kotabaru dikenal dengan budidaya kepiting bakau yang dibina oleh Dinas Perikanan. Kepiting bakau ini menjadi salah satu komoditas unggulan yang banyak dikirim ke berbagai daerah. Para peternak kepiting mencatat berat kepiting yang mereka panen setiap minggu untuk memastikan kualitasnya tetap terjaga. Berikut adalah data berat kepiting (dalam kg) yang dipanen dalam satu minggu terakhir: </p> 
@@ -9,17 +9,17 @@ window.KotaBaru = {
         
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         let data = [];
-        console.log(typeof (TanahBumbu.random_statistika));
+        console.log(typeof (Kotabaru.random_statistika));
         
         do {
             for (let index = 0; index < 7; index++) {
                 data.push(Soal.randomInterval(0.8, 1.5, 0.1));
             }
-        } while (TanahBumbu.random_statistika.array_in_array(data));
+        } while (Kotabaru.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        TanahBumbu.random_statistika.lastPush(data);
+        Kotabaru.random_statistika.lastPush(data);
         window.setting.jawaban = data.reduce((a,b)=>a+b)/data.length;
         return text.replace('__daftar_data__', data.join(' - '));
     },
@@ -38,8 +38,8 @@ window.KotaBaru = {
         do {
             x = Soal.randomInterval(500000, 800000, 100000);
             y = Soal.randomInterval(100000, 200000, 50000);
-        } while (KotaBaru.random_persamaan_linear.array_in_array([x, y]));
-        KotaBaru.random_persamaan_linear.lastPush([x, y]);
+        } while (Kotabaru.random_persamaan_linear.array_in_array([x, y]));
+        Kotabaru.random_persamaan_linear.lastPush([x, y]);
 
         // jawaban
         window.setting.jawaban = ((x - y)/50000).toLocaleString('id-ID')+' km';
@@ -70,9 +70,9 @@ window.KotaBaru = {
             n = Soal.randomInterval(7, 10);
             console.log('selesai random, akan di cek');
             
-        } while (KotaBaru.random_barisan_dan_deret.array_in_array([a, b, n]));
+        } while (Kotabaru.random_barisan_dan_deret.array_in_array([a, b, n]));
         console.log('masukkan ke array record');
-        KotaBaru.random_barisan_dan_deret.lastPush([a, b, n]);
+        Kotabaru.random_barisan_dan_deret.lastPush([a, b, n]);
         console.log('sudah di masukkan');
         
         // jawaban
