@@ -1,4 +1,4 @@
-<div class="info-kabupaten adroid-hidden">
+<div class="info-kabupaten android-hidden">
   <div class="bg-has end-0 rounded-start p-3 text-dark d-flex align-items-center" style="height: calc(100vh - 4rem); width: 23rem; position: static; margin-left: 2rem; background-image: img('img/logo/Kota Banjarmasin.png');">
       <div class="d-flex flex-column align-items-center">
         <h5 class="text-center mb-3">{{ $slot }}</h5>
