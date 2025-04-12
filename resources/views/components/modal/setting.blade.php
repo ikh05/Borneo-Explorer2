@@ -18,7 +18,7 @@
               Tolong hanya isi dengan 1-4!
             </div>
           </div>
-          
+{{--           
           <!-- lokasi -->
           <div class="mb-3">
             <label for="pengaturan_lokasi" class="form-label">Kota Memulai Permainan</label>
@@ -30,8 +30,10 @@
             <div class="invalid-feedback">
               Tolong pilih salah satu kabupaten sebagai titik awal!
             </div>
-          </div>
+          </div> --}}
+          <input type="hidden" name="lokasi" value="{{ $data['kabupaten']->keys()->first() }}">
 
+          
           <!-- materi -->
           <div class="mb-3">
             <p class="mb-0">Materi</p>
