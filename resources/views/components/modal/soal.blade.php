@@ -122,7 +122,7 @@
     function buatSoal(){
       window.setting.soal_text = window[window.setting.lokasi][window.setting.materi]();
       console.log('berhasil di tambahkan');
-      let simpanSoal = kirimServer('/simpan-soal', {
+      let simpanSoal = postServer('simpan-soal', {
         lokasi: window.setting.lokasi,
         materi: window.setting.materi,
         soal_text: window.setting.soal_text,
