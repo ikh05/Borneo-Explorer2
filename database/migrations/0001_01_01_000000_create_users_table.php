@@ -9,13 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void{
+    public function up(): void
+    {
+        // Tabel games
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('key')->unique();
             $table->timestamps();
         });
 
+        // Tabel sessions (default Laravel session table)
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -25,25 +28,33 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
+        // Tabel soals
         Schema::create('soals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('game_id')->constrained()->onDelete('cascade');
-            $table->string('soal_text');
             $table->string('lokasi');
             $table->string('materi');
-            $table->string('soal_sound');
+            $table->text('soal_text');
+            $table->text('soal_sound')->nullable();
+            $table->unsignedBigInteger('game_id');
             $table->string('jawaban');
             $table->timestamps();
+
+            // Relasi ke tabel games
+            $table->foreign('game_id')
+                  ->references('id')
+                  ->on('games')
+                  ->onDelete('cascade')     // Jika game dihapus, semua soal ikut terhapus
+                  ->onUpdate('cascade');    // Jika id game berubah (jarang), soal akan ikut
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void{
+    public function down(): void
+    {
         Schema::dropIfExists('soals');
         Schema::dropIfExists('sessions');
         Schema::dropIfExists('games');
     }
-
 };

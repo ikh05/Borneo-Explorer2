@@ -20,7 +20,7 @@ Route::get('/clear', function () {
 
 Route::get('/host/{key}', [GameController::class, 'host'])->where('key', '^GAME-[A-Z0-9]{4}-[A-Z0-9]{4}$');
 
-Route::post('/simpan-soal', [GameController::class, 'postSoal']);
+Route::post('/simpan-soal', [GameController::class, 'simpanSoal']);
 
 Route::get('/host', function(){
     $data = [];

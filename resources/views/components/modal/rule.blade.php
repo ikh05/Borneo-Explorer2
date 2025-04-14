@@ -37,7 +37,7 @@
               
               <li><strong>Waktu & Diskusi:</strong>
                   <ul style="list-style: circle">
-                      <li>Waktu yang diberikan untuk mengerjakan soal adalah <strong>3 menit (bisa diubah)</strong>.</li>
+                      <li>Waktu yang diberikan untuk mengerjakan soal adalah <strong>3 menit </strong> <span class="text-danger">(bisa diubah)</span>.</li>
                       <li>Tidak boleh diskusi dengan kelompok—hanya pemain yang sedang giliran yang menjawab.</li>
                   </ul>
               </li>
@@ -55,7 +55,7 @@
                       <li>Semua peserta harus sportif dan aktif.</li>
                   </ul>
               </li>
-              <a href="/img/papanPermainan.svg" download>Download Papan Permainan</a>
+              <a class="mt-1" href="/img/papanPermainan.svg" download><i class="fa-solid fa-file-arrow-down"></i> Download Papan Permainan</a>
           </ul>
         </div>
         @if (!isset($data['post']))

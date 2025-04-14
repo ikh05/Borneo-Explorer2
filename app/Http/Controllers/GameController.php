@@ -7,6 +7,7 @@ use App\Models\Game;
 use App\Models\Soal;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GameController extends Controller
 {
@@ -204,27 +205,28 @@ class GameController extends Controller
         }
 
         // Tampilkan halaman permainan dengan data game
-        return view('host', ['data' => $game]);
+        return view('host', ['data' => [$game, $game->soals]]);
     }
 
-    function postSoal(Request $request){
-        $validated = $request->validate([
-            'soal_text' => 'required|string',
-            'lokasi' => 'required|string',
-            'materi' => 'required|string',
-            'jawaban' => 'required|string',
-            'game_id' => 'required|exists:games,id', // pastikan game_id valid
-            // 'soal_sound' => 'required|string', // Uncomment jika sudah aktif
-        ]);
+    function simpanSoal(Request $request){
 
-        // Simpan data ke database
-        $soal = Soal::create($validated);
+        
+        $soal = Soal::create($request->only([
+            'lokasi',
+            'materi',
+            'soal_text',
+            'soal_sound',
+            'game_id',
+            'jawaban'
+        ]));
+        
+        // dd(Soal::all());
 
         // Kembalikan response JSON
         return response()->json([
             'status' => 'success',
             'message' => 'Soal berhasil disimpan',
-            'data' => $soal
+            'data' => $soal,
         ]);
     }
 }

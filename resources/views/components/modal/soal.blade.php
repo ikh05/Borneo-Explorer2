@@ -45,7 +45,7 @@
         await buatSoal();
         
         // tempel soal
-        $('#modal_soal .soal-container').html(window.setting.soal);
+        $('#modal_soal .soal-container').html(window.setting.soal_text);
         $('#kunci_jawaban').html(window.setting.jawaban);
         
         // menjalankan latex
@@ -119,12 +119,17 @@
     });
 
     const formatJudul = (str) => str.replace(/_/g, ' ').replace(/\b\w/g, m => m.toUpperCase()).replace(/\bDan\b/g, 'dan');
-    function restart_timer() {
-    }
     function buatSoal(){
-      window.setting.soal = window[window.setting.lokasi][window.setting.materi]();
+      window.setting.soal_text = window[window.setting.lokasi][window.setting.materi]();
       console.log('berhasil di tambahkan');
-      // let simpanSoal = addSoalDataBase();
+      let simpanSoal = kirimServer('/simpan-soal', {
+        lokasi: window.setting.lokasi,
+        materi: window.setting.materi,
+        soal_text: window.setting.soal_text,
+        soal_sound: window.setting.soal_sound,
+        game_id: window.setting.game_id,
+        jawaban: window.setting.jawaban,
+      });
       console.log('selesai melakukan ajax');
       document.getElementById('soal_lokasi').innerHTML = window.setting.lokasi.replace(/([A-Z])/g, ' $1').trim();
       document.getElementById('soal_materi').innerHTML = formatJudul(window.setting.materi);

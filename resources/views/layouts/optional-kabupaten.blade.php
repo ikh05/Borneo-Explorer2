@@ -3,14 +3,14 @@
       
       <x-list.kabupaten
        name="{{ $kabupaten->keys()->first() }}"
-       :pintas="$pintas"
+       :tujuan="$pintas"
        :isActive="true">
       </x-list.kabupaten>
 
       @foreach ($kabupaten->skip(1) as $name => $item)
         <x-list.kabupaten 
          name="{{ $name }}"
-         :pintas="$pintas"
+         :tujuan="$pintas"
          :isActive=false>
         </x-list.kabupaten>
       @endforeach

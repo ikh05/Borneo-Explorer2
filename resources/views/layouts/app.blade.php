@@ -14,16 +14,21 @@
     
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
+    <script src="js/konekServer.js"></script>
+
+
     <script>
       window.setting = {
         lokasi: '',
         materi: '',
-        soal: '',
-        game: @json(isset($data['game']) ? $data['game']->id : ''),
+        soal_text: '',
+        soal_sound: '',
+        game_id: @json(isset($data['game']) ? $data['game']->id : ''),
         jawaban: '',
       }
     </script>
+
+
 
   </head>
   <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden">

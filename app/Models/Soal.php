@@ -2,25 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Soal extends Authenticatable
+class Soal extends Model
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+
     protected $fillable = [
+        'lokasi',
+        'materi',
         'soal_text',
         'soal_sound',
-        'jawaban',
-        'materi',
-        'lokasi'
+        'game_id',
+        'jawaban'
     ];
 
     public function game(): BelongsTo
