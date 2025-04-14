@@ -1,5 +1,5 @@
-{{-- @dd($data) --}}
-
+@dd($data)
+{{-- 
 <form id="formSoal" method="POST" action="/simpan-soal">
     @csrf
     <label>Lokasi:</label>
@@ -21,4 +21,4 @@
     <input type="text" name="jawaban" value="Rp\\(330.000\\),-"><br>
   
     <button type="submit">Kirim</button>
-  </form>
+  </form> --}}
