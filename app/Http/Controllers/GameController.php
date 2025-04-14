@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Api;
+use App\Models\Game;
+use App\Models\Soal;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -106,11 +108,44 @@ class GameController extends Controller
     ];
     protected $data = [];
     function __construct(){
-        $this->data = API::sort($this->kab, $this->ref);
+        // jalan pintas
+        $this->data['pintas'] = [
+            'Hulu Sungai Tengah' => 'Balangan',
+            'Tanah Bumbu' => 'Banjar'
+        ];
+        // generate keyGame
+        $key = '';
+        do {
+            // Misal key-nya 8 karakter acak (bisa diubah sesuai selera)
+            $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+            $generateBlock = function ($length = 4) use ($characters) {
+                return collect(range(1, $length))
+                    ->map(fn () => $characters[random_int(0, strlen($characters) - 1)])
+                    ->implode('');
+            };
+
+            $block1 = $generateBlock(4);
+            $block2 = $generateBlock(4);
+
+            $key = "GAME-$block1-$block2";
+        } while (Game::where('key', $key)->exists());
+        $this->data['newKey'] = $key;
     }
 
 
     public function start(Request $request){
+
+        $validated = $request->validate([
+            'key' => 'required|string|unique:games,key',
+        ]);
+
+        // Simpan ke database
+        $game = Game::create([
+            'key' => $validated['key'],
+        ]);
+        $this->data['game'] = $game;
+
         $startlokasi = 0;
         foreach ($this->ref as $i => $kab) {
             if(Str::remove(' ',$kab) == $request['lokasi']) $startlokasi = $i;
@@ -124,6 +159,7 @@ class GameController extends Controller
             'instagram' => "fa-brands fa-instagram",
             'github' => "fa-brands fa-github",
         ];
+       
         $this->data['creator'] = [
             'Arif Rohman' => [
                 'instagram' => 'https://www.instagram.com/arifrohman16/'
@@ -159,4 +195,36 @@ class GameController extends Controller
         return view('game', ['data' => $this->data]);
     }
 
+    public function host($key){
+
+        $game = Game::where('key', $key)->first();
+
+        if (!$game) {
+            abort(404, 'Permainan tidak ditemukan.');
+        }
+
+        // Tampilkan halaman permainan dengan data game
+        return view('host', ['data' => $game]);
+    }
+
+    function postSoal(Request $request){
+        $validated = $request->validate([
+            'soal_text' => 'required|string',
+            'lokasi' => 'required|string',
+            'materi' => 'required|string',
+            'jawaban' => 'required|string',
+            'game_id' => 'required|exists:games,id', // pastikan game_id valid
+            // 'soal_sound' => 'required|string', // Uncomment jika sudah aktif
+        ]);
+
+        // Simpan data ke database
+        $soal = Soal::create($validated);
+
+        // Kembalikan response JSON
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Soal berhasil disimpan',
+            'data' => $soal
+        ]);
+    }
 }

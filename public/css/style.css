@@ -136,29 +136,52 @@
   #pilihan_kabupaten a{
     transition: all 1s;
   }
-  #pilihan_kabupaten a:nth-child(13n+1){ color: var(--pastel-1); }
-  #pilihan_kabupaten a:nth-child(13n+2){ color: var(--pastel-2); }
-  #pilihan_kabupaten a:nth-child(13n+3){ color: var(--pastel-3); }
-  #pilihan_kabupaten a:nth-child(13n+4){ color: var(--pastel-4); }
-  #pilihan_kabupaten a:nth-child(13n+5){ color: var(--pastel-5); }
-  #pilihan_kabupaten a:nth-child(13n+6){ color: var(--pastel-6); }
-  #pilihan_kabupaten a:nth-child(13n+7){ color: var(--pastel-7); }
-  #pilihan_kabupaten a:nth-child(13n+8){ color: var(--pastel-8); }
-  #pilihan_kabupaten a:nth-child(13n+9){ color: var(--pastel-9); }
-  #pilihan_kabupaten a:nth-child(13n+10){ color: var(--pastel-10); }
-  #pilihan_kabupaten a:nth-child(13n+11){ color: var(--pastel-11); }
-  #pilihan_kabupaten a:nth-child(13n+12){ color: var(--pastel-12); }
-  #pilihan_kabupaten a:nth-child(13n+13){ color: var(--pastel-13); }
+  #pilihan_kabupaten a:nth-child(13n+1), #pilihan_kabupaten a:nth-child(13n+1) i{ color: var(--pastel-1); }
+  #pilihan_kabupaten a:nth-child(13n+2), #pilihan_kabupaten a:nth-child(13n+2) i{ color: var(--pastel-2); }
+  #pilihan_kabupaten a:nth-child(13n+3), #pilihan_kabupaten a:nth-child(13n+3) i{ color: var(--pastel-3); }
+  #pilihan_kabupaten a:nth-child(13n+4), #pilihan_kabupaten a:nth-child(13n+4) i{ color: var(--pastel-4); }
+  #pilihan_kabupaten a:nth-child(13n+5), #pilihan_kabupaten a:nth-child(13n+5) i{ color: var(--pastel-5); }
+  #pilihan_kabupaten a:nth-child(13n+6), #pilihan_kabupaten a:nth-child(13n+6) i{ color: var(--pastel-6); }
+  #pilihan_kabupaten a:nth-child(13n+7), #pilihan_kabupaten a:nth-child(13n+7) i{ color: var(--pastel-7); }
+  #pilihan_kabupaten a:nth-child(13n+8), #pilihan_kabupaten a:nth-child(13n+8) i{ color: var(--pastel-8); }
+  #pilihan_kabupaten a:nth-child(13n+9), #pilihan_kabupaten a:nth-child(13n+9) i{ color: var(--pastel-9); }
+  #pilihan_kabupaten a:nth-child(13n+10), #pilihan_kabupaten a:nth-child(13n+10) i{ color: var(--pastel-10); }
+  #pilihan_kabupaten a:nth-child(13n+11), #pilihan_kabupaten a:nth-child(13n+11) i{ color: var(--pastel-11); }
+  #pilihan_kabupaten a:nth-child(13n+12), #pilihan_kabupaten a:nth-child(13n+12) i{ color: var(--pastel-12); }
+  #pilihan_kabupaten a:nth-child(13n+13), #pilihan_kabupaten a:nth-child(13n+13) i{ color: var(--pastel-13); }
+  #pilihan_kabupaten a:nth-child(13n+1) button.triger-tooltip{border-color: var(--pastel-1);}
+  #pilihan_kabupaten a:nth-child(13n+2) button.triger-tooltip{border-color: var(--pastel-2);}
+  #pilihan_kabupaten a:nth-child(13n+3) button.triger-tooltip{border-color: var(--pastel-3);}
+  #pilihan_kabupaten a:nth-child(13n+4) button.triger-tooltip{border-color: var(--pastel-4);}
+  #pilihan_kabupaten a:nth-child(13n+5) button.triger-tooltip{border-color: var(--pastel-5);}
+  #pilihan_kabupaten a:nth-child(13n+6) button.triger-tooltip{border-color: var(--pastel-6);}
+  #pilihan_kabupaten a:nth-child(13n+7) button.triger-tooltip{border-color: var(--pastel-7);}
+  #pilihan_kabupaten a:nth-child(13n+8) button.triger-tooltip{border-color: var(--pastel-8);}
+  #pilihan_kabupaten a:nth-child(13n+9) button.triger-tooltip{border-color: var(--pastel-9);}
+  #pilihan_kabupaten a:nth-child(13n+10) button.triger-tooltip{border-color: var(--pastel-10);}
+  #pilihan_kabupaten a:nth-child(13n+11) button.triger-tooltip{border-color: var(--pastel-11);}
+  #pilihan_kabupaten a:nth-child(13n+12) button.triger-tooltip{border-color: var(--pastel-12);}
+  #pilihan_kabupaten a:nth-child(13n+13) button.triger-tooltip{border-color: var(--pastel-13);}
   
+
   #pilihan_kabupaten a.active{ 
-    color: aliceblue; 
+    color: aliceblue;
     padding-left: 1rem;
   }
+  #pilihan_kabupaten button.triger-tooltip{
+    position: absolute;
+    left: -5rem;
+  }
+  #pilihan_kabupaten a.active button.triger-tooltip{
+    position: relative;
+    left: 0;
+  }
+
   #pilihan_kabupaten a{
     transition: bold 0s all 1s;
   }
   #pilihan_kabupaten a:not(.active):hover{
-    padding-left: 2rem;
+    padding-left: 1.3rem;
   }
   
   

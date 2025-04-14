@@ -1,13 +1,6 @@
 $(document).ready(function () {
 
 
-window.setting = {
-    lokasi: '',
-    materi: '',
-    soal: '',
-    kelompok: 'kelompok_1',
-    jawaban: '',
-  }
 
 Array.prototype.joinName = function (index = 0) {
   const count = this.length;
@@ -107,11 +100,6 @@ window.Soal = {
   
 }
 
-if (/Android/i.test(navigator.userAgent)) {
-  document.body.classList.add('android');
-}
-
-
 });
 
 
@@ -125,4 +113,41 @@ function stopTeks() {
   if (window.speechSynthesis.speaking) {
     window.speechSynthesis.cancel();
   }
+}
+
+
+function addSoalDataBase() {
+  const data = {
+    soal_text: window.setting.soal,
+    lokasi: window.setting.lokasi,
+    materi: window.setting.materi,
+    jawaban: window.setting.jawaban,
+    game_id: window.setting.game,
+    // soal_sound: document.getElementById('soal_sound').value // jika nanti digunakan
+  };
+  
+  // Kirim data ke server menggunakan fetch
+  fetch('/simpan-soal', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) {
+      return response.json().then(err => { throw err; });
+    }
+    return response.json();
+  })
+  .then(result => {
+    console.log('Berhasil disimpan:', result);
+    alert(result.message);
+  })
+  .catch(error => {
+    console.error('Terjadi kesalahan:', error);
+    alert('Gagal menyimpan soal!');
+  });
+  
 }

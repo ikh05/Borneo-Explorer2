@@ -4,6 +4,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Borneo - Eksplorer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -14,6 +15,16 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
+    <script>
+      window.setting = {
+        lokasi: '',
+        materi: '',
+        soal: '',
+        game: @json(isset($data['game']) ? $data['game']->id : ''),
+        jawaban: '',
+      }
+    </script>
+
   </head>
   <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden">
     <script src="js/function.js"></script>
@@ -45,18 +56,21 @@
       'hukuman' => 1,
       // 'bonus' => (isset($data['post']) ? $data['post']['bonus'] : 2),
       // 'hukuman' => (isset($data['post']) ? $data['post']['hukuman'] : 1)
-      ])
+    ])
 
    
     
     <!-- Pilihan Kabupaten -->
-    @include('layouts.optional-kabupaten', ['kabupaten' => collect($data['kabupaten'])])
+    @include('layouts.optional-kabupaten', [
+      'kabupaten' => collect($data['kabupaten']), 
+      'pintas' => (isset($data['pintas']) ? $data['pintas'] : []),
+    ])
     
     <!-- Navbar -->
     @include('layouts.navbar',['data' => collect($data)])
 
     <!-- Notif -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    {{-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
       <div id="jawaban" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
           <strong class="me-auto">Notif</strong>
@@ -65,10 +79,10 @@
         <div class="toast-body">
         </div>
       </div>
-    </div>
+    </div> --}}
 
     {{-- popover doubleclick --}}
-    <x-popover.double_click></x-popover.double_click>
+    {{-- <x-popover.double_click></x-popover.double_click> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>

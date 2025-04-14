@@ -23,6 +23,7 @@
               
               <li><strong>Jenis Nomor Soal:</strong>
                   <ul style="list-style: circle">
+                      <li>Kabupaten dengan tanda <i class="fa-solid fa-road-circle-exclamation"></i> memiliki jalan pintas. Dengan soal yang sulit sebagai tantangannya</li>
                       <li><strong>Soal Biasa (6 nomor):</strong>
                           <ul>
                               <li>Jawab benar → maju ke kabupaten berikutnya.</li>
@@ -54,6 +55,7 @@
                       <li>Semua peserta harus sportif dan aktif.</li>
                   </ul>
               </li>
+              <a href="/img/papanPermainan.svg" download>Download Papan Permainan</a>
           </ul>
         </div>
         @if (!isset($data['post']))

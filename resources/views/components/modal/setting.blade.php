@@ -11,11 +11,16 @@
         </div>
         <div class="modal-body">
           <!-- banyak kelompok -->
+          <div class="mb-3">
+            <p class="mb-0">Kode Baru : <a href="/host/{{ $data['newKey'] }}" target="_blank">{{ $data['newKey'] }}</a></p>
+            <p class="mb-0 small text-secondary">Kode ini adalah identitas unik untuk permainanmu.</p>
+            <input type="hidden" name="key" value="{{ $data['newKey'] }}">
+          </div>
           <div class="mb-3 ">
             <label class="form-label" for="pengaturan_banyak_kelompok">Banyak Kelompok</label>
-            <input type="number" class="form-control" id="pengaturan_banyak_kelompok" max="4" min="1" name="kelompok" value="{{ isset($data['post']) ? $data['post']['kelompok'] : 4 }}" required>
+            <input type="number" class="form-control" id="pengaturan_banyak_kelompok" max="4" min="2" name="kelompok" value="{{ isset($data['post']) ? $data['post']['kelompok'] : 4 }}" required>
             <div class="invalid-feedback">
-              Tolong hanya isi dengan 1-4!
+              Isi dengan 2-4!
             </div>
           </div>
 {{--           
@@ -38,7 +43,6 @@
           <div class="mb-3">
             <p class="mb-0">Materi</p>
             <div class="form-check">
-              
               <input class="form-check-input" type="checkbox" id="materi_baris_deret" name="materi[]" value="barisan_dan_deret" @checked(!isset($data['post']) || in_array('barisan_dan_deret', $data['post']['materi']))>
               <label class="form-check-label" for="materi_baris_deret">
                 Barisan dan Deret

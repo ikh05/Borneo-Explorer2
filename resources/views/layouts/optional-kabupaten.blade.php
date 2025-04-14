@@ -1,20 +1,18 @@
 <section id="pilihan_kabupaten" class="d-none d-md-flex position-fixed start-0 top-0 align-items-center z-1030" style="margin-top: 4rem;">
     <div class="list-group" style="border-radius: 0; width: 100%;">
-      <a href="#{{ Str::remove(' ', $kabupaten->keys()->first()) }}"
-          class="list-group-item list-group-item-action position-relative active" aria-current="true">
-          <p class="m-0">{{ $kabupaten->keys()->first() }}</p>
-          <span class="fa-hover">
-            <i id="backFlip_{{ Str::remove(' ', $kabupaten->keys()->first()) }}"  class="d-none fa-solid fa-rectangle-list fa-ishover-flip position-absolute me-1 top-50 end-0 translate-middle"></i>
-          </span>
-        </a>
+      
+      <x-list.kabupaten
+       name="{{ $kabupaten->keys()->first() }}"
+       :pintas="$pintas"
+       :isActive="true">
+      </x-list.kabupaten>
+
       @foreach ($kabupaten->skip(1) as $name => $item)
-        <a href="#{{ Str::remove(' ', $name) }}"
-          class="list-group-item list-group-item-action position-relative">
-          <p class="m-0">{{ $name }}</p>
-          <span class="fa-hover">
-            <i id="backFlip_{{ $name }}"  class="d-none fa-solid fa-rectangle-list fa-hover-flip position-absolute me-1 top-50 end-0 translate-middle"></i>
-          </span>
-        </a>
+        <x-list.kabupaten 
+         name="{{ $name }}"
+         :pintas="$pintas"
+         :isActive=false>
+        </x-list.kabupaten>
       @endforeach
     </div>
 </section>
@@ -35,6 +33,14 @@
         }, 1000);
         $(this).addClass('d-none');
       });
+    });
+
+    $('#pilihan_kabupaten .triger-tooltip').each(function (i, e) {
+      const content = $('#tooltip_'+$(e).attr('id')).html();
+      console.log(e);
+      console.log(content);
+      $(e).attr('title', content);
+      new bootstrap.Tooltip(e);
     });
   });
 </script>

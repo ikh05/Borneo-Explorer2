@@ -42,7 +42,7 @@
         $('#load-first').removeClass('d-none').html('Menyiapkan Soal ...');
         $('#load-second').addClass('d-none');
         // buat soal
-        window.setting.soal = await buatSoal(window.setting);
+        await buatSoal();
         
         // tempel soal
         $('#modal_soal .soal-container').html(window.setting.soal);
@@ -121,11 +121,14 @@
     const formatJudul = (str) => str.replace(/_/g, ' ').replace(/\b\w/g, m => m.toUpperCase()).replace(/\bDan\b/g, 'dan');
     function restart_timer() {
     }
-    function buatSoal(setting){
-      console.log(setting);
-      document.getElementById('soal_lokasi').innerHTML = setting.lokasi.replace(/([A-Z])/g, ' $1').trim();;
-      document.getElementById('soal_materi').innerHTML = formatJudul(setting.materi);
-      return window[setting.lokasi][setting.materi]();
+    function buatSoal(){
+      window.setting.soal = window[window.setting.lokasi][window.setting.materi]();
+      console.log('berhasil di tambahkan');
+      // let simpanSoal = addSoalDataBase();
+      console.log('selesai melakukan ajax');
+      document.getElementById('soal_lokasi').innerHTML = window.setting.lokasi.replace(/([A-Z])/g, ' $1').trim();
+      document.getElementById('soal_materi').innerHTML = formatJudul(window.setting.materi);
+      return 1;
     }
   });
 </script>
