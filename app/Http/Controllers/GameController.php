@@ -8,6 +8,7 @@ use App\Models\Soal;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use PhpParser\Node\Stmt\Block;
 
 class GameController extends Controller
 {
@@ -116,34 +117,41 @@ class GameController extends Controller
         ];
         // generate keyGame
         $key = '';
+        
+        $this->data['newKey'] = $key;
+    }
+
+    protected function generateKeyGame($length = 6, $blocks = 2 ,String $text = 'BORNEO'){
+        $result = '';
+        if($text !== '') {
+            $result = $text.'-';
+            $blocks -= 1;
+        }
         do {
             // Misal key-nya 8 karakter acak (bisa diubah sesuai selera)
             $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
-            $generateBlock = function ($length = 4) use ($characters) {
+            $code = [];
+            $generateBlock = function () use ($characters, $length) {
                 return collect(range(1, $length))
                     ->map(fn () => $characters[random_int(0, strlen($characters) - 1)])
                     ->implode('');
             };
-
-            $block1 = $generateBlock(4);
-            $block2 = $generateBlock(4);
-
-            $key = "GAME-$block1-$block2";
+            for ($i=$blocks; $i > 0 ; $i--) {
+                $code []= $generateBlock();
+            }
+            $key = $result . implode('-', $code);
         } while (Game::where('key', $key)->exists());
-        $this->data['newKey'] = $key;
-    }
 
+        return $key;
+    }
 
     public function start(Request $request){
 
-        $validated = $request->validate([
-            'key' => 'required|string|unique:games,key',
-        ]);
+        $validated = $request->validate([]);
 
         // Simpan ke database
         $game = Game::create([
-            'key' => $validated['key'],
+            'key' => $this->generateKeyGame(),
         ]);
         $this->data['game'] = $game;
 

@@ -18,7 +18,7 @@ Route::get('/clear', function () {
     return 'Cache cleared';
 });
 
-Route::get('/host/{key}', [GameController::class, 'host'])->where('key', '^GAME-[A-Z0-9]{4}-[A-Z0-9]{4}$');
+Route::get('/host/{key}', [GameController::class, 'host'])->where('key', '^BORNEO-[A-Z0-9]{6}$');
 
 Route::post('/simpan-soal', [GameController::class, 'simpanSoal']);
 

@@ -43,7 +43,9 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top nav-underline">
     <div class="container">
-      <a class="navbar-brand" href="#">Borneo Explorer</a>
+      <a class="navbar-brand d-flex justify-content-center align-items-center" href="#">
+        Borneo Explorer
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -82,6 +84,9 @@
             <a class="nav-link disabled" aria-disabled="true">Tutorial</a>
           </li>
         </ul>
+        @isset($data['game'])
+          <a href="host/{{ $data['game']['key'] }}" target="_blank" class="small link-secondary mx-1 mb-md-0 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">{{ $data['game']['key'] }}</a>  
+        @endisset
         <div class="d-flex">
           <button class="btn btn-outline-primary hover-i-spin me-1" data-bs-toggle="modal" data-bs-target="#pengaturan_permainan"><i class="fa-gear fa-solid"></i></button>
           <button id="fullscreen-btn" class="btn btn-outline-info me-1">
