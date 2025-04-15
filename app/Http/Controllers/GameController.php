@@ -213,12 +213,10 @@ class GameController extends Controller
         }
 
         // Tampilkan halaman permainan dengan data game
-        return view('host', ['data' => [$game, $game->soals]]);
+        return view('host', ['data' => $game]);
     }
 
     function simpanSoal(Request $request){
-
-        
         $soal = Soal::create($request->only([
             'lokasi',
             'materi',
@@ -227,14 +225,29 @@ class GameController extends Controller
             'game_id',
             'jawaban'
         ]));
-        
-        // dd(Soal::all());
-
-        // Kembalikan response JSON
         return response()->json([
             'status' => 'success',
             'message' => 'Soal berhasil disimpan',
             'data' => $soal,
         ]);
     }
+    function ambilSoalTerakhir(Request $request){
+        $game = Game::where('key', $request->input('key'))->with('soals')->first();
+    
+        $last = $game->soals->last();
+    
+        if ($last->created_at == $request->input('created_at')) {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Tidak ada soal terbaru',
+            ]);
+        } else {
+            return response()->json([
+                'banyakSoal' => $game->soals->count(),
+                'status' => 'success',
+                'message' => 'Terdapat soal terbaru',
+                'soal' => $last,
+            ]);
+        }
+    }    
 }

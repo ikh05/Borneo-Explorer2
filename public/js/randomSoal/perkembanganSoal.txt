@@ -11,3 +11,14 @@ Kabupaten Hulu Sungai Utara
 Kabupaten Hulu Sungai Tengah
 Kabupaten Tabalong (3/3)
 Kabupaten Balangan (3/3)
+
+
+
+
+- perbaiki tampilan host 
+  * pindah halaman utama menggunakan sesion ~~
+  * ambil layout untuk aplikasi ~~
+  * lakukan ajax ~~
+- sortkut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan, ganti class fs dari 1-6
+- perbaiki mekanisme di halaman utama
+- tambah pengaturan

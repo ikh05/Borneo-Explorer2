@@ -2,7 +2,8 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="jawabanLabel">Kunci Jawaban</h1>
+
+            <h1 class="modal-title fs-5" id="jawabanLabel">Jawaban</h1>
             <h1 class="modal-title fs-5 d-none" id="title_bonus">Selamat Anda Bisa Lanjut ke Kabupaten Selanjutnya</h1>
           </div>
           <div class="modal-body text-center">

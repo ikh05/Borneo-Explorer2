@@ -1,4 +1,4 @@
-<div class="info-kabupaten d-none d-md-block">
+<div class="info-kabupaten d-none d-lg-block">
   <div class="bg-has end-0 rounded-start p-3 text-dark d-flex align-items-center" style="height: calc(100vh - 4rem); width: 23rem; position: static;">
       <div class="d-flex flex-column align-items-center">
         <h5 class="text-center mb-3">{{ $slot }}</h5>

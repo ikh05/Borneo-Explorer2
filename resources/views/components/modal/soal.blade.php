@@ -20,7 +20,7 @@
             @if($timeOtomatis)
                 d-none
             @endif">Mulai</button>
-            <button class="btn btn-primary" data-bs-target="#jawaban" data-bs-toggle="modal">Tampilkan Jawaban</button>
+            <button class="btn btn-primary" data-bs-target="#jawaban" data-bs-toggle="modal">Jawaban</button>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
 </div>
 
 <!-- Konfirmasi Jawaban Pemain -->
-<x-modal.kunci-jawaban></x-modal.kunci-jawaban>
+<x-modal.kunci-jawaban :kunciJawaban=$kunciJawaban></x-modal.kunci-jawaban>
 
 
 

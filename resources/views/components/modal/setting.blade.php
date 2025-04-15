@@ -18,6 +18,8 @@
               Isi dengan 2-4!
             </div>
           </div>
+
+
           {{-- tampilkan Jawaban --}}
           {{-- <div class="mb-3">
             <p class="mb-0">Kode Baru : <a href="/host/{{ $data['newKey'] }}" target="_blank">{{ $data['newKey'] }}</a></p>
@@ -92,12 +94,19 @@
             <div class="invalid-feedback">
               Tolong isi dengan benar waktu yang diberikan untuk peserta berhitung.
             </div>
+          </div>
+          <div class="form-check">
+            <input name="time_otomatis" class="form-check-input" type="checkbox" value="time_otomatis" id="time_otomatis" @checked(isset($data['post']['time_otomatis'])) >
+            <label class="form-check-label" for="time_otomatis">Mulai waktu saat soal di munculkan</label>
+          </div>
+          <div class="mb-3">
             <div class="form-check">
-              <input name="time_otomatis" class="form-check-input" type="checkbox" value="time_otomatis" id="time_otomatis" @checked(isset($data['post']['time_otomatis'])) >
-              <label class="form-check-label" for="time_otomatis">Mulai hitung mundur saat soal di munculkan</label>
+              <input name="kunciJawaban" class="form-check-input" type="checkbox" value="kunciJawaban" id="kunciJawaban" @checked(!isset($data['post']) || isset($data['post']['kunciJawaban'])) >
+              <label class="form-check-label" for="kunciJawaban">Tunjukkan Kunci Jawaban</label>
             </div>
           </div>
         </div>
+        <p class=" mb-3 small text-secondary"> Jika ini tidak di aktifkan maka jawaban bisa di lihat melalui link {{ url('/host/{KODE_GAME}') }}</p>
         <div class="modal-footer">
           <button class="btn btn-outline-info hover-up"><i class="fa-solid fa-star"></i> Mulai Baru</button>
         </div>

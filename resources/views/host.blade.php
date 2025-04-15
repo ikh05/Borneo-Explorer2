@@ -1,24 +1,44 @@
-@dd($data)
-{{-- 
-<form id="formSoal" method="POST" action="/simpan-soal">
-    @csrf
-    <label>Lokasi:</label>
-    <input type="text" name="lokasi" value="BaritoKuala"><br>
-  
-    <label>Materi:</label>
-    <input type="text" name="materi" value="barisan_dan_deret"><br>
-  
-    <label>Soal Text:</label>
-    <textarea name="soal_text">Contoh soal...</textarea><br>
-  
-    <label>Soal Sound:</label>
-    <input type="text" name="soal_sound" value=""><br>
-  
-    <label>Game ID:</label>
-    <input type="number" name="game_id" value="1"><br>
-  
-    <label>Jawaban:</label>
-    <input type="text" name="jawaban" value="Rp\\(330.000\\),-"><br>
-  
-    <button type="submit">Kirim</button>
-  </form> --}}
+@extends('layouts.app', ['data'=>$data])
+
+@section('main')
+    <div class="controller m-3  text-center">
+      <div class="mb-2">
+        <p class="h1"><strong>Kode Game</strong></p>
+        <p class="h2">{{ $data['key'] }}</p>
+      </div>
+      <hr class="m-1">
+      <hr class="mx-1 mb-1 mt-0">
+      <div>
+        <p class="mb-1 fs-5" id="lokasi-materi"></p>
+        <hr class="mx-3 my-1">
+        <p class="mb-0">Banyak Soal yang Sudah Dibuat</p>
+        <p id="banyakSoal">-</p>
+        <hr class="mx-3 my-1">
+        <p class="mb-0">Soal</p>
+        <p id="soal">-</p>
+        <hr class="mx-3 my-1">
+        <p class="mb-0">Jawaban</p>
+        <p id="jawaban">-</p>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        let last_created_at = '-';
+        setInterval(() => {
+          const soal = getServer('/ajax/ambilSoalTerakhir', {
+            key: @json($data['key']),
+            created_at: last_created_at,
+          }, function (response) {
+            if(response.message == "Terdapat soal terbaru"){
+              $('#soal').html(response.soal.soal_text);
+              $('#jawaban').html(response.soal.jawaban);
+              $('#banyakSoal').html(response.banyakSoal);
+              $('#lokasi-materi').html(response.soal.lokasi+" - "+response.soal.materi);
+              MathJax.typesetPromise($('#jawaban'));
+            }
+          })
+        }, 3000);
+      });
+    </script>
+@endsection

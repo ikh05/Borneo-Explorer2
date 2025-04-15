@@ -1,31 +1,14 @@
 <?php
 
-use App\Models\Game;
-use App\Models\Soal;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\GameController;
 
+use App\Http\Controllers\GameController;
 
 Route::get('/', [GameController::class, 'first']);
 Route::post('/', [GameController::class, 'start']);
 
-Route::get('/clear', function () {
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('view:clear');
-    Artisan::call('route:clear');
-    return 'Cache cleared';
-});
-
-Route::get('/host/{key}', [GameController::class, 'host'])->where('key', '^BORNEO-[A-Z0-9]{6}$');
+Route::get('/host/{key}', [GameController::class, 'host']);
+Route::post('/ajax/ambilSoalTerakhir', [GameController::class, 'ambilSoalTerakhir']);
 
 Route::post('/simpan-soal', [GameController::class, 'simpanSoal']);
-
-Route::get('/host', function(){
-    $data = [];
-    $data['soal'] = Soal::all();
-    $data['game'] = Game::all();
-
-    return view('host', ['data' => $data]);
-});
+Route::post('/ajax/simapnSoal', [GameController::class, 'simpanSoal']);

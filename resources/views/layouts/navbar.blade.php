@@ -85,7 +85,7 @@
           </li>
         </ul>
         @isset($data['game'])
-          <a href="host/{{ $data['game']['key'] }}" target="_blank" class="small link-secondary mx-1 mb-md-0 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">{{ $data['game']['key'] }}</a>  
+          <a href="host/{{ $data['game']['key'] }}" target="_blank" class="small link-secondary mx-1 mb-md-0 link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Kode Game: {{ $data['game']['key'] }}</a>  
         @endisset
         <div class="d-flex">
           <button class="btn btn-outline-primary hover-i-spin me-1" data-bs-toggle="modal" data-bs-target="#pengaturan_permainan"><i class="fa-gear fa-solid"></i></button>

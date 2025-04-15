@@ -27,7 +27,7 @@ function postServer(url, data, func) {
 
 function getServer(url, data, func){
     fetch(url, {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
