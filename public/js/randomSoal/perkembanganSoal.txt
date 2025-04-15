@@ -19,6 +19,7 @@ Kabupaten Balangan (3/3)
   * pindah halaman utama menggunakan sesion ~~
   * ambil layout untuk aplikasi ~~
   * lakukan ajax ~~
-- sortkut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan, ganti class fs dari 1-6
+- sortcut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan, ganti class fs dari 1-6
+- mekanisme memperbaiki salah klik jika di hasil jawaban siswa
 - perbaiki mekanisme di halaman utama
-- tambah pengaturan
+- tambah pengaturan ~~
