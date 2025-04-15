@@ -1,6 +1,5 @@
 @extends('layouts.app', ['data'=>$data])
 
-@dd(url('/'))
 
 @section('main')
     <div class="controller m-3  text-center">

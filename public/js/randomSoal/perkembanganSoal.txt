@@ -15,11 +15,13 @@ Kabupaten Balangan (3/3)
 
 
 
-- perbaiki tampilan host 
+- perbaiki tampilan host ~~
   * pindah halaman utama menggunakan sesion ~~
   * ambil layout untuk aplikasi ~~
   * lakukan ajax ~~
-- sortcut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan, ganti class fs dari 1-6
-- mekanisme memperbaiki salah klik jika di hasil jawaban siswa
-- perbaiki mekanisme di halaman utama
+- sortcut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan soal, *solusi ganti class fs dari 1-6
+- mekanisme memperbaiki salah klik jika di hasil jawaban siswa //skip - bisa di akali dengan mekanisme menjawab soal lagi.
+- perbaikan relative path, *solusi tambahkan url('/') (PHP) ke setiap akses path
+- perbaikan mekanisme di halaman utama
 - tambah pengaturan ~~
+- fungsi ajax menjadi 2 fungsi (pushServer dan getServer)
