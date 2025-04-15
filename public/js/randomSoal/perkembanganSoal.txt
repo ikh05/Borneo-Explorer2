@@ -14,14 +14,30 @@ Kabupaten Balangan (3/3)
 
 
 
-
-- perbaiki tampilan host ~~
-  * pindah halaman utama menggunakan sesion ~~
-  * ambil layout untuk aplikasi ~~
-  * lakukan ajax ~~
-- sortcut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan soal, *solusi ganti class fs dari 1-6
-- mekanisme memperbaiki salah klik jika di hasil jawaban siswa //skip - bisa di akali dengan mekanisme menjawab soal lagi.
-- perbaikan relative path, *solusi tambahkan url('/') (PHP) ke setiap akses path
+Utama
 - perbaikan mekanisme di halaman utama
-- tambah pengaturan ~~
+    * hilangkan kunci jawalan, *solusi tanam "display none" di element jika soal tidak dibuka
+    * tutup lagi nomor yang salah, *solusi buat variabel boolean (js) lalu periksa di dalam mekanisme salah di salah menjawab
+        ~ tambahkan variabel urutan nomor, supaya bisa di tutup
+        ~ menambahkan atribut soal sebagai referensi soal yang sama di pasang setiap kali buat soal
+        ~ jika benar hapus atribut soal
+        ~ jika attribute soal ada, cegat membuat soal
+- perbaikan mekanisme menutup kembali nomor jika sudah semua nomor terbuka
+- input soal
+- perbaikan relative path, *solusi tambahkan url('/') (PHP) ke setiap akses path
+
+Tambahan Fitur
+- sortcut ctrl + dan ctrl -, untuk memperbesar dan memperkecil tulisan soal, *solusi ganti class fs dari 1-6
+
+Kurang Penting
 - fungsi ajax menjadi 2 fungsi (pushServer dan getServer)
+
+Skip
+- mekanisme memperbaiki salah klik jika di hasil jawaban siswa //skip - bisa di akali dengan mekanisme menjawab soal lagi.
+
+Selesai
+- perbaiki tampilan host
+  * pindah halaman utama menggunakan sesion
+  * ambil layout untuk aplikasi
+  * lakukan ajax
+- tambah pengaturan
