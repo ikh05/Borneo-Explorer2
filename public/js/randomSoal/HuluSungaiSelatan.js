@@ -23,14 +23,15 @@ window.HuluSungaiSelatan = {
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
         let text = `Seorang petani memiliki dua jenis lahan yaitu lahan untuk budidaya kerbau rawa adalah __v1__ hektar dan lahan untuk menanam sagu adalah __v2__ hektar. Jika jumlah kedua lahan sebesar __b__ hektar, tuliskan bentuk persamaan linear dua variabelnya.`;
-        let variabel = ('abcdefghijklmnopqrstuvwxyz').split();
+        let variabel = ('abcdefghijklmnopqrstuvwxyz').split('');
         let b = 0;
         let v1 = '';
         let v2 = '';
+        console.log(variabel);
         do {
             let indexVariabel = Soal.randomInterval(0, 24);
             v1 = variabel[indexVariabel];
-            v2 = variabel[indexVariabel];
+            v2 = variabel[indexVariabel+1];
             b = Soal.randomInterval(170, 200)
         } while (HuluSungaiSelatan.random_persamaan_linear.array_in_array([v1, b]));
         HuluSungaiSelatan.random_persamaan_linear.lastPush([v1, b]);
@@ -53,10 +54,10 @@ window.HuluSungaiSelatan = {
             geometri: 'setiap bulannya meningkat __r__ kali lipat dari bulan sebelumnya'
         }
         let pertanyaan = {
-            barisan_v1: 'barisan apa yang terbentuk dari pola jumlah pengunjung tersebut?',
-            barisan_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung pada bulan tertentu?',
-            deret_v1: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama __n__ bulan?',
-            deret_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama 1 tahun?',
+            barisan_v1: 'barisan apa yang terbentuk dari pola jumlah pengunjung tersebut',
+            barisan_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung pada bulan tertentu',
+            deret_v1: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama __n__ bulan',
+            deret_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama 1 tahun',
         }
 
         // ambil 1 data dan 1 pertanyaan
