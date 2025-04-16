@@ -1,7 +1,7 @@
 window.Tapin = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        let text = 'Pada tanggal 18 Februari 2021, Presiden Indonesia meresmikan salah satu aset negara yaitu Bendungan Tapin. Bendungan Tapin ini terletak di Desa Pipitak Jaya, Kecamatan Piani, Kabupaten Tapin, dan merupakan salah satu bendungan yang masuk dalam program pembangunan 65 bendungan besar di Indonesia. Bendungan ini diharapkan dapat memberikan manfaat untuk program pengairan lahan pertanian setempat seluas 5.472 hektar dan juga dapat mengendalikan banjir di Kabupaten Tapin. Jika dana pembangunan sekitar Rp__b__ triliun dialokasikan selama 5 tahun pembangunan (2015–2020), berapakah rata-rata dana yang dikeluarkan per tahun?';
+        let text = 'Pada tanggal 18 Februari 2021, Presiden Indonesia meresmikan salah satu aset negara yaitu Bendungan Tapin. Bendungan Tapin ini terletak di Desa Pipitak Jaya, Kecamatan Piani, Kabupaten Tapin, dan merupakan salah satu bendungan yang masuk dalam program pembangunan 65 bendungan besar di Indonesia. Bendungan ini diharapkan dapat memberikan manfaat untuk program pengairan lahan pertanian setempat seluas 5.472 hektare dan juga dapat mengendalikan banjir di Kabupaten Tapin. Jika dana pembangunan sekitar Rp__b__ triliun dialokasikan selama 5 tahun pembangunan (2015–2020), berapakah rata-rata dana yang dikeluarkan per tahun?';
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         let b = 0;
         console.log(typeof (Tapin.random_statistika));
@@ -21,16 +21,16 @@ window.Tapin = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = 'Pemerintah Kabupaten Tapin mencetak sawah rakyat seluas 564 hektare yang berpusat di Kecamatan Lokpaikat, guna memperkuat sektor pertanian. Kepala Dinas Pertanian Kabupaten Tapin, Mohammad Tri Asmoro, menuturkan setiap hektare lahan akan dikelola 15 petani milenial sebagai upaya untuk melibatkan anak muda pada sektor pertanian dan menjadikannya lebih menarik. Jika tersedia __x__ petani, maka berapa hektare lahan yang dapat dikelola?';
+        let text = 'Pemerintah Kabupaten Tapin mencetak sawah rakyat seluas 564 hektare yang berpusat di Kecamatan Lokpaikat, guna memperkuat sektor pertanian. Kepala Dinas Pertanian Kabupaten Tapin, Mohammad Tri Asmoro, menuturkan setiap hektare lahan akan dikelola 15 petani milenial sebagai upaya untuk melibatkan anak muda pada sektor pertanian dan menjadikannya lebih menarik. Jika terdapat __x__ petani, maka berapa hektare lahan yang dapat dikelola?';
+        
         let x = 0;
-
         do {
             x = Soal.randomInterval(5010, 7995, 15);
         } while (Tapin.random_persamaan_linear.array_in_array(x));
         Tapin.random_persamaan_linear.lastPush(x);
 
         // jawaban
-        window.setting.jawaban = (x/15) + ' hektar';
+        window.setting.jawaban = (x/15) + ' hektare';
         return text
             .replace('__x__', x.toLocaleString('id-ID'));
     },

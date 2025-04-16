@@ -1,64 +1,80 @@
-Daftar bug saat uji coba 1
+Yang lahan basahnya pasti ada
+- Ka Arif = Tanah bumbu + Kota Baru
+- Ka Rama = Batola + Balangan 
+- Ka Arya = Tanah laut + Tapin
+- Ka Ikhsan = Kab. Banjar
+- Ka Siti = Banjarmasin + Tabalong
+- Mylida = HST + HSS
+- Asiah = HSU
+- Irsya = Banjarbaru
 
+1 ✅ = bug fiks
+2 ✅ = jawaban fiks
+3 ✅ = typo fiks
 
-Batola:
+Batola: Ka Rama ✅|  |  
 - Statistika: -
 - Barisan dan deret: - 
 - Persamaan L.: -
 
-Tapin:
+Tapin: Ka Arya 
 * Statistika: Gagak memuat soal
 * Barisan dan deret: - 
 * Persamaan L. : - 
 
-HSS:
+HSS: Mylida 
 * Statistika: -
 * Barisan dan deret: typo undefined, NaN
 * Persamaan l: typo ab bc
 
-HST
+HST: Mylida 
 * Statistika: -
 * Barisan dan deret: -
 * Persamaan l: -
 
-HSU
+HSU: Asiah
 * Statistika: -
 * Barisan dan deret: 
 * Persamaan l: tyoe ada variabe (a) dan (b)
 
-Tabalong
+Tabalong: ka Siti
 * Statistika: -
 * Barisan dan deret: -
 * Persamaan l: -
 
-Balangan
+Balangan: Ka Rama
 * Statistika: - 
 * Barisan dan deret: -
 * Persamaan l: -
 
-Kotabaru
+Kotabaru: Ka Arif 
 * Statistika: typo angkanya bekoma super
 * Barisan dan deret: - 
 * Persamaan l: -
 
-Tanahbumbu
+Tanahbumbu: Ka Arif
 * Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -
 
-Banjarbaru
+TanahLaut : Ka Arya
+* Persamaan: belum masuk
+* Barisan dan deret: salah jawaban
+* Statistik: typo
+
+Banjarbaru: Irsya
 * Statistika: gagal membuat soal
 * Barisan dan deret: - 
 * Persamaan l: -
 
 
-Banjar
+Banjar: Ikhsan
 * Statistika: -
 * Barisan dan deret: typo __U2 
 * Persamaan l: - soal dari kota banjarmasin
 
 
-Banjarmasin
+Banjarmasin: Ka Siti
 * Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -
