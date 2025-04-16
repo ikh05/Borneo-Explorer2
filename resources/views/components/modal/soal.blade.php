@@ -44,7 +44,7 @@
         const $card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']'); 
         console.log($card_click.attr('soal'));
         window.setting.soal_sound = '';
-        if($card_click.attr('soal') === ''){
+        if($card_click.attr('soal') === '' || window.setting.show_jawaban){
           // buat soal
           await buatSoal();
           $card_click.attr('soal', window.setting.soal_text);
