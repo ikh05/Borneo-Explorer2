@@ -9,7 +9,7 @@ window.BaritoKuala = {
         let data = [];
         
         do {
-            data = randomArray(6, 8, 5);
+            data = Soal.randomArray(6, 8, 5);
         } while (BaritoKuala.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
