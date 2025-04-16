@@ -63,7 +63,7 @@ TanahLaut : Ka Arya
 * Statistik: typo
 
 Banjarbaru: Irsya
-* Statistika: gagal membuat soal
+* Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -
 
