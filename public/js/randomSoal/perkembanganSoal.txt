@@ -18,7 +18,7 @@ Batola: Ka Rama ✅|  |
 - Persamaan L.: -
 
 Tapin: Ka Arya ✅ |  | 
-* Statistika: Gagak memuat soal
+* Statistika: -
 * Barisan dan deret: - 
 * Persamaan L. : - 
 
@@ -37,15 +37,15 @@ HSU: Asiah ✅ | ✅ | ✅
 * Barisan dan deret: -
 * Persamaan l: -
 
-Tabalong: ka Siti
+Tabalong: ka Siti ✅ |  |  
 * Statistika: -
 * Barisan dan deret: -
 * Persamaan l: -
 
-Balangan: Ka Rama
+Balangan: Ka Rama ✅ |  |
 * Statistika: - 
-* Barisan dan deret: typo "diajajakan"
-* Persamaan l: hilangkan Anggaran dari "Anggaran APBN"
+* Barisan dan deret: -
+* Persamaan l: -
 
 Kotabaru: Ka Arif 
 * Statistika: typo angkanya bekoma super
