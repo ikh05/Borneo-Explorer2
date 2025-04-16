@@ -45,7 +45,7 @@ window.BaritoKuala = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() { //3*3*5 = 45
-        let text = "Di kawasan Sungai Barito tepatnya di kecamatan Anjir Muara, Kabupaten Barito Kuala terdapat sebuah kecil yang digunakan sebagai wisata alam bernama Pulau Curiak. Jika ingin mellihat surga aneka flora dan fauna, destinasi pulau curiak ini lah yang tepat.Dengan di kelilingi oleh pohon mangrove rambai dan mengamati aneka fauna seperti Bekantan dan jenis satwa liar lainnya khas lahan basah. Pulau Curiak juga memiliki berbagai jenis burung mulai dari jenis burung kuntul, Dara laut, hingga Elang Bron-tok (salah satu burung yang dilindungi). Pengunjung juga didorong untuk melakukan penanaman pohon mangrove rambai di daerah tersebut. Untuk setiap pohon rambai dikenakan harga Rp__b__,00. Jika dalam satu rombongan berisi __n__ orang Berapakan biaya penanaman pohon mangrove rambai yang dikeluarkan dalam satu rombongan tersebut?";
+        let text = "Di kawasan Sungai Barito, tepatnya di Kecamatan Anjir Muara, Kabupaten Barito Kuala, terdapat sebuah pulau kecil yang dijadikan sebagai objek wisata alam bernama Pulau Curiak. Jika ingin menikmati keanekaragaman flora dan fauna, Pulau Curiak merupakan destinasi yang tepat. Pulau ini dikelilingi oleh pohon mangrove rambai dan menjadi habitat berbagai jenis fauna, seperti bekantan dan satwa liar khas lahan basah lainnya. Pulau Curiak juga menjadi rumah bagi beragam jenis burung, mulai dari burung kuntul, dara laut, hingga elang brontok—salah satu burung yang dilindungi. Pengunjung didorong untuk berpartisipasi dalam kegiatan penanaman pohon mangrove rambai di kawasan tersebut. Setiap pohon rambai dikenakan biaya sebesar Rp__b__,00. Jika satu rombongan terdiri atas n orang, berapakah total biaya penanaman pohon mangrove rambai yang dikeluarkan oleh rombongan tersebut?";
 
         // random
         let n = 0;
@@ -55,8 +55,7 @@ window.BaritoKuala = {
         do {
             b = Soal.randomInterval(50000, 70000, 10000);
             n = Soal.randomInterval(6,10);
-            console.log('selesai random, akan di cek');
-            
+            console.log('selesai random, akan di cek');    
         } while (BaritoKuala.random_barisan_dan_deret.array_in_array([b, n]));
         console.log('masukkan ke array record');
         BaritoKuala.random_barisan_dan_deret.lastPush([b, n]);

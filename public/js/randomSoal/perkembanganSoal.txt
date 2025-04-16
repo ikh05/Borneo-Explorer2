@@ -2,8 +2,8 @@ Daftar bug saat uji coba 1
 
 
 Batola:
-- Statistika: Gagal membuat soal
-- Barisan dan deret: typo
+- Statistika: -
+- Barisan dan deret: - 
 - Persamaan L.: -
 
 Tapin:
