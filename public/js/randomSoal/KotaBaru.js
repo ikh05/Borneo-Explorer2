@@ -12,10 +12,7 @@ window.Kotabaru = {
         console.log(typeof (Kotabaru.random_statistika));
         
         do {
-            for (let index = 0; index < 7; index++) {
-                data.push(Soal.randomInterval(0.8, 1.5, 0.1));
-            }
-            data = Soal.randomArray(0.8, 1.5, 7, 7, 0.1)
+            data = Soal.randomArray(0.8, 1.5, 7, 7, 0.1, 1)
         } while (Kotabaru.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
