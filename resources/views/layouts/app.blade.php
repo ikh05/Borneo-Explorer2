@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ isset($data['tittle']) ? $data['tittle'] : "Borneo Explorer" }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/flipCard.css">
-    <link rel="stylesheet" href="/css/fa.css">
-    <link rel="stylesheet" href="/css/style.css?v=1.0.3">
-    
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/konekServer.js"></script>
-    <script src="/js/function.js"></script>
+    {{-- base --}}
+    <style>
+      *{
+        --base_url: "{{ url('/') }}";
+      }
+    </style>
     <script>
       const base_url = "{{ url('/') }}"
     </script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url('css/flipCard.css') }}">
+    <link rel="stylesheet" href="{{ url('css/fa.css') }}">
+    <link rel="stylesheet" href="{{ url('css/style.css?v=1.0.3') }}">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="{{ url('js/konekServer.js') }}"></script>
+    <script src="{{ url('js/function.js') }}"></script>
   </head>
   <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden" data-bs-theme="dark">
     @yield('main')
