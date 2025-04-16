@@ -8,13 +8,12 @@ window.Tapin = {
         
         do {
             b = Soal.randomInterval(900, 999)
-        } while (Tapin.random_statistika.array_in_array(randomEntries));
+        } while (Tapin.random_statistika.array_in_array(b));
 
         // simpan ke daftar 5 terakhir
-        Tapin.random_statistika.lastPush(randomEntries);
+        Tapin.random_statistika.lastPush(b);
 
         window.setting.jawaban = `Rp${b/5} triliun`;
-        window.setting.soal_sound = ''
         return text
             .replace('__b__', b)
     },
@@ -27,12 +26,11 @@ window.Tapin = {
 
         do {
             x = Soal.randomInterval(5010, 7995, 15);
-        } while (Tapin.random_persamaan_linear.array_in_array([a, x]));
-        Tapin.random_persamaan_linear.lastPush([a, x]);
+        } while (Tapin.random_persamaan_linear.array_in_array(x));
+        Tapin.random_persamaan_linear.lastPush(x);
 
         // jawaban
         window.setting.jawaban = (x/15) + ' hektar';
-        window.setting.soal_sound = ''
         return text
             .replace('__x__', x.toLocaleString('id-ID'));
     },
@@ -40,7 +38,7 @@ window.Tapin = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        let text = 'Daerah Rawa Muning merupakan daerah pengembangan lahan persawahan yang ditujukan untuk menunjang program transmigrasi. Namun, pengembangan Rawa Muning sebagai lahan persawahan menghadapi gangguan berupa genangan banjir pada areal usaha tani apabila musim hujan dan mengalami kondisi kekeringan pada saat musim kemarau. Permasalahan ini mengakibatkan berkurangnya jumlah transmigran. Jumlah penduduk transmigrasi awalnya 1180 kepala keluarga (kk) pada tahun 1998. Jika transmigran berkurang sebanyak __b__ kk setiap tahunnya, maka jumlah transmigran tersisa pada tahun __t__ adalah ... kk.';
+        let text = 'Daerah Rawa Muning merupakan daerah pengembangan lahan persawahan yang ditujukan untuk menunjang program transmigrasi. Namun, pengembangan Rawa Muning sebagai lahan persawahan menghadapi gangguan berupa genangan banjir pada area usaha tani apabila musim hujan dan mengalami kondisi kekeringan pada saat musim kemarau. Permasalahan ini mengakibatkan berkurangnya jumlah transmigran. Jumlah penduduk transmigrasi awalnya 1180 kepala keluarga (kk) pada tahun 1998. Jika transmigran berkurang sebanyak __b__ kk setiap tahunnya, maka jumlah transmigran tersisa pada tahun __t__ adalah ....';
         // random
         let t = 0;
         let n = 0;
@@ -60,7 +58,6 @@ window.Tapin = {
         
         // jawaban
         window.setting.jawaban = 1180 - (b*n);
-        window.setting.soal_sound = '';
         console.log('jawaban di dapatkan');
         return text
             .replace('__t__', t)
