@@ -66,7 +66,7 @@ window.TanahLaut = {
         // simpan ke daftar 5 terakhir
         TanahLaut.random_statistika.lastPush(randomEntries);
         let kunjungan = randomEntries.map(e => e[1])
-        let kategori = randomEntries.map(e => e[0])
+        let kategori = randomEntries.map(e => e[0].replace('_', ' '))
 
 
         window.setting.jawaban = (kunjungan.mean());
