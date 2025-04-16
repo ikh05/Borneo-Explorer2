@@ -16,14 +16,13 @@ Kabupaten Balangan (3/3)
 
 Utama
 - perbaikan mekanisme di halaman utama
-    * hilangkan kunci jawalan, *solusi tanam "display none" di element jika soal tidak dibuka
+    * hilangkan kunci jawalan, *solusi tanam "display none" di element jika soal tidak dibuka ~~
     * tutup lagi nomor yang salah, *solusi buat variabel boolean (js) lalu periksa di dalam mekanisme salah di salah menjawab
-        ~ tambahkan variabel urutan nomor, supaya bisa di tutup
-        ~ menambahkan atribut soal sebagai referensi soal yang sama di pasang setiap kali buat soal
-        ~ jika benar hapus atribut soal
+        ~ tambahkan variabel urutan nomor, supaya bisa di tutup ~~
+        ~ menambahkan atribut soal sebagai referensi soal yang sama di pasang setiap kali buat soal ~~
+        ~ jika benar hapus atribut soal ~~
         ~ jika attribute soal ada, cegat membuat soal
-- perbaikan mekanisme menutup kembali nomor jika sudah semua nomor terbuka
-- input soal
+- input soal ??
 - perbaikan relative path, *solusi tambahkan url('/') (PHP) ke setiap akses path
 
 Tambahan Fitur
@@ -41,3 +40,4 @@ Selesai
   * ambil layout untuk aplikasi
   * lakukan ajax
 - tambah pengaturan
+- perbaikan mekanisme menutup kembali nomor jika sudah semua nomor terbuka

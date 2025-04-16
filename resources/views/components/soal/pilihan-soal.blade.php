@@ -1,5 +1,5 @@
-<div style="padding-top: 4.5rem;" class="d-flex flex-column" >
-   <p class="d-blok d-md-none text-center">{{ $name }}</p>
+<div class="d-flex flex-column" >
+   <p class="d-blok d-md-none text-center mt-1 fs-3 text_kabupaten" style="padding-top: 5rem"><strong>{{ $name }}</strong></p>
    <div id="{{ Str::remove(' ', $name) }}" lokasi class="pilihan w-100 h-100 d-flex flex-reverse justify-content-between">
       <!-- pilihan soal -->
       <div class="d-flex flex-wrap puzzle-grid flex-shrink-0 align-items-between justify-content-between flex-grow-1 mx-3 " style=" margin-right: 2rem;" >

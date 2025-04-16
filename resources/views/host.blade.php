@@ -27,17 +27,20 @@
       $(document).ready(function () {
         let last_created_at = '-';
         setInterval(() => {
-          const soal = getServer('/ajax/ambilSoalTerakhir', {
+          const soal = postServer('/ajax/ambilSoalTerakhir', {
             key: @json($data['key']),
             created_at: last_created_at,
-          }, function (response) {
-            if(response.message == "Terdapat soal terbaru"){
-              $('#soal').html(response.soal.soal_text);
-              $('#jawaban').html(response.soal.jawaban);
-              $('#banyakSoal').html(response.banyakSoal);
-              $('#lokasi-materi').html(response.soal.lokasi+" - "+response.soal.materi);
-              MathJax.typesetPromise($('#jawaban'));
-            }
+          }, {
+            berhasil: res => {
+              console.log(res);
+              if(res.message == "Terdapat soal terbaru"){
+                $('#soal').html(res.soal.soal_text);
+                $('#jawaban').html(res.soal.jawaban);
+                $('#banyakSoal').html(res.banyakSoal);
+                $('#lokasi-materi').html(res.soal.lokasi+" - "+res.soal.materi);
+                MathJax.typesetPromise($('#jawaban'));
+              }
+            },
           })
         }, 3000);
       });

@@ -7,7 +7,7 @@
             <h1 class="modal-title fs-5 d-none" id="title_bonus">Selamat Anda Bisa Lanjut ke Kabupaten Selanjutnya</h1>
           </div>
           <div class="modal-body text-center">
-            <p id="kunci_jawaban" class="fs-3">5</p>
+            <p id="kunci_jawaban" class="fs-3" style="{{ !$kunciJawaban ? 'display: none;' : ''  }}">5</p>
             <!-- <form action="" method="post"> -->
               <div class="d-flex flex-column mb-3">
                 <label for="jawaban_kelompok">Kelompok yang menjawab</label>
@@ -60,6 +60,7 @@
           $('#jawaban button[name=bonus]').addClass('d-none');
         });
 
+
         $('#jawaban button').each(function(index, element) {
           $(element).on('click', function() {
             const kelompok = $('#jawaban_kelompok').val();
@@ -68,16 +69,18 @@
               
               console.log('Kelompok yang menjawab:'+kelompok);
               console.log('Status jawaban (benar/salah):', statusJawaban);
-      
+              
               // jika benar
               if (statusJawaban === 'benar' || statusJawaban === 'bonus') {
                 const $posKelompok = $('#pos_' + kelompok);
                 const $pilihan_kabupaten = $('#pilihan_kabupaten a');
                 // pos_kelompok_1
                 console.log('Posisi sekarang:', $posKelompok.attr('href'));
-      
+                
+                let is_kabupaten = true;
                 $pilihan_kabupaten.each(function(i, e) {
-                  if ($(e).attr('href') === $posKelompok.attr('href')) {
+                  if ($(e).attr('href') === $posKelompok.attr('href') && is_kabupaten) {
+                    is_kabupaten = false;
                     console.log('Posisi ditemukan pada index:', i);
       
                     if (i === $pilihan_kabupaten.length - 1) {
@@ -90,13 +93,25 @@
                       $posKelompok.text($($pilihan_kabupaten[i + 1]).text());
                     }
                     if(statusJawaban === 'benar'){
+                      // hapus soal di card
+                      const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
+                      card_click.attr('soal', '');
+                      card_click.attr('jawaban', '');
                       const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
-                      playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang berada di '+ l + $($pilihan_kabupaten[i+1]).text())
+                      playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
                     }
-                    return false; // berhenti dari .each
+                    return 1;
                   }
                 });
               }else{
+                // jawaban salah
+                if(window.setting.show_jawaban){
+                  const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
+                  card_click.attr('soal', '');
+                  card_click.attr('jawaban', '');
+                }else{
+                  $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+'] .card-flip').removeClass('flip-active');
+                }
                 playTeks('Maaf jawaban '+$('#jawaban_kelompok option:selected').text()+' kerang tepat. ');
                 console.log('status jawaban harusnya salah:'+statusJawaban);
               }

@@ -23,11 +23,18 @@
   $(document).ready(function () {
     $('#pilihan_kabupaten span i').each(function (i, e) {
       $(e).on('click', async function() {
+
         // ambil pilihan soal yang sesuai dengan ini, 
         const $kab = $('#'+$(this).attr('id').split("_")[1]);
-        // hilangkan '.flip-active' untuk setiap card
-        await $kab.find('.flip-active').each((i, ac) => $(ac).removeClass('flip-active'));
-        // lalu untuk kabupaten itu jalankan random soal
+
+        // hilangkan '.flip-active' untuk setiap card serta hilangkan soal dan jawaban
+        await $kab.find('.flip-active').each((i, ac) => {
+          $(ac).removeClass('flip-active')
+          $(ac).closest('.card').attr('soal', '');
+          $(ac).closest('.card').attr('jawaban', '');
+        });
+
+        // lalu untuk kabupaten itu jalankan random materi
         setTimeout(() => {
           generateMateriCard($kab.get(0));
         }, 1000);

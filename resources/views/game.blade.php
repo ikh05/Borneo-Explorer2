@@ -13,7 +13,8 @@
       soal_sound: '',
       game_id: @json(isset($data['game']) ? $data['game']->id : ''),
       jawaban: '',
-      kunciJawaban: @json(isset($data['post']['kunciJawaban']) ? $data['post']['kunciJawaban'] : false),
+      show_jawaban: @json(isset($data['post']['kunciJawaban']) ? true : false),
+      card_click: '',
     }
   </script>
   @empty($data['post'])  
@@ -31,7 +32,7 @@
     :kabupaten="$data['kabupaten']->keys()"
     :timeOtomatis="(isset($data['post']['time_otomatis']) ? true : false)"
     :durasi="(isset($data['post']) ? $data['post']['menit']*60 + $data['post']['detik'] : 120)"
-    :kunciJawaban="(isset($data['post']) ? $data['post']['kunciJawaban'] : false)"
+    :kunciJawaban="(isset($data['post']['kunciJawaban']) ? true : false)"
   ></x-modal.soal>
 
 

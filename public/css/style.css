@@ -136,19 +136,75 @@
   #pilihan_kabupaten a{
     transition: all 1s;
   }
-  #pilihan_kabupaten a:nth-child(13n+1), #pilihan_kabupaten a:nth-child(13n+1) i{ color: var(--pastel-1); }
-  #pilihan_kabupaten a:nth-child(13n+2), #pilihan_kabupaten a:nth-child(13n+2) i{ color: var(--pastel-2); }
-  #pilihan_kabupaten a:nth-child(13n+3), #pilihan_kabupaten a:nth-child(13n+3) i{ color: var(--pastel-3); }
-  #pilihan_kabupaten a:nth-child(13n+4), #pilihan_kabupaten a:nth-child(13n+4) i{ color: var(--pastel-4); }
-  #pilihan_kabupaten a:nth-child(13n+5), #pilihan_kabupaten a:nth-child(13n+5) i{ color: var(--pastel-5); }
-  #pilihan_kabupaten a:nth-child(13n+6), #pilihan_kabupaten a:nth-child(13n+6) i{ color: var(--pastel-6); }
-  #pilihan_kabupaten a:nth-child(13n+7), #pilihan_kabupaten a:nth-child(13n+7) i{ color: var(--pastel-7); }
-  #pilihan_kabupaten a:nth-child(13n+8), #pilihan_kabupaten a:nth-child(13n+8) i{ color: var(--pastel-8); }
-  #pilihan_kabupaten a:nth-child(13n+9), #pilihan_kabupaten a:nth-child(13n+9) i{ color: var(--pastel-9); }
-  #pilihan_kabupaten a:nth-child(13n+10), #pilihan_kabupaten a:nth-child(13n+10) i{ color: var(--pastel-10); }
-  #pilihan_kabupaten a:nth-child(13n+11), #pilihan_kabupaten a:nth-child(13n+11) i{ color: var(--pastel-11); }
-  #pilihan_kabupaten a:nth-child(13n+12), #pilihan_kabupaten a:nth-child(13n+12) i{ color: var(--pastel-12); }
-  #pilihan_kabupaten a:nth-child(13n+13), #pilihan_kabupaten a:nth-child(13n+13) i{ color: var(--pastel-13); }
+  #pilihan_kabupaten a:nth-child(13n+1), 
+  #pilihan_kabupaten a:nth-child(13n+1) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+1)
+    { color: var(--pastel-1); }
+
+  #pilihan_kabupaten a:nth-child(13n+2), 
+  #pilihan_kabupaten a:nth-child(13n+2) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+2)
+    { color: var(--pastel-2); }
+
+  #pilihan_kabupaten a:nth-child(13n+3), 
+  #pilihan_kabupaten a:nth-child(13n+3) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+3)
+    { color: var(--pastel-3); }
+
+  #pilihan_kabupaten a:nth-child(13n+4), 
+  #pilihan_kabupaten a:nth-child(13n+4) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+4)
+    { color: var(--pastel-4); }
+
+  #pilihan_kabupaten a:nth-child(13n+5), 
+  #pilihan_kabupaten a:nth-child(13n+5) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+5)
+    { color: var(--pastel-5); }
+
+  #pilihan_kabupaten a:nth-child(13n+6), 
+  #pilihan_kabupaten a:nth-child(13n+6) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+6)
+    { color: var(--pastel-6); }
+
+  #pilihan_kabupaten a:nth-child(13n+7), 
+  #pilihan_kabupaten a:nth-child(13n+7) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+7)
+    { color: var(--pastel-7); }
+
+  #pilihan_kabupaten a:nth-child(13n+8), 
+  #pilihan_kabupaten a:nth-child(13n+8) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+8)
+    { color: var(--pastel-8); }
+
+  #pilihan_kabupaten a:nth-child(13n+9), 
+  #pilihan_kabupaten a:nth-child(13n+9) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+9)
+    { color: var(--pastel-9); }
+
+  #pilihan_kabupaten a:nth-child(13n+10), 
+  #pilihan_kabupaten a:nth-child(13n+10) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+10){
+    color: var(--pastel-10);
+  }
+  
+  #pilihan_kabupaten a:nth-child(13n+11), 
+  #pilihan_kabupaten a:nth-child(13n+11) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+11){
+    color: var(--pastel-11); 
+  }
+  
+  #pilihan_kabupaten a:nth-child(13n+12), 
+  #pilihan_kabupaten a:nth-child(13n+12) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+12){
+    color: var(--pastel-12); 
+  }
+  
+  #pilihan_kabupaten a:nth-child(13n+13), 
+  #pilihan_kabupaten a:nth-child(13n+13) i,
+  #pilihan_soal .text_kabupaten:nth-child(13n+13){
+    color: var(--pastel-13); 
+  }
+
   #pilihan_kabupaten a:nth-child(13n+1) button.triger-tooltip{border-color: var(--pastel-1);}
   #pilihan_kabupaten a:nth-child(13n+2) button.triger-tooltip{border-color: var(--pastel-2);}
   #pilihan_kabupaten a:nth-child(13n+3) button.triger-tooltip{border-color: var(--pastel-3);}
@@ -198,9 +254,15 @@
   #pilihan_soal{
     width: calc(100vw - 15rem);
   }
+  #pilihan_soal .pilihan[lokasi]{
+    padding-top: 5rem;
+  }
   
   @media only screen and (max-width: 768px) {
     #pilihan_soal{
       width: 100vw !important;
+    }
+    #pilihan_soal .pilihan[lokasi]{
+      padding-top: 0px;
     }
   }

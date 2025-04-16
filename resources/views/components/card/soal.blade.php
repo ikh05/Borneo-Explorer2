@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" nomor="{{ $slot }}" soal="" jawaban="">
     <div class="card-flip">
         <div class="card-front">
         <div style="--x:{{ $x }}; --y:{{ $y }}; background-image: url('img/bg/bg-{{ Str::remove(' ', Str::lower($name)) }}.jpg');" class="puzzle-piece d-flex align-items-center justify-content-center position-absolute w-100 h-100">

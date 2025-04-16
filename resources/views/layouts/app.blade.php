@@ -15,6 +15,9 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="/js/konekServer.js"></script>
     <script src="/js/function.js"></script>
+    <script>
+      const base_url = "{{ url('/') }}"
+    </script>
   </head>
   <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden" data-bs-theme="dark">
     @yield('main')

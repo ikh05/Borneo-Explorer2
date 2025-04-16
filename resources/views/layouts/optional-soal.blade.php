@@ -86,17 +86,22 @@
       });
     });
 
-    // card soal di buak
-    $('.card-front').each(function(i,e) { 
+    // card soal di buka
+
+    // front
+    $('.card').each(function(i,e) { 
       $(e).on('click', function() {
         // mengecek apakah bisa flipcard
         if(!boolean_flipcard) return 0;
-        let $flip = $(this).closest('.card-flip');
-        $flip.addClass('flip-active');
-        window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');          
 
+        // set card_click
+        window.setting.card_click = $(this).attr('nomor');
+
+        // mengambil kartu
+        let $flip = $(this).find('.card-flip');
+        
         // mendapatkan bonus
-        if($flip.find('.p-materi').text() === bonus){
+        if($flip.find('.p-materi').text() === bonus && !$flip.hasClass('flip-active')){
           boolean_flipcard = false;
           // munculkan modal yang di edit
           const modal = new bootstrap.Modal(document.getElementById('jawaban'));
@@ -110,11 +115,17 @@
             playTeks('Selamat kamu lanjut ke kabupaten selanjutnya.');
             boolean_flipcard = true;
           }, 1000);
+          
         }
+        // mengambil nilai lokasi dan membalik kartu
+        $flip.addClass('flip-active');
+        window.setting.lokasi = $flip.find('.btn-materi').attr('lokasi');          
 
         // semua kartu sudah di buka
+        console.log(window.setting.lokasi + ' sudah ' + $flip.closest('.card').parent().find('.flip-active').length + ' nomor teruka');
         if($flip.closest('.card').parent().find('.flip-active').length === 9){
-          // buka mekanisme restart flip
+          // buka mekanisme restart 
+          console.log('aktifkan reset');
           $('#backFlip_'+window.setting.lokasi).removeClass('d-none');
         }
 

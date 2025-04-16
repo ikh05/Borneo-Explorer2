@@ -113,7 +113,7 @@ class GameController extends Controller
         // jalan pintas
         $this->data['pintas'] = [
             'Hulu Sungai Tengah' => 'Balangan',
-            'Tanah Bumbu' => 'Banjar'
+            'Hulu Sungai Selatan' => 'Hulu Sungai Utara',
         ];
         // generate keyGame
         $key = '';

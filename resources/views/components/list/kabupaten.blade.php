@@ -6,7 +6,10 @@
     @endisset
     <p class="m-0 d-inline-block">{{ $name }}</p>
     <span class="fa-hover">
-        <i id="backFlip_{{ $name }}"  class="d-none fa-solid fa-rectangle-list fa-hover-flip position-absolute me-1 top-50 end-0 translate-middle"></i>
+        <i id="backFlip_{{ Str::remove(' ', $name) }}"  class="d-none fa-solid fa-rectangle-list fa-hover-flip position-absolute me-1 top-50 end-0 translate-middle"
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-custom-class="custom-tooltip"
+        data-bs-title="Tutup lagi semua nomor di {{ $name }}"></i>
     </span>
 </a>
 

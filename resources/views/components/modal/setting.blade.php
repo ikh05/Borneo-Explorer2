@@ -86,27 +86,31 @@
 
           <!-- waktu Pengerjaan -->
           <p class="mb-0">Waktu Pengerjaan Soal</p>
-          <div class="input-group mb-3 has-validation">
-            <input id="setting_menit" name="menit" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['menit'] : 3 }}">
-            <span class="input-group-text">menit</span>
-            <input id="setting_detik" name="detik" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['detik'] : 0 }}">
-            <span class="input-group-text">detik</span>
-            <div class="invalid-feedback">
-              Tolong isi dengan benar waktu yang diberikan untuk peserta berhitung.
+          <div class="mb-3">
+
+            <div class="input-group has-validation">
+              <input id="setting_menit" name="menit" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['menit'] : 3 }}">
+              <span class="input-group-text">menit</span>
+              <input id="setting_detik" name="detik" type="number" class="form-control" min="0" max="59" value="{{ isset($data['post']) ? $data['post']['detik'] : 0 }}">
+              <span class="input-group-text">detik</span>
+              <div class="invalid-feedback">
+                Tolong isi dengan benar waktu yang diberikan untuk peserta berhitung.
+              </div>
             </div>
-          </div>
-          <div class="form-check">
-            <input name="time_otomatis" class="form-check-input" type="checkbox" value="time_otomatis" id="time_otomatis" @checked(isset($data['post']['time_otomatis'])) >
-            <label class="form-check-label" for="time_otomatis">Mulai waktu saat soal di munculkan</label>
+            <div class="form-check">
+              <input name="time_otomatis" class="form-check-input" type="checkbox" value="time_otomatis" id="time_otomatis" @checked(!isset($data['post']) || isset($data['post']['time_otomatis'])) >
+              <label class="form-check-label" for="time_otomatis">Mulai waktu saat soal di munculkan</label>
+            </div>
           </div>
           <div class="mb-3">
+            <p class="mb-0">Tambahan</p>
             <div class="form-check">
               <input name="kunciJawaban" class="form-check-input" type="checkbox" value="kunciJawaban" id="kunciJawaban" @checked(!isset($data['post']) || isset($data['post']['kunciJawaban'])) >
-              <label class="form-check-label" for="kunciJawaban">Tunjukkan Kunci Jawaban</label>
+              <label class="form-check-label" for="kunciJawaban">Selalu Tampilkan Jawaban yang Benar</label>
             </div>
+            <p class=" mb-3 small text-secondary"> Jika tidak diaktifkan, jawaban bisa dilihat melalui link {{ url('/host/{KODE_GAME}') }}</p>
           </div>
         </div>
-        <p class=" mb-3 small text-secondary"> Jika ini tidak di aktifkan maka jawaban bisa di lihat melalui link {{ url('/host/{KODE_GAME}') }}</p>
         <div class="modal-footer">
           <button class="btn btn-outline-info hover-up"><i class="fa-solid fa-star"></i> Mulai Baru</button>
         </div>

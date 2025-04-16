@@ -41,10 +41,31 @@
       try {
         $('#load-first').removeClass('d-none').html('Menyiapkan Soal ...');
         $('#load-second').addClass('d-none');
-        // buat soal
-        await buatSoal();
+        const $card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']'); 
+        console.log($card_click.attr('soal'));
+        if($card_click.attr('soal') === ''){
+          // buat soal
+          await buatSoal();
+          $card_click.attr('soal', window.setting.soal_text);
+          $card_click.attr('jawaban', window.setting.jawaban);
+        }else{
+          window.setting.soal_text = $card_click.attr('soal');
+          window.setting.jawaban = $card_click.attr('jawaban');
+        }
+        
+        // update soal di database
+        postServer('simpan-soal', {
+          lokasi: window.setting.lokasi,
+          materi: window.setting.materi,
+          soal_text: window.setting.soal_text,
+          soal_sound: window.setting.soal_sound,
+          game_id: window.setting.game_id,
+          jawaban: window.setting.jawaban,
+        });
         
         // tempel soal
+        document.getElementById('soal_lokasi').innerHTML = window.setting.lokasi.replace(/([A-Z])/g, ' $1').trim();
+        document.getElementById('soal_materi').innerHTML = formatJudul(window.setting.materi);
         $('#modal_soal .soal-container').html(window.setting.soal_text);
         $('#kunci_jawaban').html(window.setting.jawaban);
         
@@ -119,20 +140,8 @@
     });
 
     const formatJudul = (str) => str.replace(/_/g, ' ').replace(/\b\w/g, m => m.toUpperCase()).replace(/\bDan\b/g, 'dan');
-    function buatSoal(){
-      window.setting.soal_text = window[window.setting.lokasi][window.setting.materi]();
-      console.log('berhasil di tambahkan');
-      let simpanSoal = postServer('simpan-soal', {
-        lokasi: window.setting.lokasi,
-        materi: window.setting.materi,
-        soal_text: window.setting.soal_text,
-        soal_sound: window.setting.soal_sound,
-        game_id: window.setting.game_id,
-        jawaban: window.setting.jawaban,
-      });
-      console.log('selesai melakukan ajax');
-      document.getElementById('soal_lokasi').innerHTML = window.setting.lokasi.replace(/([A-Z])/g, ' $1').trim();
-      document.getElementById('soal_materi').innerHTML = formatJudul(window.setting.materi);
+    function buatSoal(setting = window.setting){
+      window.setting.soal_text = window[setting.lokasi][setting.materi]();
       return 1;
     }
   });
