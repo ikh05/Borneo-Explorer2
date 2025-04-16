@@ -77,21 +77,21 @@ window.TanahLaut = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = '';
+        let text = 'Sejak beberapa tahun lalu hingga sekarang Pantai Batakan tetap menjadi destinasi wisata favorit di Kabupaten Tanah Laut, Kalimantan Selatan. Data pada Dinas Pariwisata (Dispar) Tala menunjukkan bahwa sejak hari kedua libur panjang Hari Raya Idulfitri 1446 Hijriyah hingga 3 April, jumlah pengunjung mencapai 16.800 orang. Angka tersebut berdasar jumlah karcis masuk yang terjual, terbanyak pada Rabu atau 2 April kemarin, yakni terjual 74 pak karcis masuk. Satu pak berisi 100 lembar karcis. Artinya, pada hari tersebut setidaknya sebanyak 7.400 orang pengunjung datang ke Pantai Batakan Baru. Sedangkan pada tanggal 31 Maret terjual __a__ pak, dan 1 April terjual __b__ pak. Tentukan jumlah pak yang terjual pada 2 April.';
         let a = 0;
-        let x = 0;
+        let b = 0;
 
         do {
-            a = Soal.randomInterval(6,9);
-            x = Soal.randomInterval(20000, 22000, 1000);
-        } while (TanahLaut.random_persamaan_linear.array_in_array([a, x]));
-        TanahLaut.random_persamaan_linear.lastPush([a, x]);
+            a = Soal.randomInterval(5, 10);
+            b = Soal.randomInterval(35, 40);
+        } while (TanahLaut.random_persamaan_linear.array_in_array([a, b]));
+        TanahLaut.random_persamaan_linear.lastPush([a, b]);
 
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(200000 - a*x).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = 168 - (74 + a + b);
         return text
             .replace('__a__', a)
-            .replace('__x__', x.toLocaleString('id-ID'));
+            .replace('__b__', b);
     },
 
     // barisan dan deret
@@ -119,8 +119,7 @@ window.TanahLaut = {
         TanahLaut.random_barisan_dan_deret.lastPush([t, n, b]);
         
         // jawaban
-        window.setting.jawaban = 20014 + (n-1)*b;
-        window.setting.soal_sound = '';
+        window.setting.jawaban = 20014 + n*b;
         console.log('jawaban di dapatkan');
         return text
             .replace('__t__', t)
