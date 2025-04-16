@@ -235,7 +235,7 @@ class GameController extends Controller
         $game = Game::where('key', $request->input('key'))->first();
     
         $last = $game->soals->last();
-        if($last->empty()) return response()->json([
+        if(!$last) return response()->json([
             'status' => 'success',
             'message' => 'Tidak ada soal!'
         ]);
