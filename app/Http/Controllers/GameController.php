@@ -232,7 +232,7 @@ class GameController extends Controller
         ]);
     }
     function ambilSoalTerakhir(Request $request){
-        $game = Game::where('key', $request->input('key'))->with('soals')->first();
+        $game = Game::where('key', $request->input('key'))->first();
     
         $last = $game->soals->last();
         if($last->empty()) return response()->json([
