@@ -45,10 +45,13 @@
         console.log($card_click.attr('soal'));
         if($card_click.attr('soal') === ''){
           // buat soal
+          window.setting.soal_sound = '';
           await buatSoal();
           $card_click.attr('soal', window.setting.soal_text);
           $card_click.attr('jawaban', window.setting.jawaban);
+          $card_click.attr('sound', (window.setting.soal_sound === '') ? window.setting.soal_text : window.setting.soal_sound);
         }else{
+          window.setting.soal_sound = $card_click.attr('sound');
           window.setting.soal_text = $card_click.attr('soal');
           window.setting.jawaban = $card_click.attr('jawaban');
         }
@@ -111,7 +114,7 @@
       $('#modal_soal .soal').removeClass('d-none');
 
       setTimeout(() => {
-        playTeks(window.setting.soal);
+        playTeks(window.setting.soal_sound === '' ? window.setting.soal_text : window.setting.soal_sound);
       }, 500);
     });
 

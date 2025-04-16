@@ -1,12 +1,51 @@
 window.TanahLaut = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
+        let text = `<p class="mb-0">Ekowisata mangrove di Desa Pagatan Besar merupakan destinasi wisata yang menawarkan keunikan berupa hutan mangrove, pantai, budaya lokal, serta wisata susur. Lokasinya berada di Jalan Gang Balai, RT 10, Desa Pagatan Besar, Kecamatan Takisung, Kabupaten Tanah Laut, Kalimantan Selatan. Tempat ini menjadi salah satu destinasi wisata edukatif pertama di Tanah Laut yang berfokus pada pelestarian dan pembelajaran tentang ekosistem hutan mangrove. Pengelolaannya dilakukan oleh Kelompok Sadar Wisata (Pokdarwis) Desa Pagatan Besar, dan ekowisata ini telah beroperasi sejak tahun 2019. Berikut adalah data jumlah pengunjung pendidikan dan penelitian wisata hutan mangrove: </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Kategori</th>
+                    <th scope="col">Jumlah Pengunjung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>SD</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>SMA</td>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Mahasiswa S1</td>
+                    <td>33</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Mahasiswa S2</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Dosen dan Staff</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mb-0">Tentukan rata-rata jumlah pengunjung untuk kategori __kategori__!</p>`;
+        let sound = `Ekowisata mangrove di Desa Pagatan Besar merupakan destinasi wisata yang menawarkan keunikan berupa hutan mangrove, pantai, budaya lokal, serta wisata susur. Lokasinya berada di Jalan Gang Balai, RT 10, Desa Pagatan Besar, Kecamatan Takisung, Kabupaten Tanah Laut, Kalimantan Selatan. Tempat ini menjadi salah satu destinasi wisata edukatif pertama di Tanah Laut yang berfokus pada pelestarian dan pembelajaran tentang ekosistem hutan mangrove. Pengelolaannya dilakukan oleh Kelompok Sadar Wisata (Pokdarwis) Desa Pagatan Besar, dan ekowisata ini telah beroperasi sejak tahun 2019. Berikut adalah data jumlah pengunjung pendidikan dan penelitian wisata hutan mangrove. >Tentukan rata-rata jumlah pengunjung untuk kategori __kategori__!`;
         const data = {
-            2004: 11189920000,
-            2005: 14845000000,
-            2006: 22179635000,
-            2007: 19073670000,
-            2011: 22475238000
+            SD: 10,
+            SMA: 21,
+            Mahasiswa_S1: 33,
+            Mahasiswa_S2: 1,
+            Dosen_dan_Staff: 10
         }
         console.log('statistika belum_random');
         
@@ -26,18 +65,19 @@ window.TanahLaut = {
 
         // simpan ke daftar 5 terakhir
         TanahLaut.random_statistika.lastPush(randomEntries);
+        let kunjungan = randomEntries.map(e => e[1])
+        let kategori = randomEntries.map(e => e[0])
 
-        window.setting.jawaban = 'Rp\\('+((randomEntries[0][1] + randomEntries[1][1] + randomEntries[2][1])/3).toLocaleString('id-ID')+'\\),-'
-        return text
-            .replace('__tahunA__', randomEntries[0][0])
-            .replace('__tahunB__', randomEntries[1][0])
-            .replace('__tahunC__', randomEntries[2][0]);
+
+        window.setting.jawaban = (kunjungan.mean());
+        window.setting.soal_sound = sound.replace('__kategori__', kategori.joinName())
+        return text.replace('__kategori__', kategori.joinName());
     },
 
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-
+        let text = '';
         let a = 0;
         let x = 0;
 
@@ -57,34 +97,34 @@ window.TanahLaut = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
+        let text = 'Luas panen jagung di Kabupaten Tanah Laut pada tahun 2022 adalah 20.014 hektar. Diasumsikan bahwa setiap tahun, luas panen bertambah secara teratur sebesar __b__ hektar karena peningkatan produktivitas. Tentukan luas panen jagung pada tahun __t__.'
         // a=400.000-600.000 (kelipatan 20.000)
         // r=2-3 
         // n=4-6 
         // Jawaban: U_n=ar^(n-1)  
 
         // random
-        let a = 0;
+        let t = 0;
         let n = 0;
-        let r = 0;
+        let b = 0;
         console.log('mulai random');
         
         do {
-            a = Soal.randomInterval(400000,600000, 20000);
-            n = Soal.randomInterval(4,6);
-            r = Soal.randomInterval(2,3);
+            t = Soal.randomInterval(2025, 2030);
+            n = t - 2022;
+            b = Soal.randomInterval(400, 600, 100);
             console.log('selesai random, akan di cek');
             
-        } while (TanahLaut.random_barisan_dan_deret.array_in_array([a, r, n]));
-        console.log('masukkan ke array record');
-        TanahLaut.random_barisan_dan_deret.lastPush([a, r, n]);
-        console.log('sudah di masukkan');
+        } while (TanahLaut.random_barisan_dan_deret.array_in_array([t, n, b]));
+        TanahLaut.random_barisan_dan_deret.lastPush([t, n, b]);
         
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(a*r^(n-1)).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = 20014 + (n-1)*b;
+        window.setting.soal_sound = '';
         console.log('jawaban di dapatkan');
         return text
-            .replace('__a__', a.toLocaleString('id-ID'))
-            .replace('__r__', r)
+            .replace('__t__', t)
+            .replace('__b__', b)
             .replace('__n__', n);
     }
 }

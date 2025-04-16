@@ -27,7 +27,7 @@
     <script src="{{ url('js/konekServer.js?v=last') }}"></script>
     <script src="{{ url('js/function.js?v=1') }}"></script>
   </head>
-  <body style="overflow-x: hidden; height: 100vh;" class="overflow-y-hidden" data-bs-theme="dark">
+  <body style="overflow-x: hidden;" data-bs-theme="dark">
     @yield('main')
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>

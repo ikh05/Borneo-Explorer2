@@ -1,62 +1,71 @@
 window.KotaBanjarbaru = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        const data = {
-            2004: 11189920000,
-            2005: 14845000000,
-            2006: 22179635000,
-            2007: 19073670000,
-            2011: 22475238000
-        }
-        console.log('statistika belum_random');
-        
+        let text = `
+        <p class="mb-0">Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:</p>
+        <ul class="mb-0">
+            <li>Senin:__data1__ pengunjung</li>
+            <li>Selasa:__data2__ pengunjung</li>
+            <li>Rabu:__data3__ pengunjung</li>
+            <li>Kamis:__data4__ pengunjung</li>
+            <li>Jumat:__data5__ pengunjung</li>
+            <li>Sabtu:__data6__ pengunjung</li>
+            <li>Minggu:__data7__ pengunjung</li>
+        </ul>
+        <p class="mb-0">Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!</p>
+        `
+        let soal_sound = `Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:, Senin __data1__ pengunjung, Selasa __data2__ pengunjung, Rabu __data3__ pengunjung, Kamis __data4__ pengunjung, Jumat __data5__ pengunjung, Sabtu __data6__ pengunjung, Minggu __data7__ pengunjung. Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!`;
+        let data1 = [];
+        let data2 = [];
+        let data = [];
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
-        let randomEntries = '';
-        console.log(typeof (KotaBanjarbaru.random_statistika));
         
         do {
-            console.log('statistika iterasi_random');
-            randomEntries = Object.entries(data)
-            .shuffleArray()
-            .slice(0, 3)
-            .sort((a, b) => a[0] - b[0]);
-            console.log('statistika sudah_di random');
-        } while (KotaBanjarbaru.random_statistika.array_in_array(randomEntries));
+            data = [];
+            data1 = Soal.randomArray(40, 80, 5, 1, 5);
+            data2 = Soal.randomArray(100, 300, 2, 1, 5);
+            data = data1.concat(data2)
+
+        } while (KotaBanjarbaru.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        KotaBanjarbaru.random_statistika.lastPush(randomEntries);
+        KotaBanjarbaru.random_statistika.lastPush(data);
 
-        window.setting.jawaban = 'Rp\\('+((randomEntries[0][1] + randomEntries[1][1] + randomEntries[2][1])/3).toLocaleString('id-ID')+'\\),-'
-        return text
-            .replace('__tahunA__', randomEntries[0][0])
-            .replace('__tahunB__', randomEntries[1][0])
-            .replace('__tahunC__', randomEntries[2][0]);
+        window.setting.jawaban = data.mean();
+        data.forEach((element, index) => {
+            text = text.replace(`__data${i+1}__`, element);
+            soal_sound = soal_sound.replace(`__data${i+1}__`, element);
+        });
+        window.setting.soal_sound = soal_sound;
+        return text;
     },
 
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-
+        let text = `Pada hari Minggu pagi yang cerah, Ibu Galuh memutuskan untuk menghabiskan waktu bersama anak-anaknya dan keponakannya dengan berkunjung ke Kebun Raya Banua. Tempat itu terkenal sebagai salah satu destinasi wisata alam yang menyenangkan, terutama bagi keluarga. Udara yang sejuk, pepohonan rindang, dan berbagai fasilitas yang memadai, kebun raya ini selalu ramai pengunjung. Setiap akhir pekan, ratusan orang datang untuk menikmati keindahan alam dan beristirahat sejenak dari kesibukan kota. Setelah tiba di loket tiket, Ibu Galuh membeli 1 tiket dewasa untuk dirinya sendiri dan 4 tiket untuk anak-anak. Harga tiket untuk orang dewasa adalah Rp__b__. Setelah membayar, Ibu Galuh menerima struk dengan total pembayaran sebesar Rp__a__. Berdasarkan informasi tersebut, bantu Ibu Galuh untuk mengetahui berapa harga tiket untuk satu anak-anak!`;
         let a = 0;
-        let x = 0;
+        let b = 0;
 
         do {
-            a = Soal.randomInterval(6,9);
-            x = Soal.randomInterval(20000, 22000, 1000);
-        } while (KotaBanjarbaru.random_persamaan_linear.array_in_array([a, x]));
-        KotaBanjarbaru.random_persamaan_linear.lastPush([a, x]);
+            a = Soal.randomInterval(20000, 25000, 1000);
+            b = Soal.randomInterval(7000, 10000, 1000);
+        } while (KotaBanjarbaru.random_persamaan_linear.array_in_array([a, b]));
+        KotaBanjarbaru.random_persamaan_linear.lastPush([a, b]);
 
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(200000 - a*x).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = 'Rp\\('+((a-b)/4).toLocaleString('id-ID')+'\\),-';
+        window.setting.soal_sound = '';
         return text
-            .replace('__a__', a)
-            .replace('__x__', x.toLocaleString('id-ID'));
+            .replace('__a__', a.toLocaleString('id-ID'))
+            .replace('__b__', b.toLocaleString('id-ID'));
     },
 
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
+        let text = 'Kampung Purun yang berada di Kelurahan Palam, Kecamatan Cempaka, Kalimantan Selatan, dikenal sebagai sentra kerajinan tangan dari bahan purun, seperti tas, topi, dan bakul yang dibuat langsung oleh para pengrajin di teras rumah mereka. Setiap bulan, hasil produksi kerajinan meningkat mengikuti pola barisan aritmetika, di mana pada bulan pertama diproduksi __a__ buah, bulan kedua __U2__ buah, dan bulan ketiga __U3__ buah. Berapakah jumlah produksi kerajinan pada bulan ke-__n__?'
         // a=400.000-600.000 (kelipatan 20.000)
         // r=2-3 
         // n=4-6 
@@ -69,22 +78,25 @@ window.KotaBanjarbaru = {
         console.log('mulai random');
         
         do {
-            a = Soal.randomInterval(400000,600000, 20000);
-            n = Soal.randomInterval(4,6);
-            r = Soal.randomInterval(2,3);
+            a = Soal.randomInterval(20, 40);
+            b = Soal.randomInterval(3, 8);
+            n = Soal.randomInterval(5, 12);
             console.log('selesai random, akan di cek');
             
-        } while (KotaBanjarbaru.random_barisan_dan_deret.array_in_array([a, r, n]));
+        } while (KotaBanjarbaru.random_barisan_dan_deret.array_in_array([a, b, n]));
         console.log('masukkan ke array record');
-        KotaBanjarbaru.random_barisan_dan_deret.lastPush([a, r, n]);
+        KotaBanjarbaru.random_barisan_dan_deret.lastPush([a, b, n]);
         console.log('sudah di masukkan');
         
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(a*r^(n-1)).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = 'Rp\\('+(a+b*(n-1)).toLocaleString('id-ID')+'\\),-';
+        window.setting.soal_sound = '';
+
         console.log('jawaban di dapatkan');
         return text
             .replace('__a__', a.toLocaleString('id-ID'))
-            .replace('__r__', r)
-            .replace('__n__', n);
+            .replace('__U2__', a+b)
+            .replace('__U3__', a+b*2)
+            .replace('__n__', n)
     }
 };

@@ -1,90 +1,93 @@
 window.HuluSungaiSelatan = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        const data = {
-            2004: 11189920000,
-            2005: 14845000000,
-            2006: 22179635000,
-            2007: 19073670000,
-            2011: 22475238000
-        }
-        console.log('statistika belum_random');
-        
-        // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
-        let randomEntries = '';
-        console.log(typeof (HuluSungaiSelatan.random_statistika));
-        
+       let text = `Dari data kunjungan aktivitas Balanting Paring (Bamboo Rafting) selama __n__ minggu didapat data sebagai berikut: __daftar_data__. Tentukan modus dari data tersebut.`;
+        let data =[];
+        let n = 0
         do {
-            console.log('statistika iterasi_random');
-            randomEntries = Object.entries(data)
-            .shuffleArray()
-            .slice(0, 3)
-            .sort((a, b) => a[0] - b[0]);
-            console.log('statistika sudah_di random');
-        } while (HuluSungaiSelatan.random_statistika.array_in_array(randomEntries));
+            n = Soal.randomInterval(7, 9)
+            data = Soal.randomArray(100, 300, n, 1, 50);
+        } while (HuluSungaiSelatan.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        HuluSungaiSelatan.random_statistika.lastPush(randomEntries);
+        HuluSungaiSelatan.random_statistika.lastPush(data);
 
-        window.setting.jawaban = 'Rp\\('+((randomEntries[0][1] + randomEntries[1][1] + randomEntries[2][1])/3).toLocaleString('id-ID')+'\\),-'
+        window.setting.jawaban = data.modus().joinName();
+        window.setting.soal_sound = '';
         return text
-            .replace('__tahunA__', randomEntries[0][0])
-            .replace('__tahunB__', randomEntries[1][0])
-            .replace('__tahunC__', randomEntries[2][0]);
+            .replace('__n__', n)
+            .replace('__daftar_data__', data.joinName());
     },
 
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-
-        let a = 0;
-        let x = 0;
-
+        let text = `Seorang petani memiliki dua jenis lahan yaitu lahan untuk budidaya kerbau rawa adalah __v1__ hektar dan lahan untuk menanam sagu adalah __v2__ hektar. Jika jumlah kedua lahan sebesar __b__ hektar, tuliskan bentuk persamaan linear dua variabelnya.`;
+        let variabel = 'abcdefghijklmnopqrstuvwxyz';
+        let b = 0;
+        let v = '';
         do {
-            a = Soal.randomInterval(6,9);
-            x = Soal.randomInterval(20000, 22000, 1000);
-        } while (HuluSungaiSelatan.random_persamaan_linear.array_in_array([a, x]));
-        HuluSungaiSelatan.random_persamaan_linear.lastPush([a, x]);
+            v = variabel.match(/(?=(\w\w))/g).map((_, i) => variabel.slice(i, i + 2));
+            b = Soal.randomInterval(170, 200)
+        } while (HuluSungaiSelatan.random_persamaan_linear.array_in_array([v, b]));
+        HuluSungaiSelatan.random_persamaan_linear.lastPush([v, b]);
 
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(200000 - a*x).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = `\(${v[0]} + ${v[1]} = ${b}\)`;
+        window.setting.soal_sound = '';
         return text
-            .replace('__a__', a)
-            .replace('__x__', x.toLocaleString('id-ID'));
+            .replace('__b__', b)
+            .replace('__v1__', v[0])
+            .replace('__v2__', v[1]);
     },
 
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        // a=400.000-600.000 (kelipatan 20.000)
-        // r=2-3 
-        // n=4-6 
-        // Jawaban: U_n=ar^(n-1)  
+        let text = `Seorang pengelola wisata mencatat jumlah pengunjung Danau Bangkau setiap bulan selama setahun. Jika jumlah pengunjung pada bulan pertama adalah __a__ orang dan __data__, maka __pertanyaan__?`;
+
+        let data = {
+            aritmatika: 'meningkat sebesar __b__ orang setiap bulan',
+            geometri: 'setiap bulannya meningkat __r__ kali lipat dari bulan sebelumnya'
+        }
+        let pertanyaan = {
+            barisan_v1: 'barisan apa yang terbentuk dari pola jumlah pengunjung tersebut?',
+            barisan_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung pada bulan tertentu?',
+            deret_v1: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama __n__ bulan?',
+            deret_v2: 'konsep apa yang bisa digunakan untuk mengetahui jumlah pengunjung selama 1 tahun?',
+        }
+
+        // ambil 1 data dan 1 pertanyaan
 
         // random
-        let a = 0;
-        let n = 0;
-        let r = 0;
+        let a = Soal.randomInterval(50, 100);
+        let n = Soal.randomInterval(3, 12);
+        let r = Soal.randomInterval(1, 2, 0,5);
+        let b = Soal.randomInterval(10, 30);
         console.log('mulai random');
         
+        let randomPertanyaan = '';
+        let randomData = '';            
         do {
-            a = Soal.randomInterval(400000,600000, 20000);
-            n = Soal.randomInterval(4,6);
-            r = Soal.randomInterval(2,3);
-            console.log('selesai random, akan di cek');
-            
-        } while (HuluSungaiSelatan.random_barisan_dan_deret.array_in_array([a, r, n]));
+            randomData = Object.keys(data)[Math.floor(Math.random() * Object.keys(data).length)]
+            randomPertanyaanKey = Object.keys(pertanyaan)[Math.floor(Math.random() * Object.keys(pertanyaan).length)];
+
+        } while (HuluSungaiSelatan.random_barisan_dan_deret.array_in_array([randomPertanyaan, randomData]));
         console.log('masukkan ke array record');
-        HuluSungaiSelatan.random_barisan_dan_deret.lastPush([a, r, n]);
+        HuluSungaiSelatan.random_barisan_dan_deret.lastPush([randomPertanyaan, randomData]);
         console.log('sudah di masukkan');
         
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(a*r^(n-1)).toLocaleString('id-ID')+'\\),-';
+        window.setting.jawaban = (randomPertanyaan.includes('deret') ? 'Deret ' : 'Barisan ') + randomData;
+        window.setting.soal_sound = '';
         console.log('jawaban di dapatkan');
+        text = text.replace('__data__', data[randomData])
+            .replace('__pertanyaan__', pertanyaan[randomPertanyaan]);
         return text
-            .replace('__a__', a.toLocaleString('id-ID'))
+            .replace('__a__', a)
             .replace('__r__', r)
+            .replace('__b__', b)
             .replace('__n__', n);
     }
-};
+}

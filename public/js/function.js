@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
 
-Array.prototype.joinName = function (index = 0) {
+Array.prototype.joinName = function (index = 0, join=",") {
   const count = this.length;
   
   if (count === 0) {
@@ -17,9 +17,9 @@ Array.prototype.joinName = function (index = 0) {
     } else if (count === 2) {
         return `${data[0]} dan ${data[1]}`;
     } else {
-        const firstPart = data.slice(0, -1).join(', ');
+        const firstPart = data.slice(0, -1).join(join+' ');
         const lastPart = data[count - 1];
-        return `${firstPart}, dan ${lastPart}`;
+        return `${firstPart}${join} dan ${lastPart}`;
     }
   }
 }
@@ -78,6 +78,15 @@ Array.prototype.lastPush = function(item, maxLength = 5) {
     this.push(item); // Tambahkan elemen baru
     return this; // Return array untuk chaining
 };
+Array.prototype.mean = function () {
+  return this.reduce((a, b) => a + b, 0)/this.length;
+}
+
+Array.prototype.modus = function () {
+  const frek = this.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {});
+  const max = Math.max(...Object.values(frek));
+  return Object.keys(frek).filter(k => frek[k] === max).map(Number);
+}
 
 window.Soal = {
   randomInterval: function (min, max, kelipatan=1) {
@@ -96,12 +105,32 @@ window.Soal = {
     const result = min + (randomMultiples * kelipatan);
     
     return result;
+  },
+  randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1) {
+    let data = [];
+    let last = 0;
+    do {
+      data = [];
+
+      // Isi data sebanyak length - 1
+      for (let i = 0; i < length - 1; i++) {
+        data.push(this.randomInterval(min, max, kelipatan));
+      }
+
+      // Nilai terakhir, dijamin supaya total kelipatan kelipatan_total
+      last = this.randomInterval(min, max, kelipatan);
+      let totalSementara = data.reduce((a, b) => a + b, 0);
+      last = last - (totalSementara + last) % kelipatan_total;
+
+      // Validasi last tetap dalam rentang
+    } while (last < min || last > max);
+    
+    data[length - 1] = last;
+    return data;
   }
-  
 }
 
 });
-
 
 function playTeks(teks) {
   const msg = new SpeechSynthesisUtterance(teks);
@@ -113,41 +142,4 @@ function stopTeks() {
   if (window.speechSynthesis.speaking) {
     window.speechSynthesis.cancel();
   }
-}
-
-
-function addSoalDataBase() {
-  const data = {
-    soal_text: window.setting.soal,
-    lokasi: window.setting.lokasi,
-    materi: window.setting.materi,
-    jawaban: window.setting.jawaban,
-    game_id: window.setting.game,
-    // soal_sound: document.getElementById('soal_sound').value // jika nanti digunakan
-  };
-  
-  // Kirim data ke server menggunakan fetch
-  fetch('/simpan-soal', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-    },
-    body: JSON.stringify(data)
-  })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(err => { throw err; });
-    }
-    return response.json();
-  })
-  .then(result => {
-    console.log('Berhasil disimpan:', result);
-    alert(result.message);
-  })
-  .catch(error => {
-    console.error('Terjadi kesalahan:', error);
-    alert('Gagal menyimpan soal!');
-  });
-  
 }
