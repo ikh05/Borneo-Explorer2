@@ -27,7 +27,7 @@ window.Kotabaru = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = `Di Kabupaten Kotabaru terdapat beberapa pulau kecil yang hanya dapat diakses dengan perahu nelayan. Sebuah kelompok peneliti ingin melakukan penelitian ekosistem mangrove di salah satu pulau dan menyewa perahu untuk perjalanan. Biaya sewa perahu terdiri dari biaya tetap Rp__x__ dan biaya tambahan Rp50.000 per kilometer perjalanan. Jika kelompok peneliti memiliki anggaran maksimal Rp__y__, berapa kilometer maksimal perjalanan yang bisa mereka tempuh?`;
+        let text = `Di Kabupaten Kotabaru terdapat beberapa pulau kecil yang hanya dapat diakses dengan perahu nelayan. Sebuah kelompok peneliti ingin melakukan penelitian ekosistem mangrove di salah satu pulau dan menyewa perahu untuk perjalanan. Biaya sewa perahu terdiri dari biaya tetap Rp__y__ dan biaya tambahan Rp50.000 per kilometer perjalanan. Jika kelompok peneliti memiliki anggaran maksimal Rp__x__, berapa kilometer maksimal perjalanan yang bisa mereka tempuh?`;
         // Ketentuan Random:
         // x = 500.000 − 800.000 (kelipatan 100.000)
         // y = 100.000 − 200.000 (kelipatan 50.000)

@@ -1,7 +1,7 @@
 window.Balangan = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        let text = 'Terletak di Desa Nungka Kecamatan Awayan, Bendungan Pitap dibangun pada tahun 2004 hingga 2011, sebagai penunjang ketahanan nasional, yang menjadi sumber aliran air dan irigasi bagi pertanian, luasannya ribuan hektare yang tersebar pada beberapa kecamatan. Bendungan Pitap dibangun Kementerian Pekerjaan Umum dan Perumahan Rakyat, Direktorat Jenderal Sumber Daya Air, Balai Wilayah Sungai Kalimantan II dengan menggunakan Anggaran APBN sebagai berikut, Pada Tahun 2004, Rp11.000.000.000, pada tahun 2005, Rp15.000.000.000, kemudian tahun 2006 Rp22.000.000.000, dan tahun 2007 Rp19.000.000.000, dilanjutkan pada tahun 2011 Rp22.000.000.000. Tentukan rata-rata anggaran pada tahun __daftar tahun__';
+        let text = 'Terletak di Desa Nungka Kecamatan Awayan, Bendungan Pitap dibangun pada tahun 2004 hingga 2011, sebagai penunjang ketahanan nasional, yang menjadi sumber aliran air dan irigasi bagi pertanian, luasannya ribuan hektare yang tersebar pada beberapa kecamatan. Bendungan Pitap dibangun Kementerian Pekerjaan Umum dan Perumahan Rakyat, Direktorat Jenderal Sumber Daya Air, Balai Wilayah Sungai Kalimantan II dengan menggunakan Anggaran APBN sebagai berikut, Pada Tahun 2004, Rp11.000.000.000, pada tahun 2005, Rp15.000.000.000, kemudian tahun 2006 Rp22.000.000.000, dan tahun 2007 Rp19.000.000.000, dilanjutkan pada tahun 2011 Rp22.000.000.000. Tentukan rata-rata anggaran pada tahun __daftar_tahun__';
         const data = {
             2004: 11000000000,
             2005: 15000000000,

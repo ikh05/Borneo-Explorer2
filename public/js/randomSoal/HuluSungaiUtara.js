@@ -25,12 +25,12 @@ window.HuluSungaiUtara = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = 'Wisata rumah terapung terletak di Desa Banyu Hirang, Kecamatan Amuntai Selatan, Kab. HSU. Kawasan ini ramai dikunjungi wisatawan, terutama saat akhir pekan. Di area wisata tersedia parkiran roda dua dengan tarif Rp__a__,00 (a) per kendaraan. Pada hari libur, seorang petugas parkir mendapatkan uang sebesar Rp__b__,00 (b). Jika x menyatakan jumlah kendaraan yang parkir, maka model persamaan linier satu variabel berdasarkan informasi di atas adalah?'
+        let text = 'Wisata rumah terapung terletak di Desa Banyu Hirang, Kecamatan Amuntai Selatan, Kab. HSU. Kawasan ini ramai dikunjungi wisatawan, terutama saat akhir pekan. Di area wisata tersedia parkiran roda dua dengan tarif Rp__a__,00 per kendaraan. Pada hari libur, seorang petugas parkir mendapatkan uang sebesar Rp__b__,00. Jika x menyatakan jumlah kendaraan yang parkir, maka model persamaan linier satu variabel berdasarkan informasi di atas adalah?'
         let a = 0;
         let x = 0;
         let b = 0;
         do {
-            a = Soal.randomInterval(300, 5000, 1000);
+            a = Soal.randomInterval(3000, 5000, 1000);
             x = Soal.randomInterval(95, 100);
         } while (HuluSungaiUtara.random_persamaan_linear.array_in_array([a, x]));
         HuluSungaiUtara.random_persamaan_linear.lastPush([a, x]);
@@ -55,7 +55,6 @@ window.HuluSungaiUtara = {
         let b = 0;
         let r = 0;
         let barisan = 0;
-        
         do {
             a = Soal.randomInterval(100, 200, 10);
             b = Soal.randomInterval(30, 50, 5);

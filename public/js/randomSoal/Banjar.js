@@ -126,7 +126,7 @@ window.Banjar = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        let text = "Pemerintah Kabupaten Banjar menjalankan sebuah kebijakan promosi pariwisata ke sosial media untuk meningkatkan jumlah wisatawan asing yang berkunjung ke Pasar Terapung Lok Baintan. Setiap tahun, jumlah wisatawan asing meningkat secara teratur. Dimana pada tahun ke-2 sebanyak __U2__ wisatawan per tahun, tahun ke-__m__ adalah __Um__ wisatawan pertahun, dan tahun ke-__o__ adalah __Uo__ wisatawan pertahun. Tentukan banyak wisatawan pada tahun pertama!";
+        let text = "Pemerintah Kabupaten Banjar menjalankan sebuah kebijakan promosi pariwisata ke sosial media untuk meningkatkan jumlah wisatawan asing yang berkunjung ke Pasar Terapung Lok Baintan. Setiap tahun, jumlah wisatawan asing meningkat secara teratur. Dimana pada tahun ke-2 sebanyak __Un__ wisatawan per tahun, tahun ke-__m__ adalah __Um__ wisatawan pertahun, dan tahun ke-__o__ adalah __Uo__ wisatawan pertahun. Tentukan banyak wisatawan pada tahun pertama!";
         // Ketentuan Random:
         // a = 100 − 200 (kelipatan 10)
         // b = 50 − 70 (kelipatan 5)
@@ -144,8 +144,8 @@ window.Banjar = {
         do {
             a = Soal.randomInterval(100, 200, 10);
             b = Soal.randomInterval(50, 70, 5);
-            m = Soal.randomInterval(2, 10);
-            do { o = Soal.randomInterval(2, 10);
+            m = Soal.randomInterval(3, 10);
+            do { o = Soal.randomInterval(3, 10);
             } while (m == o);
             console.log('selesai random, akan di cek');
             
@@ -160,7 +160,7 @@ window.Banjar = {
         return text
             .replace('__m__', m)
             .replace('__o__', o)
-            .replace('__Un__', a+b*2)
+            .replace('__Un__', a+b)
             .replace('__Um__', a+b*(m-1))
             .replace('__Uo__', a+b*(o-1))
     }
