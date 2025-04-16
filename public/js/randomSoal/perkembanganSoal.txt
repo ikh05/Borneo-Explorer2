@@ -8,7 +8,7 @@ Batola:
 
 Tapin:
 * Statistika: Gagak memuat soal
-* Barisan dan deret: Gagak memuat soal
+* Barisan dan deret: - 
 * Persamaan L. : - 
 
 HSS:

@@ -1,7 +1,7 @@
 window.BaritoKuala = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //20^5 = 3.200.000
-        let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa sty-rofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggu-lan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produk-tivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut(dalam ton per hektar): __daftar_data__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
+        let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa styrofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggulan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produktivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut(dalam ton per hektar): __daftar_data__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
         // x1, x2, x3, x4, x5 = 6, 0 − 8, 0 (kelipatan 0,1)
         // Jawaban:  ̄x = sigma(xn)/n
         
@@ -23,7 +23,7 @@ window.BaritoKuala = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ 
-        let text = 'Di Desa Tamban Kabupaten Barito Kuala terdapat penyeberangan feri yang menghubungkan Desa Tamban kabupaten Barito Kuala ke Banjarmasin. Pak Yusuf bersama istri menyebrang sungai barito menggunakan jasa penyeberangan feri dari Tamban ke Banjarmasin dengan membayar Rp__x__. Jika tarif untuk kendaraan pak Yusuf adalah Rp__y__, maka berapakah tarif penyebrangan untuk setiap orang?';
+        let text = 'Di Desa Tamban, Kabupaten Barito Kuala, terdapat layanan penyeberangan feri yang menghubungkan desa tersebut dengan Kota Banjarmasin. Pak Yusuf bersama istrinya menggunakan jasa penyeberangan feri tersebut untuk menyeberangi Sungai Barito dengan total biaya sebesar Rp__x__. Diketahui bahwa tarif untuk kendaraan yang dibawa Pak Yusuf adalah sebesar Rp__y__, berapakah tarif penyeberangan untuk setiap orang?';
 
         let x = 0;
         let y = 0;

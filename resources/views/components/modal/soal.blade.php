@@ -43,9 +43,9 @@
         $('#load-second').addClass('d-none');
         const $card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']'); 
         console.log($card_click.attr('soal'));
+        window.setting.soal_sound = '';
         if($card_click.attr('soal') === ''){
           // buat soal
-          window.setting.soal_sound = '';
           await buatSoal();
           $card_click.attr('soal', window.setting.soal_text);
           $card_click.attr('jawaban', window.setting.jawaban);
@@ -152,5 +152,5 @@
 
 
 @foreach ($kabupaten as $item)  
-  <script src="js/randomSoal/{{ Str::remove(' ', $item) }}.js?v=ujicoba&r=baritokuala&i=4"></script>
+  <script src="js/randomSoal/{{ Str::remove(' ', $item) }}.js?v=ujicoba&r=baritokuala&i=5"></script>
 @endforeach
