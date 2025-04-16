@@ -89,6 +89,12 @@ Array.prototype.modus = function () {
 }
 
 window.Soal = {
+  roundDecimal: function (value, decimal) {
+    if (decimal === false) return value;
+    const factor = Math.pow(10, decimal);
+    return Math.round(value * factor) / factor;
+  },
+
   randomInterval: function (min, max, kelipatan=1, decimal = false) {
     // random
     if(min > max){
@@ -100,13 +106,7 @@ window.Soal = {
     const randomMultiples = Math.floor(Math.random() * (range + 1));
     let result = min + (randomMultiples * kelipatan);
 
-    // Bulatkan jika decimal diminta
-    if (decimal !== false) {
-      const factor = Math.pow(10, decimal);
-      result = Math.round(result * factor) / factor;
-    }
-
-    return result;
+    return this.roundDecimal(result, decimal);
   },
   randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1, decimal = false) {
     let data = [];
@@ -120,7 +120,7 @@ window.Soal = {
       }
 
       // Nilai terakhir, dijamin supaya total kelipatan kelipatan_total
-      last = this.randomInterval(min, max, kelipatan, decimal);
+      last = this.randomInterval(min, max, kelipatan);
       let totalSementara = data.reduce((a, b) => a + b, 0);
       last = last - (totalSementara + last) % kelipatan_total;
 
@@ -128,7 +128,7 @@ window.Soal = {
     } while (last < min || last > max);
     
     data[length - 1] = last;
-    return data;
+    return data.map(e => this.roundDecimal(e, decimal));
   }
 }
 
