@@ -1,8 +1,7 @@
 window.KotaBanjarbaru = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        let text = `
-        <p class="mb-0">Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:</p>
+        let text = `<p class="mb-0">Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:</p>
         <ul class="mb-0">
             <li>Senin:__data1__ pengunjung</li>
             <li>Selasa:__data2__ pengunjung</li>
@@ -12,9 +11,10 @@ window.KotaBanjarbaru = {
             <li>Sabtu:__data6__ pengunjung</li>
             <li>Minggu:__data7__ pengunjung</li>
         </ul>
-        <p class="mb-0">Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!</p>
-        `
+        <p class="mb-0">Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!</p>`;
+
         let soal_sound = `Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:, Senin __data1__ pengunjung, Selasa __data2__ pengunjung, Rabu __data3__ pengunjung, Kamis __data4__ pengunjung, Jumat __data5__ pengunjung, Sabtu __data6__ pengunjung, Minggu __data7__ pengunjung. Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!`;
+
         let data1 = [];
         let data2 = [];
         let data = [];
@@ -24,7 +24,7 @@ window.KotaBanjarbaru = {
             data = [];
             data1 = Soal.randomArray(40, 80, 5, 1, 5);
             data2 = Soal.randomArray(100, 300, 2, 1, 5);
-            data = data1.concat(data2)
+            data = data1.push(data2)
 
         } while (KotaBanjarbaru.random_statistika.array_in_array(data));
         console.log('statistika selesai_random');
@@ -34,8 +34,8 @@ window.KotaBanjarbaru = {
 
         window.setting.jawaban = data.mean();
         data.forEach((element, index) => {
-            text = text.replace(`__data${i+1}__`, element);
-            soal_sound = soal_sound.replace(`__data${i+1}__`, element);
+            text = text.replace(`__data${index+1}__`, element);
+            soal_sound = soal_sound.replace(`__data${index+1}__`, element);
         });
         window.setting.soal_sound = soal_sound;
         return text;
@@ -66,35 +66,25 @@ window.KotaBanjarbaru = {
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
         let text = 'Kampung Purun yang berada di Kelurahan Palam, Kecamatan Cempaka, Kalimantan Selatan, dikenal sebagai sentra kerajinan tangan dari bahan purun, seperti tas, topi, dan bakul yang dibuat langsung oleh para pengrajin di teras rumah mereka. Setiap bulan, hasil produksi kerajinan meningkat mengikuti pola barisan aritmetika, di mana pada bulan pertama diproduksi __a__ buah, bulan kedua __U2__ buah, dan bulan ketiga __U3__ buah. Berapakah jumlah produksi kerajinan pada bulan ke-__n__?'
-        // a=400.000-600.000 (kelipatan 20.000)
-        // r=2-3 
-        // n=4-6 
-        // Jawaban: U_n=ar^(n-1)  
 
         // random
         let a = 0;
         let n = 0;
-        let r = 0;
-        console.log('mulai random');
+        let b = 0;
         
         do {
             a = Soal.randomInterval(20, 40);
             b = Soal.randomInterval(3, 8);
             n = Soal.randomInterval(5, 12);
-            console.log('selesai random, akan di cek');
-            
         } while (KotaBanjarbaru.random_barisan_dan_deret.array_in_array([a, b, n]));
-        console.log('masukkan ke array record');
         KotaBanjarbaru.random_barisan_dan_deret.lastPush([a, b, n]);
-        console.log('sudah di masukkan');
         
         // jawaban
-        window.setting.jawaban = 'Rp\\('+(a+b*(n-1)).toLocaleString('id-ID')+'\\),-';
-        window.setting.soal_sound = '';
+        window.setting.jawaban = a+b*(n-1);
 
         console.log('jawaban di dapatkan');
         return text
-            .replace('__a__', a.toLocaleString('id-ID'))
+            .replace('__a__', a)
             .replace('__U2__', a+b)
             .replace('__U3__', a+b*2)
             .replace('__n__', n)
