@@ -1,16 +1,69 @@
-Kabupaten Kota Baru (3/3)
-Kabupaten Tanah Bumbu (3/3)
-Kabupaten Tanah Laut
-Kota Banjarmasin (3/3)
-Kota Banjarbaru
-Kabupaten Banjar (3/3)
-Kabupaten Barito Kuala (3/3)
-Kabupaten Tapin
-Kabupaten Hulu Sungai Selatan
-Kabupaten Hulu Sungai Utara
-Kabupaten Hulu Sungai Tengah
-Kabupaten Tabalong (3/3)
-Kabupaten Balangan (3/3)
+Daftar bug saat uji coba 1
+
+
+Batola:
+- Statistika: Gagal membuat soal
+- Barisan dan deret: typo
+- Persamaan L.: -
+
+Tapin:
+* Statistika: Gagak memuat soal
+* Barisan dan deret: Gagak memuat soal
+* Persamaan L. : - 
+
+HSS:
+* Statistika: -
+* Barisan dan deret: typo undefined, NaN
+* Persamaan l: typo ab bc
+
+HST
+* Statistika: -
+* Barisan dan deret: -
+* Persamaan l: -
+
+HSU
+* Statistika: -
+* Barisan dan deret: 
+* Persamaan l: tyoe ada variabe (a) dan (b)
+
+Tabalong
+* Statistika: -
+* Barisan dan deret: -
+* Persamaan l: -
+
+Balangan
+* Statistika: - 
+* Barisan dan deret: -
+* Persamaan l: -
+
+Kotabaru
+* Statistika: typo angkanya bekoma super
+* Barisan dan deret: - 
+* Persamaan l: -
+
+Tanahbumbu
+* Statistika: -
+* Barisan dan deret: - 
+* Persamaan l: -
+
+Banjarbaru
+* Statistika: gagal membuat soal
+* Barisan dan deret: - 
+* Persamaan l: -
+
+
+Banjar
+* Statistika: -
+* Barisan dan deret: typo __U2 
+* Persamaan l: - soal dari kota banjarmasin
+
+
+Banjarmasin
+* Statistika: -
+* Barisan dan deret: - 
+* Persamaan l: -
+
+
 
 
 
