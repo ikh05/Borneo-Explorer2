@@ -41,10 +41,10 @@ window.TanahLaut = {
         <p class="mb-0">Tentukan rata-rata jumlah pengunjung untuk kategori __kategori__!</p>`;
         let sound = `Ekowisata mangrove di Desa Pagatan Besar merupakan destinasi wisata yang menawarkan keunikan berupa hutan mangrove, pantai, budaya lokal, serta wisata susur. Lokasinya berada di Jalan Gang Balai, RT 10, Desa Pagatan Besar, Kecamatan Takisung, Kabupaten Tanah Laut, Kalimantan Selatan. Tempat ini menjadi salah satu destinasi wisata edukatif pertama di Tanah Laut yang berfokus pada pelestarian dan pembelajaran tentang ekosistem hutan mangrove. Pengelolaannya dilakukan oleh Kelompok Sadar Wisata (Pokdarwis) Desa Pagatan Besar, dan ekowisata ini telah beroperasi sejak tahun 2019. Berikut adalah data jumlah pengunjung pendidikan dan penelitian wisata hutan mangrove. >Tentukan rata-rata jumlah pengunjung untuk kategori __kategori__!`;
         const data = {
+            Mahasiswa_S2: 1,
             SD: 10,
             SMA: 21,
             Mahasiswa_S1: 33,
-            Mahasiswa_S2: 1,
             Dosen_dan_Staff: 10
         }
         console.log('statistika belum_random');
@@ -58,7 +58,7 @@ window.TanahLaut = {
             randomEntries = Object.entries(data)
             .shuffleArray()
             .slice(0, 3)
-            .sort((a, b) => a[0] - b[0]);
+            .sort((a, b) => a[1] - b[1]);
             console.log('statistika sudah_di random');
         } while (TanahLaut.random_statistika.array_in_array(randomEntries));
         console.log('statistika selesai_random');
