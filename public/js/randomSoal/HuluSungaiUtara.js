@@ -16,7 +16,6 @@ window.HuluSungaiUtara = {
         HuluSungaiUtara.random_statistika.lastPush(data);
 
         window.setting.jawaban = data.mean();
-        window.setting.soal_sound = '';
         data.map(e => e+" unit");
         return text
             .replace('__data__', data.joinName());
@@ -25,11 +24,14 @@ window.HuluSungaiUtara = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = 'Wisata rumah terapung terletak di Desa Banyu Hirang, Kecamatan Amuntai Selatan, Kab. HSU. Kawasan ini ramai dikunjungi wisatawan, terutama saat akhir pekan. Di area wisata tersedia parkiran roda dua dengan tarif Rp__a__,00 per kendaraan. Pada hari libur, seorang petugas parkir mendapatkan uang sebesar Rp__b__,00. Jika x menyatakan jumlah kendaraan yang parkir, maka model persamaan linier satu variabel berdasarkan informasi di atas adalah?'
+        let text = 'Wisata rumah terapung terletak di Desa Banyu Hirang, Kecamatan Amuntai Selatan, Kab. HSU. Kawasan ini ramai dikunjungi wisatawan, terutama saat akhir pekan. Di area wisata tersedia parkiran roda dua dengan tarif Rp__a__,00 per kendaraan. Pada hari libur, seorang petugas parkir mendapatkan uang sebesar Rp__b__,00. Jika __v__ menyatakan jumlah kendaraan yang parkir, maka model persamaan linier satu variabel berdasarkan informasi di atas adalah?'
+        let variabel = ('qwertyuiopasdfghjklzxcvbnm').split('')
         let a = 0;
         let x = 0;
         let b = 0;
+        let v = '';
         do {
+            v = variabel[Soal.randomInterval(0, 25)];
             a = Soal.randomInterval(3000, 5000, 1000);
             x = Soal.randomInterval(95, 100);
         } while (HuluSungaiUtara.random_persamaan_linear.array_in_array([a, x]));
@@ -38,11 +40,11 @@ window.HuluSungaiUtara = {
         b = x*a;
 
         // jawaban
-        window.setting.jawaban = a+"x = "+b;
-        window.setting.soal_sound = '';
+        window.setting.jawaban = `\\( ${a}${v} = ${b} \\)`;
 
         return text
             .replace('__a__', a.toLocaleString('id-ID'))
+            .replace('__v__', v)
             .replace('__b__', b.toLocaleString('id-ID'));
     },
 
@@ -67,7 +69,6 @@ window.HuluSungaiUtara = {
         
         // jawaban
         window.setting.jawaban = 'Barisan ' + (barisan ? 'Geometri' : 'Aritmatika');
-        window.setting.soal_sound = '';
         return text
             .replace('__1__', a)
             .replace('__2__', (barisan ? a*r : a+b))
