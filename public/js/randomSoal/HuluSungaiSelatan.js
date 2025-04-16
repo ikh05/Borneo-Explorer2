@@ -14,7 +14,6 @@ window.HuluSungaiSelatan = {
         HuluSungaiSelatan.random_statistika.lastPush(data);
 
         window.setting.jawaban = data.modus().joinName();
-        window.setting.soal_sound = '';
         return text
             .replace('__n__', n)
             .replace('__daftar_data__', data.joinName());
@@ -24,22 +23,24 @@ window.HuluSungaiSelatan = {
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
         let text = `Seorang petani memiliki dua jenis lahan yaitu lahan untuk budidaya kerbau rawa adalah __v1__ hektar dan lahan untuk menanam sagu adalah __v2__ hektar. Jika jumlah kedua lahan sebesar __b__ hektar, tuliskan bentuk persamaan linear dua variabelnya.`;
-        let variabel = 'abcdefghijklmnopqrstuvwxyz';
+        let variabel = ('abcdefghijklmnopqrstuvwxyz').split();
         let b = 0;
-        let v = '';
+        let v1 = '';
+        let v2 = '';
         do {
-            v = variabel.match(/(?=(\w\w))/g).map((_, i) => variabel.slice(i, i + 2));
+            let indexVariabel = Soal.randomInterval(0, 24);
+            v1 = variabel[indexVariabel];
+            v2 = variabel[indexVariabel];
             b = Soal.randomInterval(170, 200)
-        } while (HuluSungaiSelatan.random_persamaan_linear.array_in_array([v, b]));
-        HuluSungaiSelatan.random_persamaan_linear.lastPush([v, b]);
+        } while (HuluSungaiSelatan.random_persamaan_linear.array_in_array([v1, b]));
+        HuluSungaiSelatan.random_persamaan_linear.lastPush([v1, b]);
 
         // jawaban
-        window.setting.jawaban = `\(${v[0]} + ${v[1]} = ${b}\)`;
-        window.setting.soal_sound = '';
+        window.setting.jawaban = `\(${v1} + ${v2} = ${b}\)`;
         return text
             .replace('__b__', b)
-            .replace('__v1__', v[0])
-            .replace('__v2__', v[1]);
+            .replace('__v1__', v1)
+            .replace('__v2__', v2);
     },
 
     // barisan dan deret
@@ -63,7 +64,7 @@ window.HuluSungaiSelatan = {
         // random
         let a = Soal.randomInterval(50, 100);
         let n = Soal.randomInterval(3, 12);
-        let r = Soal.randomInterval(1, 2, 0,5);
+        let r = Soal.randomInterval(1, 2, 0.5);
         let b = Soal.randomInterval(10, 30);
         console.log('mulai random');
         
@@ -71,7 +72,7 @@ window.HuluSungaiSelatan = {
         let randomData = '';            
         do {
             randomData = Object.keys(data)[Math.floor(Math.random() * Object.keys(data).length)]
-            randomPertanyaanKey = Object.keys(pertanyaan)[Math.floor(Math.random() * Object.keys(pertanyaan).length)];
+            randomPertanyaan = Object.keys(pertanyaan)[Math.floor(Math.random() * Object.keys(pertanyaan).length)];
 
         } while (HuluSungaiSelatan.random_barisan_dan_deret.array_in_array([randomPertanyaan, randomData]));
         console.log('masukkan ke array record');
@@ -80,7 +81,6 @@ window.HuluSungaiSelatan = {
         
         // jawaban
         window.setting.jawaban = (randomPertanyaan.includes('deret') ? 'Deret ' : 'Barisan ') + randomData;
-        window.setting.soal_sound = '';
         console.log('jawaban di dapatkan');
         text = text.replace('__data__', data[randomData])
             .replace('__pertanyaan__', pertanyaan[randomPertanyaan]);

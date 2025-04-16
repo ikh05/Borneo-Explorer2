@@ -17,7 +17,7 @@ Batola: Ka Rama ✅|  |
 - Barisan dan deret: - 
 - Persamaan L.: -
 
-Tapin: Ka Arya 
+Tapin: Ka Arya ✅
 * Statistika: Gagak memuat soal
 * Barisan dan deret: - 
 * Persamaan L. : - 
@@ -27,7 +27,7 @@ HSS: Mylida
 * Barisan dan deret: typo undefined, NaN
 * Persamaan l: typo ab bc
 
-HST: Mylida 
+HST: Mylida ✅ | ✅ | ✅
 * Statistika: -
 * Barisan dan deret: -
 * Persamaan l: -
