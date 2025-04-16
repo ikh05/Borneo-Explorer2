@@ -89,7 +89,7 @@ Array.prototype.modus = function () {
 }
 
 window.Soal = {
-  randomInterval: function (min, max, kelipatan=1) {
+  randomInterval: function (min, max, kelipatan=1, decimal = false) {
     // random
     if(min > max){
       let buff = min; min = max; max = buff;
@@ -104,9 +104,9 @@ window.Soal = {
     // Hitung hasil akhir
     const result = min + (randomMultiples * kelipatan);
     
-    return result;
+    return decimal !== false ? result.toFixed(decimal) : result;
   },
-  randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1) {
+  randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1, decimal = false) {
     let data = [];
     let last = 0;
     do {
@@ -114,11 +114,11 @@ window.Soal = {
 
       // Isi data sebanyak length - 1
       for (let i = 0; i < length - 1; i++) {
-        data.push(this.randomInterval(min, max, kelipatan));
+        data.push(this.randomInterval(min, max, kelipatan, decimal));
       }
 
       // Nilai terakhir, dijamin supaya total kelipatan kelipatan_total
-      last = this.randomInterval(min, max, kelipatan);
+      last = this.randomInterval(min, max, kelipatan, decimal);
       let totalSementara = data.reduce((a, b) => a + b, 0);
       last = last - (totalSementara + last) % kelipatan_total;
 
