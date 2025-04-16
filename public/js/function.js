@@ -92,19 +92,21 @@ window.Soal = {
   randomInterval: function (min, max, kelipatan=1, decimal = false) {
     // random
     if(min > max){
-      let buff = min; min = max; max = buff;
+      [max, min] = [min, max];
     }
     
-    // Hitung range dalam kelipatan
+    // Hitung banyaknya kelipatan
     const range = (max - min) / kelipatan;
-    
-    // Generate random number dalam range kelipatan
     const randomMultiples = Math.floor(Math.random() * (range + 1));
-    
-    // Hitung hasil akhir
-    const result = min + (randomMultiples * kelipatan);
-    
-    return (decimal !== false) ? Number(result.toFixed(decimal)) : result;
+    let result = min + (randomMultiples * kelipatan);
+
+    // Bulatkan jika decimal diminta
+    if (decimal !== false) {
+      const factor = Math.pow(10, decimal);
+      result = Math.round(result * factor) / factor;
+    }
+
+    return result;
   },
   randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1, decimal = false) {
     let data = [];
