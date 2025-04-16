@@ -25,7 +25,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="{{ url('js/konekServer.js?v=last') }}"></script>
-    <script src="{{ url('js/function.js?v=1') }}"></script>
+    <script src="{{ url('js/function.js?v=ujicoba') }}"></script>
   </head>
   <body style="overflow-x: hidden;" data-bs-theme="dark">
     @yield('main')
