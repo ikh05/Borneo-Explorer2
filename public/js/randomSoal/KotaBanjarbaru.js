@@ -17,23 +17,21 @@ window.KotaBanjarbaru = {
 
         let data1 = [];
         let data2 = [];
-        let data = [];
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         
         do {
-            data = [];
             data1 = Soal.randomArray(40, 80, 5, 1, 5);
             data2 = Soal.randomArray(100, 300, 2, 1, 5);
-            data = data1.push(data2)
+            data1.push(data2)
 
-        } while (KotaBanjarbaru.random_statistika.array_in_array(data));
+        } while (KotaBanjarbaru.random_statistika.array_in_array(data1));
         console.log('statistika selesai_random');
 
         // simpan ke daftar 5 terakhir
-        KotaBanjarbaru.random_statistika.lastPush(data);
+        KotaBanjarbaru.random_statistika.lastPush(data1);
 
-        window.setting.jawaban = data.mean();
-        data.forEach((element, index) => {
+        window.setting.jawaban = data1.mean();
+        data1.forEach((element, index) => {
             text = text.replace(`__data${index+1}__`, element);
             soal_sound = soal_sound.replace(`__data${index+1}__`, element);
         });
@@ -52,7 +50,7 @@ window.KotaBanjarbaru = {
         do {
             a = Soal.randomInterval(20000, 25000, 1000);
             b = Soal.randomInterval(7000, 10000, 1000);
-            n = Soal.randomInterval(3, 5);
+            n = Soal.randomInterval(4, 5);
         } while (KotaBanjarbaru.random_persamaan_linear.array_in_array([a, b, n]));
         KotaBanjarbaru.random_persamaan_linear.lastPush([a, b, n]);
 
