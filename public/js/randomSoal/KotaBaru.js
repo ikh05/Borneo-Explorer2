@@ -14,7 +14,7 @@ window.Kotabaru = {
         do {
             data = Soal.randomArray(0.8, 1.5, 7, 7, 0.1, 1)
         } while (Kotabaru.random_statistika.array_in_array(data));
-        console.log('statistika selesai_random');
+        console.log(data);
 
         // simpan ke daftar 5 terakhir
         Kotabaru.random_statistika.lastPush(data);
