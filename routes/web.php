@@ -15,5 +15,5 @@ Route::post('/simpan-soal', [GameController::class, 'simpanSoal']);
 Route::post('/ajax/simapnSoal', [GameController::class, 'simpanSoal']);
 
 Route::get('/a/{key}', function($key){
-    return view('a', ['data' => Game::where('key', $key)->get()->soals]);
+    return view('a', ['data' => Game::where('key', $key)->get()->soals()]);
 });
