@@ -97,7 +97,7 @@ window.TanahLaut = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        let text = 'Luas panen jagung di Kabupaten Tanah Laut pada tahun 2022 adalah 20.014 hektar. Diasumsikan bahwa setiap tahun, luas panen bertambah secara teratur sebesar __b__ hektar karena peningkatan produktivitas. Tentukan luas panen jagung pada tahun __t__.'
+        let text = 'Luas panen jagung di Kabupaten Tanah Laut pada tahun 2022 adalah 20.014 hektare. Diasumsikan bahwa setiap tahun, luas panen bertambah secara teratur sebesar __b__ hektare karena peningkatan produktivitas. Tentukan luas panen jagung pada tahun __t__.'
         // a=400.000-600.000 (kelipatan 20.000)
         // r=2-3 
         // n=4-6 
