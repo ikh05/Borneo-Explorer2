@@ -47,34 +47,34 @@ Balangan: Ka Rama ✅ |  |
 * Barisan dan deret: -
 * Persamaan l: -
 
-Kotabaru: Ka Arif 
-* Statistika: typo angkanya bekoma super
+Kotabaru: Ka Arif ✅ |  |
+* Statistika: - (berdasarkan random, jawaban pasti 1)
 * Barisan dan deret: - 
 * Persamaan l: -
 
-Tanahbumbu: Ka Arif
+Tanahbumbu: Ka Arif ✅ |  |
 * Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -
 
-TanahLaut : Ka Arya
-* Persamaan: belum masuk
-* Barisan dan deret: salah jawaban
+TanahLaut : Ka Arya ✅ |  |
+* Persamaan: -
+* Barisan dan deret: -
 * Statistik: typo
 
-Banjarbaru: Irsya
+Banjarbaru: Irsya ✅ |  |
 * Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -
 
 
-Banjar: Ikhsan
+Banjar: Ikhsan ✅ |  |
 * Statistika: -
-* Barisan dan deret: typo __U2__ 
-* Persamaan l: - soal dari kota banjarmasin
+* Barisan dan deret: -
+* Persamaan l: -
 
 
-Banjarmasin: Ka Siti
+Banjarmasin: Ka Siti ✅ |  |
 * Statistika: -
 * Barisan dan deret: - 
 * Persamaan l: -

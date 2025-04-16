@@ -49,7 +49,7 @@ window.Banjar = {
                 </tr>
             </tbody>
         </table>
-        Berdasarkan data tersebut, berapakah rata-rata produksi pada pada kecamatan __daftar_kecamatan__?
+        Berdasarkan data tersebut, berapa rata-rata produksi pada Kecamatan __daftar_kecamatan__?
         `;
         const data = {
             "Sungai Tabuk": 15,
@@ -80,9 +80,10 @@ window.Banjar = {
 
         // simpan ke daftar 5 terakhir
         Banjar.random_statistika.lastPush(randomEntries);
-
-        window.setting.jawaban = randomEntries.reduce((sum, item) => sum + item[1], 0) / randomEntries.length + ' ton';
-        return text.replace('__daftar_kecamatan__', randomEntries.joinName());
+        const kecamatan = randomEntries.map(e => e[0]);
+        const produksi = randomEntries.map(e => e[1]);
+        window.setting.jawaban = produksi.mean();
+        return text.replace('__daftar_kecamatan__', kecamatan.joinName());
     },
 
     // persamaan_linear
@@ -126,7 +127,7 @@ window.Banjar = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        let text = "Pemerintah Kabupaten Banjar menjalankan sebuah kebijakan promosi pariwisata ke sosial media untuk meningkatkan jumlah wisatawan asing yang berkunjung ke Pasar Terapung Lok Baintan. Setiap tahun, jumlah wisatawan asing meningkat secara teratur. Dimana pada tahun ke-2 sebanyak __Un__ wisatawan per tahun, tahun ke-__m__ adalah __Um__ wisatawan pertahun, dan tahun ke-__o__ adalah __Uo__ wisatawan pertahun. Tentukan banyak wisatawan pada tahun pertama!";
+        let text = "Pemerintah Kabupaten Banjar menjalankan sebuah kebijakan promosi pariwisata ke sosial media untuk meningkatkan jumlah wisatawan asing yang berkunjung ke Pasar Terapung Lok Baintan. Setiap tahun, jumlah wisatawan asing meningkat secara teratur. Dimana pada tahun ke-2 sebanyak __U2__ wisatawan per tahun, tahun ke-4 adalah __Um__ wisatawan pertahun, dan tahun ke-__o__ adalah __Uo__ wisatawan pertahun. Tentukan banyak wisatawan pada tahun pertama!";
         // Ketentuan Random:
         // a = 100 − 200 (kelipatan 10)
         // b = 50 − 70 (kelipatan 5)
@@ -137,21 +138,19 @@ window.Banjar = {
         // random
         let a = 0;
         let b = 0;
-        let m = 0;
+        let m = 4;
         let o = 0;
         console.log('mulai random');
         
         do {
             a = Soal.randomInterval(100, 200, 10);
             b = Soal.randomInterval(50, 70, 5);
-            m = Soal.randomInterval(3, 10);
-            do { o = Soal.randomInterval(3, 10);
-            } while (m == o);
+            o = Soal.randomInterval(5, 10);
             console.log('selesai random, akan di cek');
             
-        } while (Banjar.random_barisan_dan_deret.array_in_array([a, b, m, o]));
+        } while (Banjar.random_barisan_dan_deret.array_in_array([a, b]));
         console.log('masukkan ke array record');
-        Banjar.random_barisan_dan_deret.lastPush([a, b, m, o]);
+        Banjar.random_barisan_dan_deret.lastPush([a, b]);
         console.log('sudah di masukkan');
         
         // jawaban
@@ -160,7 +159,7 @@ window.Banjar = {
         return text
             .replace('__m__', m)
             .replace('__o__', o)
-            .replace('__Un__', a+b)
+            .replace('__U2__', a+b)
             .replace('__Um__', a+b*(m-1))
             .replace('__Uo__', a+b*(o-1))
     }
