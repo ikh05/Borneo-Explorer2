@@ -104,7 +104,7 @@ window.Soal = {
     // Hitung hasil akhir
     const result = min + (randomMultiples * kelipatan);
     
-    return (decimal !== false) ? Number.parseFloat(result).toFixed(decimal) : result;
+    return (decimal !== false) ? Number.(result.toFixed(decimal)) : result;
   },
   randomArray: function (min, max, length, kelipatan_total = 1, kelipatan = 1, decimal = false) {
     let data = [];
