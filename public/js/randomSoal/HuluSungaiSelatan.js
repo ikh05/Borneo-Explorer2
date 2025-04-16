@@ -22,7 +22,7 @@ window.HuluSungaiSelatan = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = `Seorang petani memiliki dua jenis lahan yaitu lahan untuk budidaya kerbau rawa adalah __v1__ hektar dan lahan untuk menanam sagu adalah __v2__ hektar. Jika jumlah kedua lahan sebesar __b__ hektar, tuliskan bentuk persamaan linear dua variabelnya.`;
+        let text = `Seorang petani memiliki dua jenis lahan yaitu lahan untuk budidaya kerbau rawa adalah __v1__ hektare dan lahan untuk menanam sagu adalah __v2__ hektare. Jika jumlah kedua lahan sebesar __b__ hektare, tuliskan bentuk persamaan linear dua variabelnya.`;
         let variabel = ('abcdefghijklmnopqrstuvwxyz').split('');
         let b = 0;
         let v1 = '';
@@ -37,7 +37,7 @@ window.HuluSungaiSelatan = {
         HuluSungaiSelatan.random_persamaan_linear.lastPush([v1, b]);
 
         // jawaban
-        window.setting.jawaban = `\(${v1} + ${v2} = ${b}\)`;
+        window.setting.jawaban = `\\(${v1} + ${v2} = ${b}\\)`;
         return text
             .replace('__b__', b)
             .replace('__v1__', v1)
@@ -87,7 +87,7 @@ window.HuluSungaiSelatan = {
             .replace('__pertanyaan__', pertanyaan[randomPertanyaan]);
         return text
             .replace('__a__', a)
-            .replace('__r__', r)
+            .replace('__r__', (r%1 !== 0 ? (r-0.5)+'\\(\\frac{1}{2}\\)' : r))
             .replace('__b__', b)
             .replace('__n__', n);
     }
