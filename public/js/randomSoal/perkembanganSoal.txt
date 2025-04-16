@@ -8,9 +8,9 @@ Yang lahan basahnya pasti ada
 - Asiah = HSU
 - Irsya = Banjarbaru
 
-1 ✅ = bug fiks
-2 ✅ = jawaban fiks
-3 ✅ = typo fiks
+✅ ke-1 = bug fiks
+✅ ke-2 = jawaban fiks
+✅ ke-3 = typo fiks
 
 Batola: Ka Rama ✅|  |  
 - Statistika: -

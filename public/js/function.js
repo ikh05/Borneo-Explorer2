@@ -78,8 +78,9 @@ Array.prototype.lastPush = function(item, maxLength = 5) {
     this.push(item); // Tambahkan elemen baru
     return this; // Return array untuk chaining
 };
-Array.prototype.mean = function () {
-  return this.reduce((a, b) => a + b, 0)/this.length;
+Array.prototype.mean = function (decimal = false) {
+  let mean = this.reduce((a, b) => a + b, 0)/this.length;
+  return decimal !== false ? Soal.roundDecimal(mean, decimal) : mean; 
 }
 
 Array.prototype.modus = function () {
