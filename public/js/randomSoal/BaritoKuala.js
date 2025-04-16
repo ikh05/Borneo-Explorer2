@@ -4,26 +4,19 @@ window.BaritoKuala = {
         let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa sty-rofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggu-lan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produk-tivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut(dalam ton per hektar): __daftar_data__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
         // x1, x2, x3, x4, x5 = 6, 0 − 8, 0 (kelipatan 0,1)
         // Jawaban:  ̄x = sigma(xn)/n
-        console.log('Batola - Statistika');
-        console.log('line 8');
         
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         let data = [];
         
-        console.log('line 13');
         do {
             data = Soal.randomArray(6, 8, 5);
         } while (BaritoKuala.random_statistika.array_in_array(data));
-        console.log('line 17');
         
         // simpan ke daftar 5 terakhir
         BaritoKuala.random_statistika.lastPush(data);
-        console.log('line 21');
         
         window.setting.soal_sound = '';
-        console.log('line 24');
         window.setting.jawaban = (data.mean()).toLocaleString('id-ID')+' ton';
-        console.log('line 26');
         return text.replace('__daftar_data__', data.joinName(0, ';'));
     },
 
