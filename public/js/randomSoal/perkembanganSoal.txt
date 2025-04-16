@@ -17,15 +17,15 @@ Batola: Ka Rama ✅|  |
 - Barisan dan deret: - 
 - Persamaan L.: -
 
-Tapin: Ka Arya ✅
+Tapin: Ka Arya ✅ |  | 
 * Statistika: Gagak memuat soal
 * Barisan dan deret: - 
 * Persamaan L. : - 
 
-HSS: Mylida 
+HSS: Mylida ✅ |  | 
 * Statistika: -
-* Barisan dan deret: typo undefined, NaN
-* Persamaan l: typo ab bc
+* Barisan dan deret: - 
+* Persamaan l: -
 
 HST: Mylida ✅ | ✅ | ✅
 * Statistika: -
@@ -44,8 +44,8 @@ Tabalong: ka Siti
 
 Balangan: Ka Rama
 * Statistika: - 
-* Barisan dan deret: -
-* Persamaan l: -
+* Barisan dan deret: typo "diajajakan"
+* Persamaan l: hilangkan Anggaran dari "Anggaran APBN"
 
 Kotabaru: Ka Arif 
 * Statistika: typo angkanya bekoma super
@@ -70,7 +70,7 @@ Banjarbaru: Irsya
 
 Banjar: Ikhsan
 * Statistika: -
-* Barisan dan deret: typo __U2 
+* Barisan dan deret: typo __U2__ 
 * Persamaan l: - soal dari kota banjarmasin
 
 
