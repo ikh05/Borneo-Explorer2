@@ -17,7 +17,7 @@ window.Kotabaru = {
 
         // simpan ke daftar 5 terakhir
         Kotabaru.random_statistika.lastPush(data);
-        window.setting.jawaban = data.reduce((a,b)=>a+b)/data.length;
+        window.setting.jawaban = data.mean();
         return text.replace('__daftar_data__', data.join(' - '));
     },
 
