@@ -3,26 +3,26 @@ window.KotaBanjarbaru = {
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
         let text = `<p class="mb-0">Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:</p>
         <ul class="mb-0">
-            <li>Senin:__data1__ pengunjung</li>
-            <li>Selasa:__data2__ pengunjung</li>
-            <li>Rabu:__data3__ pengunjung</li>
-            <li>Kamis:__data4__ pengunjung</li>
-            <li>Jumat:__data5__ pengunjung</li>
-            <li>Sabtu:__data6__ pengunjung</li>
-            <li>Minggu:__data7__ pengunjung</li>
+            <li>Senin: __data1__ pengunjung</li>
+            <li>Selasa: __data2__ pengunjung</li>
+            <li>Rabu: __data3__ pengunjung</li>
+            <li>Kamis: __data4__ pengunjung</li>
+            <li>Jumat: __data5__ pengunjung</li>
+            <li>Sabtu: __data6__ pengunjung</li>
+            <li>Minggu: __data7__ pengunjung</li>
         </ul>
         <p class="mb-0">Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!</p>`;
 
         let soal_sound = `Danau Seran di Kota Banjarbaru adalah tempat wisata yang populer bagi masyarakat sekitar. Di sana, pengunjung bisa menikmati suasana alam yang asri, melakukan piknik di tepi danau, atau menikmati pemandangan sambil naik perahu. Setiap minggu, jumlah pengunjung yang datang ke Danau Seran bervariasi, dengan lebih banyak pengunjung yang datang pada akhir pekan untuk berlibur. Berikut adalah data jumlah pengunjung yang datang ke Danau Seran selama seminggu:, Senin __data1__ pengunjung, Selasa __data2__ pengunjung, Rabu __data3__ pengunjung, Kamis __data4__ pengunjung, Jumat __data5__ pengunjung, Sabtu __data6__ pengunjung, Minggu __data7__ pengunjung. Hitunglah rata-rata jumlah pengunjung yang datang ke Danau Seran setiap hari selama seminggu!`;
 
         let data1 = [];
-        let data2 = [];
         // random ambil 3 buah data dan urutkan data dan menjaga agar tidak ada yang berulang
         
         do {
-            data1 = Soal.randomArray(40, 80, 5, 1, 5);
-            data2 = Soal.randomArray(100, 300, 2, 1, 5);
-            data1.push(data2)
+            data1 = Soal.randomArray(40, 80, 5, 5, 5);
+            // data2 = Soal.randomArray(100, 300, 2, 5, 5);
+            data1.push(Soal.randomInterval(100, 200, 5));
+            data1.push(Soal.randomInterval(100, 200, 5));
 
         } while (KotaBanjarbaru.random_statistika.array_in_array(data1));
         console.log('statistika selesai_random');
