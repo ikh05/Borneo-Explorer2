@@ -12,10 +12,10 @@
               <div class="d-flex flex-column mb-3">
                 <label for="jawaban_kelompok">Kelompok yang menjawab</label>
                 <select name="kelompok" id="jawaban_kelompok" class="form-select">
-                  <option class="d-none" value="kelompok_1">Kelompok 1</option>
-                  <option class="d-none" value="kelompok_2">Kelompok 2</option>
-                  <option class="d-none" value="kelompok_3">Kelompok 3</option>
-                  <option class="d-none" value="kelompok_4">Kelompok 4</option>
+                  <option id="op-1" class="d-none" value="kelompok_1">Kelompok 1</option>
+                  <option id="op-2" class="d-none" value="kelompok_2">Kelompok 2</option>
+                  <option id="op-3" class="d-none" value="kelompok_3">Kelompok 3</option>
+                  <option id="op-4" class="d-none" value="kelompok_4">Kelompok 4</option>
                   <option id="tanpaKelompok" value="">Tanpa Kelompok</option>
                 </select>
               </div>
