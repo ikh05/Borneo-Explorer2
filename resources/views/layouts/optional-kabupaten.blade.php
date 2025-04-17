@@ -1,6 +1,6 @@
 <section id="pilihan_kabupaten" class="d-none d-md-flex position-fixed start-0 top-0 align-items-center z-1030" style="margin-top: 4rem;">
     <div class="list-group" style="border-radius: 0; width: 100%;">
-      
+            
       <x-list.kabupaten
        name="{{ $kabupaten->keys()->first() }}"
        :tujuan="$pintas"
@@ -34,7 +34,7 @@
           $(ac).closest('.card').attr('jawaban', '');
         });
 
-        // lalu untuk kabupaten itu jalankan random materi
+        // lalu untuk kabupaten itu jsalankan random materi
         setTimeout(() => {
           generateMateriCard($kab.get(0));
         }, 1000);
@@ -47,6 +47,7 @@
       console.log(e);
       console.log(content);
       $(e).attr('title', content);
+      $(e).attr('soal') = window[$(e).attr('lokasi')]['pintas'+$(e).attr('tujuan')]();
       new bootstrap.Tooltip(e);
     });
   });

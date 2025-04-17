@@ -89,7 +89,7 @@ window.Banjar = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{
-        let = "Suatu perahu yang akan membawa ke Pasar Terapung Lok Baintan, maksimal membawa 60 penumpang dengan tarip Rp__x__,- untuk dewasa dan Rp__y__,- untuk anak-anak. Jika terdapat __a__ penumpang dewasa dan total pendapatan Rp__c__,-. Maka tentukan banyaknya penumpang anak-anak!";
+        let text = "Suatu perahu yang akan membawa ke Pasar Terapung Lok Baintan, maksimal membawa 60 penumpang dengan tarip Rp__x__,- untuk dewasa dan Rp__y__,- untuk anak-anak. Jika terdapat __a__ penumpang dewasa dan total pendapatan Rp__c__,-. Maka tentukan banyaknya penumpang anak-anak!";
         
         // Ketentuan Random:
         // bentuk umum : ax + by = c

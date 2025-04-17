@@ -8,7 +8,7 @@ function combineUrl(base, path) {
 }
 
 function postServer(url, data, func = {}) {
-    console.log(base_url);
+    console.log('Post to', combineUrl(base_url, url));
     fetch(combineUrl(base_url, url), {
         method: 'POST',
         headers: {
@@ -41,6 +41,7 @@ function postServer(url, data, func = {}) {
 
 function getServer(url, data, func = {}){
     url = base_url + url
+    console.log('Get to', combineUrl(base_url, url) + '?' + new URLSearchParams(data).toString());
     fetch(combineUrl(base_url, url) + '?' + new URLSearchParams(data).toString(), {
         method: 'GET',
         headers: {
