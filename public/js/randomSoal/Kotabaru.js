@@ -12,7 +12,7 @@ window.Kotabaru = {
         console.log(typeof (Kotabaru.random_statistika));
         
         do {
-            data = Soal.randomArray(0.8, 1.5, 7, 7, 0.1, 1)
+            data = Soal.randomArray(0.8, 5, 7, 7, 0.1, 1)
         } while (Kotabaru.random_statistika.array_in_array(data));
 
         // simpan ke daftar 5 terakhir
