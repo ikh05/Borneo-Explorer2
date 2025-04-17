@@ -35,16 +35,26 @@ return new class extends Migration
             $table->string('materi');
             $table->text('soal_text');
             $table->text('soal_sound')->nullable();
-            $table->unsignedBigInteger('game_id');
             $table->string('jawaban');
             $table->timestamps();
 
             // Relasi ke tabel games
-            $table->foreign('game_id')
-                  ->references('id')
+            $table->foreignId('game_id')
                   ->on('games')
                   ->onDelete('cascade')     // Jika game dihapus, semua soal ikut terhapus
                   ->onUpdate('cascade');    // Jika id game berubah (jarang), soal akan ikut
+        });
+
+        // siswa
+        Schema::create('kelompok', function (Blueprint $table) {
+            $table->id(); // primary key auto increment
+            $table->unsignedInteger('no_urut');
+            $table->string('nama');
+            $table->string('lokasi');
+            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
+            $table->unsignedInteger('salah')->default(0);
+            $table->unsignedInteger('benar')->default(0);
+            $table->timestamps();
         });
     }
 

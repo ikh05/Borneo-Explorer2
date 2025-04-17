@@ -98,8 +98,8 @@
                       const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
                       card_click.attr('soal', '');
                       card_click.attr('jawaban', '');
-                      const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
-                      playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
+                      // const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
+                      // playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
                     }
                     return 1;
                   }
