@@ -49,7 +49,7 @@
           $('#jawaban_kelompok option:not(.d-none)').first().prop('selected', true);
         }).on('hide.bs.modal', function() {
           $('#jawaban_kelompok option').each(function (index, element) {
-            if($(element).attr(id) !== 'tanpaKelompok')
+            if($(element).attr('id') !== 'tanpaKelompok')
               $(element).addClass('d-none');
           });
           
