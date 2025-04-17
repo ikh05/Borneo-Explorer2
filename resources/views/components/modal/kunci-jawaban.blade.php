@@ -16,7 +16,7 @@
                   <option class="d-none" value="kelompok_2">Kelompok 2</option>
                   <option class="d-none" value="kelompok_3">Kelompok 3</option>
                   <option class="d-none" value="kelompok_4">Kelompok 4</option>
-                  <option class="d-none" value="">Tanpa Kelompok</option>
+                  <option id="tanpaKelompok" value="">Tanpa Kelompok</option>
                 </select>
               </div>
               <p class="mb-0">Apakah jawabannya benar?</p>
@@ -49,7 +49,8 @@
           $('#jawaban_kelompok option:not(.d-none)').first().prop('selected', true);
         }).on('hide.bs.modal', function() {
           $('#jawaban_kelompok option').each(function (index, element) {
-            $(element).addClass('d-none');
+            if($(element).attr(id) !== 'tanpaKelompok')
+              $(element).addClass('d-none');
           });
           
           // mengatur ulang agar bisa digunakan untuk kunci jawaban
