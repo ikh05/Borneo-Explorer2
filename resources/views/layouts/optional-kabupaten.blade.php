@@ -44,12 +44,27 @@
 
     $('#pilihan_kabupaten .triger-tooltip').each(function (i, e) {
       const content = $('#tooltip_'+$(e).attr('id')).html();
-      console.log(e);
-      console.log(content);
       $(e).attr('title', content);
-      $(e).attr('soal') = window[$(e).attr('lokasi')]['pintas'+$(e).attr('tujuan')]();
       new bootstrap.Tooltip(e);
+
+      // click
+      $(e).on('click', function() {
+        console.log(e);
+        window.setting.lokasi = $(e).attr('lokasi');
+        window.setting.materi = 'pintas';
+        window.setting.pintas = true;
+        // buka modal soal
+        const modalEl = document.getElementById('modal_soal'); 
+        const soalModal = new bootstrap.Modal(modalEl);
+        soalModal.show(e)
+      })
     });
+
+    // $('#pilihan_kabupaten button.pintas').each(function (i, e) {
+    //   $(e).on('click', function() {
+        
+    //   });
+    // });
   });
 </script>
 

@@ -67,5 +67,13 @@ window.HuluSungaiTengah = {
             .replace('__1__', a)
             .replace('__2__', (barisan ? a*r : a+b))
             .replace('__3__', (barisan ? a*r*r : a+b+b))
+    },
+
+
+    
+    random_pintas: ['', '', '', '', ''],
+    pintas: function(){
+        let text = 'Ini pintas di hulu sungai tengah';
+        return text;
     }
 };

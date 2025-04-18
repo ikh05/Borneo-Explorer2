@@ -98,6 +98,9 @@
                       const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
                       card_click.attr('soal', '');
                       card_click.attr('jawaban', '');
+                      $('html, body').animate({
+                          scrollTop: $($($pilihan_kabupaten[i+1]).attr('href')).offset().top
+                      }, 500);
                       // const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
                       // playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
                     }
@@ -131,6 +134,7 @@
                 $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
               }
             }
+            window.setting.bool_bonus = false;
           });
         });
     

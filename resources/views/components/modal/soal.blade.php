@@ -41,19 +41,29 @@
       try {
         $('#load-first').removeClass('d-none').html('Menyiapkan Soal ...');
         $('#load-second').addClass('d-none');
-        const $card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']'); 
-        console.log($card_click.attr('soal'));
+        let $click = '';
+        if(window.setting.bool_bonus){
+          $click = $('#pintas_'+window.setting.lokasi);
+          console.log('pintas ', $click);
+        }else{
+          // jika yang di click itu soal
+          $click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']'); 
+          console.log('soal biasa ', $click);
+        }
+        
+        console.log('yang di click ', $click);
+        console.log($click.attr('soal'));
         window.setting.soal_sound = '';
-        if($card_click.attr('soal') === '' || window.setting.show_jawaban){
+        if($click.attr('soal') === '' || window.setting.show_jawaban){
           // buat soal
           await buatSoal();
-          $card_click.attr('soal', window.setting.soal_text);
-          $card_click.attr('jawaban', window.setting.jawaban);
-          $card_click.attr('sound', (window.setting.soal_sound === '') ? window.setting.soal_text : window.setting.soal_sound);
+          $click.attr('soal', window.setting.soal_text);
+          $click.attr('jawaban', window.setting.jawaban);
+          $click.attr('sound', (window.setting.soal_sound === '') ? window.setting.soal_text : window.setting.soal_sound);
         }else{
-          window.setting.soal_sound = $card_click.attr('sound');
-          window.setting.soal_text = $card_click.attr('soal');
-          window.setting.jawaban = $card_click.attr('jawaban');
+          window.setting.soal_sound = $click.attr('sound');
+          window.setting.soal_text = $click.attr('soal');
+          window.setting.jawaban = $click.attr('jawaban');
         }
         
         // update soal di database
@@ -80,6 +90,7 @@
         setTimeout(function() {
           $('#load-first').addClass('d-none');
           $('#load-second').removeClass('d-none');
+          if(!timer_start) $('#start_timer').removeClass('d-none');
         }, 1000);
 
       } catch(error){ // soal gagal
@@ -140,6 +151,7 @@
 
     $('#start_timer').on('click', function() {
       bool_timer = true;
+      $('#start_timer').addClass('d-none');
     });
 
     const formatJudul = (str) => str.replace(/_/g, ' ').replace(/\b\w/g, m => m.toUpperCase()).replace(/\bDan\b/g, 'dan');

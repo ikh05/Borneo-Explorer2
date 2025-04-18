@@ -90,5 +90,13 @@ window.HuluSungaiSelatan = {
             .replace('__r__', (r%1 !== 0 ? (r-0.5)+'\\(\\frac{1}{2}\\)' : r))
             .replace('__b__', b)
             .replace('__n__', n);
+    },
+
+
+    
+    random_pintas: ['', '', '', '', ''],
+    pintas: function(){
+        let text = 'Ini pintas di hulu sungai selatan';
+        return text;
     }
 }
