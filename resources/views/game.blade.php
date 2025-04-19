@@ -77,6 +77,7 @@
   
   <script>
     $(document).ready(function () {
+      
       const $offcanvas = $('#kelompok_offcanvas');
       const $section = $('#kelompok');
       const $btnKelompok = $('#kelompok button');
@@ -94,6 +95,35 @@
         $('#kelompok button span').removeClass('rotate180');
       }).on('hidden.bs.offcanvas', function() {
         $('#pilihan_kabupaten').addClass('z-1030');
+      });
+
+      let fs = 3;
+      document.addEventListener('keydown', function (e) {
+        // soal
+        const $soal = $('#modal_soal .soal-container');
+        const isCmdOrCtrl = e.ctrlKey || e.metaKey;
+        if(isCmdOrCtrl && e.key === '-'){
+          if(fs < 6){
+            $soal.removeClass('fs-'+fs);
+            fs += 1;
+            $soal.addClass('fs-'+fs);
+          }
+          e.preventDefault();
+        }
+        else if(isCmdOrCtrl && (e.key === '+' || e.key === '=')){
+          if(fs > 1){
+            $soal.removeClass('fs-'+fs);
+            fs -= 1;
+            $soal.addClass('fs-'+fs);
+          }
+          e.preventDefault();
+        }
+        else if(isCmdOrCtrl && e.key === '0'){
+          $soal.removeClass('fs-'+fs);
+          fs = 3;
+          $soal.addClass('fs-'+fs);
+        }
+        e.preventDefault();
       });
     }); 
     </script>
