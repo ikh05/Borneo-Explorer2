@@ -1,7 +1,7 @@
 window.TanahBumbu = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //%!/(3!2!) = 5.4/2 = 10 macam
-        let text = `Desa Kersik Putih di Kecamatan Batulicin memiliki kawasan wisata mangrove yang menarik banyak pengunjung. Wisata ini tidak hanya menawarkan pemandangan yang indah tetapi juga edukasi mengenai pentingnya ekosistem mangrove dalam menjaga ke- seimbangan lingkungan. Setiap harinya, pengelola wisata mencatat jumlah pengunjung untuk memantau perkembangan pariwisata. Dalam 7 hari terakhir, jumlah pengunjung yang datang ke wisata mangrove ini adalah __daftar_data__ orang. Hitunglah rata-rata (mean) jumlah pengunjung per hari!`;
+        let text = `Desa Kersik Putih di Kecamatan Batulicin memiliki kawasan wisata mangrove yang menarik banyak pengunjung. Wisata ini tidak hanya menawarkan pemandangan yang indah tetapi juga edukasi mengenai pentingnya ekosistem mangrove dalam menjaga keseimbangan lingkungan. Setiap harinya, pengelola wisata mencatat jumlah pengunjung untuk memantau perkembangan pariwisata. Dalam 7 hari terakhir, jumlah pengunjung yang datang ke wisata mangrove ini adalah __daftar_data__ orang. Hitunglah rata-rata (mean) jumlah pengunjung per hari!`;
 
         console.log('statistika belum_random');
         
@@ -27,7 +27,7 @@ window.TanahBumbu = {
     // persamaan_linear
     random_persamaan_linear: ['', '', '', '', ''],
     persamaan_linear: ()=>{ // 4*3 = 12 macam
-        let text = `Pesta Pantai Pagatan, atau dikenal sebagai Mappanre Ri Tasi’e, adalah tradisi masyarakat Bugis di Kalimantan Selatan yang diadakan setiap tahun di Pantai Pagatan. Festival ini menarik banyak pengunjung dari berbagai daerah untuk menikmati berbagai pertun jukan budaya, kuliner khas, dan perlombaan tradisional. Seorang pedagang es kelapa ingin berjualan di acara tersebut. Harga tiket masuk ke festival adalah Rp__y__ per orang. Ia menjual es kelapa seharga Rp5.000 per gelas dan menargetkan keuntungan sebesar Rp__x__ setelah membayar tiket masuk. Berapa gelas es kelapa yang harus ia jual untuk mencapai target keuntungan tersebut?`;
+        let text = `Pesta Pantai Pagatan, atau dikenal sebagai Mappanre Ri Tasi’e, adalah tradisi masyarakat Bugis di Kalimantan Selatan yang diadakan setiap tahun di Pantai Pagatan. Festival ini menarik banyak pengunjung dari berbagai daerah untuk menikmati berbagai pertun jukan budaya, kuliner khas, dan perlombaan tradisional. Seorang pedagang es kelapa ingin berjualan di acara tersebut. Harga tiket masuk ke festival adalah Rp__y__. Ia menjual es kelapa seharga Rp5.000 per gelas dan menargetkan keuntungan sebesar Rp__x__ setelah membayar tiket masuk. Berapa gelas es kelapa yang harus ia jual untuk mencapai target keuntungan tersebut?`;
         
         
         let x = 0;
@@ -49,7 +49,7 @@ window.TanahBumbu = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() {
-        let text = "Di Desa Pulau Burung, Kecamatan Simpang Empat, masyarakat memanfaatkan mangrove sebagai pewarna alami untuk kain sasirangan. Proses ini lebih ramah lingkungan dibandingkan dengan pewarna sintetis dan semakin diminati oleh perajin kain tradisional.Seorang pengrajin kain membutuhkan __a__ kg daun mangrove pada hari pertama untuk menghasilkan pewarna alami. Setiap hari berikutnya, jumlah daun yang dibutuhkan bertambah __b__ kg dari hari sebelumnya. Berapa kg daun mangrove yang dibutuhkan pada hari ke-__n__?";
+        let text = "Di Desa Pulau Burung, Kecamatan Simpang Empat, masyarakat memanfaatkan mangrove sebagai pewarna alami untuk kain sasirangan. Proses ini lebih ramah lingkungan dibandingkan dpengan pewarna sintetis dan semakin diminati oleh perajin kain tradisional.Seorang pengrajin kain membutuhkan __a__ kg daun mangrove pada hari pertama untuk menghasilkan pewarna alami. Setiap hari berikutnya, jumlah daun yang dibutuhkan bertambah __b__ kg dari hari sebelumnya. Berapa kg daun mangrove yang dibutuhkan pada hari ke-__n__?";
         
         // Ketentuan Random:
         // a = 2 − 5

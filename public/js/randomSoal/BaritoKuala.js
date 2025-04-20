@@ -1,7 +1,7 @@
 window.BaritoKuala = {
     random_statistika: ['', '', '', '', ''],
     statistika: ()=>{ //20^5 = 3.200.000
-        let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa styrofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggulan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produktivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut(dalam ton per hektar): __daftar_data__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
+        let text = 'Di Desa Cahaya Baru, Kecamatan Jejangkit, Kabupaten Barito Kuala (Batola) terdapat pertanian budidaya padi apung yaitu teknik inovatif yang menggunakan rakit berupa styrofoam atau bambu dan pot berisi tanah sebagai media tanam. Teknik ini sangat cocokuntuk lahan yang selalu tergenang. Budidaya Padi Apung memiliki berbagai keunggulan, seperti kemampuan menyesuaikan diri dengan perubahan ketinggian air, produktivitas yang relatif tinggi, serta toleransi terhadap hama dan penyakit. Seorang petanipadi apung di Jejangkit mencatat hasil panennya selama 5 musim tanam sebagai berikut (dalam ton per hektar): __daftar_data__. Hitunglahrata-rata hasil panen padi apung petani tersebut!';
         // x1, x2, x3, x4, x5 = 6, 0 − 8, 0 (kelipatan 0,1)
         // Jawaban:  ̄x = sigma(xn)/n
         
@@ -45,7 +45,7 @@ window.BaritoKuala = {
     // barisan dan deret
     random_barisan_dan_deret:['', '', '', '', ''],
     barisan_dan_deret: function() { //3*3*5 = 45
-        let text = "Di kawasan Sungai Barito, tepatnya di Kecamatan Anjir Muara, Kabupaten Barito Kuala, terdapat sebuah pulau kecil yang dijadikan sebagai objek wisata alam bernama Pulau Curiak. Jika ingin menikmati keanekaragaman flora dan fauna, Pulau Curiak merupakan destinasi yang tepat. Pulau ini dikelilingi oleh pohon mangrove rambai dan menjadi habitat berbagai jenis fauna, seperti bekantan dan satwa liar khas lahan basah lainnya. Pulau Curiak juga menjadi rumah bagi beragam jenis burung, mulai dari burung kuntul, dara laut, hingga elang brontok—salah satu burung yang dilindungi. Pengunjung didorong untuk berpartisipasi dalam kegiatan penanaman pohon mangrove rambai di kawasan tersebut. Setiap pohon rambai dikenakan biaya sebesar Rp__b__,00. Jika satu rombongan terdiri atas __n__ orang, berapakah total biaya penanaman pohon mangrove rambai yang dikeluarkan oleh rombongan tersebut?";
+        let text = `Di kawasan Sungai Barito tepatnya di kecamatan Anjir Muara, Kabupaten Barito Kuala terdapat sebuah pulau kecil yang digunakan sebagai wisata alam bernama Pulau Curiak. Dengan di kelilingi oleh pohon mangrove rambai dan mengamati aneka fauna seperti Bekantan dan jenis satwa liar lainnya khas lahan basah. Pengunjung juga didorong untuk melakukan penanaman pohon mangrove rambai di daerah tersebut. Untuk setiap pohon rambai dikenakan harga Rp__b__. Jika dalam satu rombongan berisi __n__ orang. Berapakan biaya penanaman pohon mangrove rambai yang dikeluarkan dalam satu rombongan tersebut?`;
 
         // random
         let n = 0;

@@ -7,7 +7,7 @@ window.Tapin = {
         console.log(typeof (Tapin.random_statistika));
         
         do {
-            b = Soal.randomInterval(900, 999)
+            b = Soal.randomInterval(900, 999, 5)
         } while (Tapin.random_statistika.array_in_array(b));
 
         // simpan ke daftar 5 terakhir

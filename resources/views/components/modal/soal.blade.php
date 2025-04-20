@@ -164,5 +164,5 @@
 
 
 @foreach ($kabupaten as $item)  
-  <script src="js/randomSoal/{{ Str::remove(' ', $item) }}.js?v=ujicoba&l=banjar&i=2"></script>
+  <script src="js/randomSoal/{{ Str::remove(' ', $item) }}.js?v=last"></script>
 @endforeach
