@@ -21,6 +21,7 @@
 
 <script>
   $(document).ready(function () {
+
     $('#pilihan_kabupaten span i').each(function (i, e) {
       $(e).on('click', async function() {
 
@@ -53,6 +54,7 @@
         window.setting.lokasi = $(e).attr('lokasi');
         window.setting.materi = 'pintas';
         window.setting.pintas = true;
+        
         // buka modal soal
         const modalEl = document.getElementById('modal_soal'); 
         const soalModal = new bootstrap.Modal(modalEl);

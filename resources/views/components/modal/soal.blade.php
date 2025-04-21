@@ -42,7 +42,7 @@
         $('#load-first').removeClass('d-none').html('Menyiapkan Soal ...');
         $('#load-second').addClass('d-none');
         let $click = '';
-        if(window.setting.bool_bonus){
+        if(window.setting.pintas){
           $click = $('#pintas_'+window.setting.lokasi);
           console.log('pintas ', $click);
         }else{

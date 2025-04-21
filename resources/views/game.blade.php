@@ -15,7 +15,7 @@
       jawaban: '',
       show_jawaban: @json(isset($data['post']['kunciJawaban']) ? true : false),
       card_click: '',
-      bool_bonus: true,
+      pintas: false,
     }
   </script>
   @empty($data['post'])  

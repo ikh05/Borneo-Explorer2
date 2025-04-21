@@ -134,7 +134,7 @@
                 $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
               }
             }
-            window.setting.bool_bonus = false;
+            window.setting.pintas = false;
           });
         });
     
