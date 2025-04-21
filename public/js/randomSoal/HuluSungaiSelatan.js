@@ -96,7 +96,23 @@ window.HuluSungaiSelatan = {
     
     random_pintas: ['', '', '', '', ''],
     pintas: function(){
-        let text = 'Ini pintas di hulu sungai selatan';
-        return text;
-    }
+        let text =`Berdasarkan data Badan Pusat Statistik Hulu Sungai Selatan tahun 2020, luas hutan rawa di Kabupaten Hulu Sungai Selatan adalah 90.060 hektare. Sebuah proyek konservasi lahan basah di Kecamatan Daha Barat berencana memulihkan hutan rawa yang telah beralih fungsi menjadi lahan pertanian. Biaya pemulihan per hektare adalah Rp15.000.000. Total anggaran yang tersedia untuk proyek ini adalah Rp__a__, namun Rp__b__ dialokasikan untuk biaya administrasi dan survei. Jika x adalah luas lahan hutan rawa (dalam hektare) yang dapat dipulihkan dengan anggaran tersebut, tentukan nilai x.`;
+        
+        let a = 0;
+        let b = 0;
+        do {
+            a = Soal.randomInterval(3000000000, 4000000000, 50000000);
+            b = Soal.randomInterval(500000000, 1000000000, 50000000);
+        } while (HuluSungaiSelatan.random_pintas.array_in_array([a, b]));
+        console.log('masukkan ke array record');
+        HuluSungaiSelatan.random_pintas.lastPush([a, b]);
+        console.log('sudah di masukkan');
+        
+        // jawaban
+        window.setting.jawaban = 'Rp.'+((a-b)/15000000).toLocaleString('id-ID')+",-";
+        console.log('jawaban di dapatkan');
+        return text
+            .replace('__a__', a.toLocaleString('id-ID'))
+            .replace('__b__', b.toLocaleString('id-ID'));
+    },
 }

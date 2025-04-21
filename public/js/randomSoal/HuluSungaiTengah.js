@@ -73,7 +73,36 @@ window.HuluSungaiTengah = {
     
     random_pintas: ['', '', '', '', ''],
     pintas: function(){
-        let text = 'Ini pintas di hulu sungai tengah';
-        return text;
+        let text =`
+        <p class="mb-0">Sumber data lahan rawa di Kabupaten Hulu Sungai Tengah meliputi 3 (tiga) wilayah kecamatan yaitu Kecamatan Labuan Amas Utara, Kecamatan Labuhan Amas Selatas, dan Kecamatan Pandawan dengan luas total 21.300 hektare. Terjadi penyusutan luas hutan rawa akibat alih fungsi lahan menjadi perumahan. Berikut data total luas lahan 2018-2022 sebagai berikut:<p>
+        <ul>
+            <li>Tahun 2018: 21.300 hektare</li>
+            <li>Tahun 2019: 21.000 hektare</li>
+            <li>Tahun 2020: __a__ hektare</li>
+            <li>Tahun 2021: __b__ hektare</li>
+            <li>Tahun 2022: __c__ hektare</li>
+        </ul>
+        <p class="mb-0"> Hitunglah rata-rata penyusutan luas hutan rawa per tahun dalam hektare!<p>
+        `;
+        
+        let a = 0;
+        let b = 0;
+        let c = 0;
+        do {
+            a = Soal.randomInterval(400, 600, 100);
+            b = Soal.randomInterval(700, 900, 100);
+            c = Soal.randomInterval(400, 600, 100);
+        } while (HuluSungaiSelatan.random_pintas.array_in_array([a, b,c]));
+        console.log('masukkan ke array record');
+        HuluSungaiSelatan.random_pintas.lastPush([a, b, c]);
+        console.log('sudah di masukkan');
+        
+        // jawaban
+        window.setting.jawaban = ((300 + a + b + c)/4).toLocaleString('id-ID')+" hektare";
+        console.log('jawaban di dapatkan');
+        return text
+            .replace('__a__', (21000-a).toLocaleString('id-ID'))
+            .replace('__b__', (21000-a-b).toLocaleString('id-ID'))
+            .replace('__c__', (21000-a-b-c).toLocaleString('id-ID'));
     }
 };
