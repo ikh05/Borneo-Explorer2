@@ -83,8 +83,12 @@
                   console.log($click);
                   $click.attr('soal', '');
                   $click.attr('jawaban', '');
-                  $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
-                  $posKelompok.text($tujuan.text());
+                  $pilihan_kabupaten.each(function (i, e) {
+                    if($(e).attr('href') === ('#'+window.setting.tujuan)){
+                      $posKelompok.text($(e).text());
+                      $posKelompok.attr('href', $(e).attr('href'));
+                    }
+                  })
                 }else{
                   let loop = true;
                   $pilihan_kabupaten.each(function(i, e) {
