@@ -62,7 +62,7 @@
                 </ul>
               </li>
 
-              <a class="mt-1" href="{{ url('file/papan_permainan.pdf') }}" download><i class="fa-solid fa-file-arrow-down"></i> Download Papan Permainan</a>
+              <a class="mt-1" href="http://drive.google.com/drive/folders/1w09_zyAjTjmq2gcXIcITsi8Q3KwWacRe"><i class="fa-solid fa-file-arrow-down"></i> Download Papan Permainan</a>
           </ul>
         </div>
         @if (!isset($data['post']))
