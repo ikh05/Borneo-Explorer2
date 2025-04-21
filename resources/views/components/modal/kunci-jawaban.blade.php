@@ -77,36 +77,46 @@
                 const $pilihan_kabupaten = $('#pilihan_kabupaten a');
                 // pos_kelompok_1
                 console.log('Posisi sekarang:', $posKelompok.attr('href'));
-                
-                let is_kabupaten = true;
-                $pilihan_kabupaten.each(function(i, e) {
-                  if ($(e).attr('href') === $posKelompok.attr('href') && is_kabupaten) {
-                    is_kabupaten = false;
-                    console.log('Posisi ditemukan pada index:', i);
-      
-                    if (i === $pilihan_kabupaten.length - 1) {
-                      console.log('Akhir list, kembali ke awal');
-                      $posKelompok.attr('href', $pilihan_kabupaten[0].attr('href'));
-                      $posKelompok.text($pilihan_kabupaten[0].text());
-                    } else {
-                      console.log('Lanjut ke posisi berikutnya');
-                      $posKelompok.attr('href', $($pilihan_kabupaten[i + 1]).attr('href'));
-                      $posKelompok.text($($pilihan_kabupaten[i + 1]).text());
+                if (window.setting.pintas){
+                  // yang di click
+                  $click = $(`#pilihan_kabupaten [lokasi=${window.setting.lokasi}][tujuan=${window.setting.tujuan}]`)
+                  $click.attr('soal', '');
+                  $click.attr('jawaban', '');
+                  $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
+                  $posKelompok.text($tujuan.find('p')text());
+                  window.setting.pintas = false;
+                  window.setting.tujuan = '';
+                }else{
+                  let loop = true;
+                  $pilihan_kabupaten.each(function(i, e) {
+                    if ($(e).attr('href') === $posKelompok.attr('href') && loop) {
+                      loop = false;
+                      console.log('Posisi ditemukan pada index:', i);
+        
+                      if (i === $pilihan_kabupaten.length - 1) {
+                        console.log('Akhir list, kembali ke awal');
+                        $posKelompok.attr('href', $pilihan_kabupaten[0].attr('href'));
+                        $posKelompok.text($pilihan_kabupaten[0].find('p').text());
+                      } else {
+                        console.log('Lanjut ke posisi berikutnya');
+                        $posKelompok.attr('href', $($pilihan_kabupaten[i + 1]).attr('href'));
+                        $posKelompok.text($($pilihan_kabupaten[i + 1]).find('p')text());
+                      }
+                      if (statusJawaban === 'benar'){
+                        // hapus soal di card
+                        const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
+                        card_click.attr('soal', '');
+                        card_click.attr('jawaban', '');
+                        $('html, body').animate({
+                            scrollTop: $($($pilihan_kabupaten[i+1]).attr('href')).offset().top
+                        }, 500);
+                        // const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
+                        // playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
+                      }
+                      return 1;
                     }
-                    if(statusJawaban === 'benar'){
-                      // hapus soal di card
-                      const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
-                      card_click.attr('soal', '');
-                      card_click.attr('jawaban', '');
-                      $('html, body').animate({
-                          scrollTop: $($($pilihan_kabupaten[i+1]).attr('href')).offset().top
-                      }, 500);
-                      // const l = ($($pilihan_kabupaten[i+1]).text().includes('Kota ') ? '' : 'Kabupaten ');
-                      // playTeks('Jawaban benar, '+$('#jawaban_kelompok option:selected').text()+' sekarang menuju ke '+ l + $($pilihan_kabupaten[i+1]).text())
-                    }
-                    return 1;
-                  }
-                });
+                  });
+                }
               }else{
                 // jawaban salah
                 if(window.setting.show_jawaban){
@@ -134,7 +144,6 @@
                 $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
               }
             }
-            window.setting.pintas = false;
           });
         });
     
