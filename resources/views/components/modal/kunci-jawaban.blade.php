@@ -84,7 +84,7 @@
                   $click.attr('soal', '');
                   $click.attr('jawaban', '');
                   $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
-                  $posKelompok.text($tujuan.find('p').text());
+                  $posKelompok.text($tujuan.text());
                 }else{
                   let loop = true;
                   $pilihan_kabupaten.each(function(i, e) {
@@ -95,11 +95,11 @@
                       if (i === $pilihan_kabupaten.length - 1) {
                         console.log('Akhir list, kembali ke awal');
                         $posKelompok.attr('href', $pilihan_kabupaten[0].attr('href'));
-                        $posKelompok.text($pilihan_kabupaten[0].find('p').text());
+                        $posKelompok.text($pilihan_kabupaten[0].text());
                       } else {
                         console.log('Lanjut ke posisi berikutnya');
                         $posKelompok.attr('href', $($pilihan_kabupaten[i + 1]).attr('href'));
-                        $posKelompok.text($($pilihan_kabupaten[i + 1]).find('p').text());
+                        $posKelompok.text($($pilihan_kabupaten[i + 1]).text());
                       }
                       if (statusJawaban === 'benar'){
                         // hapus soal di card
