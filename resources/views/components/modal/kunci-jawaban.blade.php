@@ -89,6 +89,8 @@
                       $posKelompok.attr('href', $(e).attr('href'));
                     }
                   })
+                  window.setting.tujuan = '';
+                  window.setting.pintas = false;
                 }else{
                   let loop = true;
                   $pilihan_kabupaten.each(function(i, e) {
@@ -121,6 +123,8 @@
                   });
                 }
               }else{
+                window.setting.pintas = false;
+                window.setting.tujuan = '';
                 // jawaban salah
                 if(window.setting.show_jawaban){
                   const card_click = $('#'+window.setting.lokasi+' .card[nomor='+window.setting.card_click+']');
@@ -142,12 +146,10 @@
                 console.log()
                 console.log('Count lama:', countLama);
                 console.log('Count baru:', countBaru);
-        
+                
                 $count.attr('count', countBaru);
                 $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
               }
-              window.setting.pintas = false;
-              window.setting.tujuan = '';
             }
           });
         });
