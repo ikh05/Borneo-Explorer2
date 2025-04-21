@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card me-1">
     <div class="card-body">
       <img class="rounded-circle img-thumbnail position-absolute translate-middle" src="img/logo/kelompok {{ $slot }}.jpg" alt="">
       <div class="data text-end">
