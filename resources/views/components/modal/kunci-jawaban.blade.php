@@ -100,7 +100,7 @@
                       } else {
                         console.log('Lanjut ke posisi berikutnya');
                         $posKelompok.attr('href', $($pilihan_kabupaten[i + 1]).attr('href'));
-                        $posKelompok.text($($pilihan_kabupaten[i + 1]).find('p')text());
+                        $posKelompok.text($($pilihan_kabupaten[i + 1]).find('p').text());
                       }
                       if (statusJawaban === 'benar'){
                         // hapus soal di card
