@@ -79,13 +79,12 @@
                 console.log('Posisi sekarang:', $posKelompok.attr('href'));
                 if (window.setting.pintas){
                   // yang di click
-                  $click = $(`#pilihan_kabupaten [lokasi=${window.setting.lokasi}][tujuan=${window.setting.tujuan}]`)
+                  $click = $(`#pilihan_kabupaten button[tujuan=${window.setting.tujuan}]`);
+                  log($click);
                   $click.attr('soal', '');
                   $click.attr('jawaban', '');
                   $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
                   $posKelompok.text($tujuan.find('p').text());
-                  window.setting.pintas = false;
-                  window.setting.tujuan = '';
                 }else{
                   let loop = true;
                   $pilihan_kabupaten.each(function(i, e) {
@@ -143,6 +142,8 @@
                 $count.attr('count', countBaru);
                 $count.text(kapitalHurufPertama(statusJawaban) + ' ' + countBaru);
               }
+              window.setting.pintas = false;
+              window.setting.tujuan = '';
             }
           });
         });
