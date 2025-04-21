@@ -119,8 +119,8 @@
               $soal.removeClass('fs-'+fs);
               $soal.addClass('fs-5');
             }
+            e.preventDefault();
           }
-          e.preventDefault();
         }
       });
     }); 
