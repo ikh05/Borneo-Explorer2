@@ -55,7 +55,14 @@
                       <li>Semua peserta harus sportif dan aktif.</li>
                   </ul>
               </li>
-              <a class="mt-1" href="/img/papanPermainan.svg" download><i class="fa-solid fa-file-arrow-down"></i> Download Papan Permainan</a>
+
+              <li><strong>Peraturan Tambahan:</strong>
+                <ul style="list-style: circle">
+                    <li>Permainan dapat disesuaikan dengan kondisi yang ada</li>
+                </ul>
+              </li>
+
+              <a class="mt-1" href="{{ url('file/papan_permainan.pdf') }}" download><i class="fa-solid fa-file-arrow-down"></i> Download Papan Permainan</a>
           </ul>
         </div>
         @if (!isset($data['post']))
