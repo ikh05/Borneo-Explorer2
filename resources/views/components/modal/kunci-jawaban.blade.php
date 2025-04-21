@@ -80,7 +80,7 @@
                 if (window.setting.pintas){
                   // yang di click
                   $click = $(`#pilihan_kabupaten button[tujuan=${window.setting.tujuan}]`);
-                  log($click);
+                  console.log($click);
                   $click.attr('soal', '');
                   $click.attr('jawaban', '');
                   $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
