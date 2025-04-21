@@ -83,7 +83,7 @@
                   $click.attr('soal', '');
                   $click.attr('jawaban', '');
                   $tujuan = $('#pilihan_kabupaten a[href=#'+window.setting.tujuan+']');
-                  $posKelompok.text($tujuan.find('p')text());
+                  $posKelompok.text($tujuan.find('p').text());
                   window.setting.pintas = false;
                   window.setting.tujuan = '';
                 }else{
