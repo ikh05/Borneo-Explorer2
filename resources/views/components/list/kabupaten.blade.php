@@ -1,6 +1,6 @@
 <a href="#{{ Str::remove(' ', $name) }}" class="list-group-item list-group-item-action position-relative d-flex @if($isActive) 'active' @endif">
     @isset($tujuan[$name])
-        <button tujuan="{{ $tujuan[$name] }}" lokasi="{{ Str::remove(' ', $name) }}"  class="button button-outline triger-tooltip p-1 me-1" data-bs-toggle="tooltip" data-bs-html="true" id="pintas_{{ Str::remove(' ', $name) }}">
+        <button soal jawaban tujuan="{{ Str::remove(' ', $tujuan[$name]) }}" lokasi="{{ Str::remove(' ', $name) }}"  class="button button-outline triger-tooltip p-1 me-1" data-bs-toggle="tooltip" data-bs-html="true" id="pintas_{{ Str::remove(' ', $name) }}">
             <i class="fa-solid fa-road-circle-exclamation"></i>
         </button>
     @endisset
