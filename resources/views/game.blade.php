@@ -97,33 +97,31 @@
         $('#pilihan_kabupaten').addClass('z-1030');
       });
 
-      let fs = 3;
+      const $soal = $('#modal_soal .soal-container');
       document.addEventListener('keydown', function (e) {
         // soal
-        const $soal = $('#modal_soal .soal-container');
-        const isCmdOrCtrl = e.ctrlKey || e.metaKey;
-        if(isCmdOrCtrl && e.key === '-'){
-          if(fs < 6){
-            $soal.removeClass('fs-'+fs);
-            fs += 1;
-            $soal.addClass('fs-'+fs);
+        if($('#modal_soal').hasClass('show') || true){
+          const isCmdOrCtrl = e.ctrlKey || e.metaKey;
+          if(isCmdOrCtrl){
+            let fs = Number($soal.attr('fs'));
+            if(e.key === '-' && fs < 6){
+              $soal.attr('fs', fs+1);
+              $soal.removeClass('fs-'+fs);
+              $soal.addClass('fs-'+(fs+1));
+            }
+            else if((e.key === '=' || e.key === '+') && fs > 1){
+              $soal.attr('fs', fs-1);
+              $soal.removeClass('fs-'+fs);
+              $soal.addClass('fs-'+(fs-1));
+            }
+            else if(e.key === '0'){
+              $soal.attr('fs', 5);
+              $soal.removeClass('fs-'+fs);
+              $soal.addClass('fs-5');
+            }
           }
           e.preventDefault();
         }
-        else if(isCmdOrCtrl && (e.key === '+' || e.key === '=')){
-          if(fs > 1){
-            $soal.removeClass('fs-'+fs);
-            fs -= 1;
-            $soal.addClass('fs-'+fs);
-          }
-          e.preventDefault();
-        }
-        else if(isCmdOrCtrl && e.key === '0'){
-          $soal.removeClass('fs-'+fs);
-          fs = 3;
-          $soal.addClass('fs-'+fs);
-        }
-        e.preventDefault();
       });
     }); 
     </script>

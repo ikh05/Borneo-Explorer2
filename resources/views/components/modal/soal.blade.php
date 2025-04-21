@@ -11,7 +11,7 @@
             <h6 id="soal_lokasi" class="small text-secondary mb-0">Lokasi</h6>
           </div>
           <!-- soal -->
-          <div class="modal-body soal-container"></div>
+          <div class="modal-body soal-container fs-5" fs="5"></div>
           
           <!-- timer dan jawaban -->
           <div class="modal-footer">

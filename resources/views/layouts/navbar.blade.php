@@ -57,7 +57,7 @@
           <li class="nav-item me-1">
             <button id="triger_aturan_permainan" class="nav-link" data-bs-toggle="modal" data-bs-target="#aturan_permainan">Aturan Permainan</button>
           </li>
-          <li class="nav-item dropdown me-2">
+          <li class="nav-item dropdown me-1">
             <button id="pembuat-btn" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Pembuat
             </button>
@@ -78,6 +78,17 @@
                   </li>
                 @endforeach
               @endisset
+            </ul>
+          </li>
+          <li class="nav-item dropdown me-1">
+            <button id="shortcut" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pintasan
+            </button>
+            <ul class="dropdown-menu p-2" style="width: 23rem;">
+                <li class="py-1">K <i class="fa-solid fa-arrow-right"></i> Membuka/Menutup Daftar Kelompok</li>
+                <li class="py-1">CTRL + <i class="fa-solid fa-arrow-right"></i> Memperbesar Ukuran Huruf Soal</li>
+                <li class="py-1">CTRL - <i class="fa-solid fa-arrow-right"></i> Memperperkecil Ukuran Huruf Soal</li>
+                <li class="py-1">CTRL 0 <i class="fa-solid fa-arrow-right"></i> Mengembalikan Ukuran Huruf Soal</li>
             </ul>
           </li>
           <li class="nav-item">
