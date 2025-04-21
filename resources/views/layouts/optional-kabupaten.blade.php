@@ -51,7 +51,7 @@
       // click
       $(e).on('click', function() {
         console.log(e);
-        window.setting.tujuan = $(e).attr('tujuan');
+        window.setting.lokasi = $(e).attr('lokasi');
         window.setting.lokasi = $(e).attr('lokasi');
         window.setting.materi = 'pintas';
         window.setting.pintas = true;

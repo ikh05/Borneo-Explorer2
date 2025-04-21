@@ -13,7 +13,7 @@
           <!-- banyak kelompok -->
           <div class="mb-3 ">
             <label class="form-label" for="pengaturan_banyak_kelompok">Banyak Kelompok</label>
-            <input type="number" class="form-control" id="pengaturan_banyak_kelompok" max="5" min="2" name="kelompok" value="{{ isset($data['post']) ? $data['post']['kelompok'] : 4 }}" required>
+            <input type="number" class="form-control" id="pengaturan_banyak_kelompok" max="6" min="2" name="kelompok" value="{{ isset($data['post']) ? $data['post']['kelompok'] : 4 }}" required>
             <div class="invalid-feedback">
               Isi dengan 2-5!
             </div>
