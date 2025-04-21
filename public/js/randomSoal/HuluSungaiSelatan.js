@@ -101,18 +101,18 @@ window.HuluSungaiSelatan = {
         let a = 0;
         let b = 0;
         do {
-            a = Soal.randomInterval(3000000000, 4000000000, 50000000);
-            b = Soal.randomInterval(500000000, 1000000000, 50000000);
+            a = Soal.randomInterval(3000, 4000, 50);
+            b = Soal.randomInterval(500, 1000, 50);
         } while (HuluSungaiSelatan.random_pintas.array_in_array([a, b]));
         console.log('masukkan ke array record');
         HuluSungaiSelatan.random_pintas.lastPush([a, b]);
         console.log('sudah di masukkan');
         
         // jawaban
-        window.setting.jawaban = 'Rp.'+((a-b)/15000000).toLocaleString('id-ID')+",-";
+        window.setting.jawaban = 'Rp.'+((a-b)/15).toLocaleString('id-ID')+".000.000,-";
         console.log('jawaban di dapatkan');
         return text
-            .replace('__a__', a.toLocaleString('id-ID'))
-            .replace('__b__', b.toLocaleString('id-ID'));
+            .replace('__a__', a.toLocaleString('id-ID')+'.000.000')
+            .replace('__b__', b.toLocaleString('id-ID')+'.000.000');
     },
 }

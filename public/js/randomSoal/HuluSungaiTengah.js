@@ -92,9 +92,9 @@ window.HuluSungaiTengah = {
             a = Soal.randomInterval(400, 600, 100);
             b = Soal.randomInterval(700, 900, 100);
             c = Soal.randomInterval(400, 600, 100);
-        } while (HuluSungaiSelatan.random_pintas.array_in_array([a, b,c]));
+        } while (HuluSungaiTengah.random_pintas.array_in_array([a, b,c]));
         console.log('masukkan ke array record');
-        HuluSungaiSelatan.random_pintas.lastPush([a, b, c]);
+        HuluSungaiTengah.random_pintas.lastPush([a, b, c]);
         console.log('sudah di masukkan');
         
         // jawaban
