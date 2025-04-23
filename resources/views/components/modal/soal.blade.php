@@ -28,7 +28,7 @@
 </div>
 
 <!-- Konfirmasi Jawaban Pemain -->
-<x-modal.kunci-jawaban :kunciJawaban=$kunciJawaban></x-modal.kunci-jawaban>
+<x-modal.kunci-jawaban :kunciJawaban=$kunciJawaban :banyakKelompok=$banyakKelompok></x-modal.kunci-jawaban>
 
 
 
