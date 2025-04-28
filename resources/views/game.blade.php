@@ -31,7 +31,7 @@
 
   <!-- Soal -->
   <x-modal.soal 
-    :banyakKelompok="(isste($data['post']) ? $data['post']['kelompok'] : [])"  
+    :banyakKelompok="(isset($data['post']) ? $data['post']['kelompok'] : [])"  
     :kabupaten="$data['kabupaten']->keys()"
     :timeOtomatis="(isset($data['post']['time_otomatis']) ? true : false)"
     :durasi="(isset($data['post']) ? $data['post']['menit']*60 + $data['post']['detik'] : 120)"
